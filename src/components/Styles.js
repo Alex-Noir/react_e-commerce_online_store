@@ -1,39 +1,40 @@
-import styled from 'styled-components';
+//App
+export const StyledDivWrapper = window.styled.div`
+  min-height: 100vh;
+`
 
 // Header
-export const StyledHeader = styled.header`
-  height: 60px;
-  box-shadow: 0 1px 5px;
+export const StyledHeader = window.styled.header`
+  z-index: 1;
 `
-export const StyledDivContent = styled.div`
-  width: 1140px;
-  height: 60px;
+export const StyledDivHeaderContent = window.styled.div`
+  width: 1200px;
 `
-export const StyledDivSearchBar = styled.div`
-  height: 35px;
-  margin-left: 10px;
-  margin-top: 10px;
-`
-export const StyledDivAccount = styled.div`
-  margin-left: 17px;
-  margin-top: 10px;
-`
-export const StyledSpanAccount = styled.span`
+export const StyledSpanAccount = window.styled.span`
   font-size: 12px;
 `
 
 // Container
-export const StyledSpanBestOffers = styled.span`
-  position: relative;
-  left: 200px;
-  display: inline-block;
+export const StyledDivGridContainer = window.styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1200px 1fr;
+  flex: 1 1 0;
+`
+export const StyledDivGridContent = window.styled.div`
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
 `
 
 // Nav
-export const StyledNav = styled.nav`
-  max-width: 200px;
+export const StyledNav = window.styled.nav`
+  min-width: 205px;
+  max-width: 205px;
+  grid-area: 1 / 1 / 2 / 2;
 `
-export const StyledLiCategory = styled.li`
+export const StyledLiCategory = window.styled.li`
   border-left: 2px solid red;
   border-bottom: 1px solid #acacac;
   border-right: 1px solid #acacac;
@@ -41,30 +42,39 @@ export const StyledLiCategory = styled.li`
 `
 
 // Carousel
-export const StyledDivCarousel = styled.div`
-  height: 500px;
-  width: 960px;
-  left: 15px;
-  clear: right;
+export const StyledDivCarousel = window.styled.div`
+  width: 960px; 
+  grid-area: 1 / 2 / 2 / 3;
+  justify-self: end;
 `
-export const StyledDivCarouselInner = styled.div`
-  width: 960px;
-`
-export const StyledDivCarouselItem = styled.div`
+export const StyledDivCarouselItem = window.styled.div`
   transition: transform 0.5s ease-in-out !important;
 `
 
-// Googs
-export const StyledDivItem = styled.div`
+//Mobile Phones
+export const StyledDivPhonesList = window.styled.div`
+  grid-area: 1 / 2 / 2 / 3;
+  min-width: 960px;
+`
+
+// Products
+export const StyledDivProducts = window.styled.div`
+  grid-area: 2 / 2 / 3 / 3;
+`
+
+//Product
+export const StyledProductItem = window.styled.div`
   height: 400px;
+  width: 300px;
 `
 
 // Footer
-export const StyledFooter = styled.footer`
-  height: 300px;
-`
+export const StyledFooter = window.styled.footer`
 
-export const StyledListsWrapper = styled.div`
-  width: 1140px;
-  height: 300px;
+`
+export const StyledUlFooterList = window.styled.ul`
+  width: 300px;
+`
+export const StyledDivFooter = window.styled.div`
+  width: 300px;
 `
