@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledDivCarousel, StyledDivCarouselItem } from '../styles';
+import { StyledDivCarousel } from '../styles';
 
 export default function Carousel() {
   return (
@@ -10,15 +10,15 @@ export default function Carousel() {
         <li data-target="#carouselIndicators" data-slide-to="2"></li>
       </ol>
       <div className="carousel-inner">
-        <StyledDivCarouselItem className="carousel-item active">
+        <div className="carousel-item active">
           <img className="d-block" src={require('../../img/carousel/lake.jpg')} alt="First slide"/>
-        </StyledDivCarouselItem>
-        <StyledDivCarouselItem className="carousel-item">
+        </div>
+        <div className="carousel-item">
           <img className="d-block" src={require('../../img/carousel/landscape.jpg')} alt="Second slide"/>
-        </StyledDivCarouselItem>
-        <StyledDivCarouselItem className="carousel-item">
+        </div>
+        <div className="carousel-item">
           <img className="d-block" src={require('../../img/carousel/sunset.jpg')} alt="Third slide"/>
-        </StyledDivCarouselItem>
+        </div>
       </div>
       <a className="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
         <span className="carousel-control-prev-icon" aria-hidden="true"></span>

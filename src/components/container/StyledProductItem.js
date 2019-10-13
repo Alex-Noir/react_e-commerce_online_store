@@ -12,7 +12,7 @@ export default class StyledProductItem extends Component {
           alt="Item"
           width={props.product.imageWidth}
           heigth={props.product.imageHeight}
-          src={`../../img/products/${props.product.imageSrc}`}
+          src={`../../img/products/mobile_phones/${props.product.imageSrc}`}
         />
         <div>{props.product.description}</div>
         <div>{props.product.price}</div>
