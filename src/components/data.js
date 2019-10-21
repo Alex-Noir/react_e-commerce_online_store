@@ -8,6 +8,7 @@ export const mobile_phones = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: false,
     isInCart: false,
     amountInCart: 0
   },
@@ -20,6 +21,7 @@ export const mobile_phones = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: false,
     isInCart: false,
     amountInCart: 0
   },
@@ -32,6 +34,7 @@ export const mobile_phones = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: true,
     isInCart: false,
     amountInCart: 0
   },
@@ -44,6 +47,7 @@ export const mobile_phones = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: false,
     isInCart: false,
     amountInCart: 0
   },
@@ -56,6 +60,7 @@ export const mobile_phones = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: false,
     isInCart: false,
     amountInCart: 0
   },
@@ -68,6 +73,7 @@ export const mobile_phones = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: true,
     isInCart: false,
     amountInCart: 0
   },
@@ -80,6 +86,7 @@ export const mobile_phones = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: false,
     isInCart: false,
     amountInCart: 0
   },
@@ -92,6 +99,7 @@ export const mobile_phones = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: false,
     isInCart: false,
     amountInCart: 0
   },
@@ -104,6 +112,7 @@ export const mobile_phones = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: true,
     isInCart: false,
     amountInCart: 0
   },
@@ -116,6 +125,7 @@ export const mobile_phones = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: false,
     isInCart: false,
     amountInCart: 0
   },
@@ -128,6 +138,7 @@ export const mobile_phones = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: false,
     isInCart: false,
     amountInCart: 0
   },
@@ -140,6 +151,7 @@ export const mobile_phones = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: true,
     isInCart: false,
     amountInCart: 0
   },
@@ -152,6 +164,7 @@ export const mobile_phones = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: false,
     isInCart: false,
     amountInCart: 0
   },
@@ -164,6 +177,7 @@ export const mobile_phones = [
     "imageWidth": 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: false,
     isInCart: false,
     amountInCart: 0
   },
@@ -176,6 +190,7 @@ export const mobile_phones = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: true,
     isInCart: false,
     amountInCart: 0
   }
@@ -191,6 +206,7 @@ export const laptops = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: true,
     isInCart: false,
     amountInCart: 0
   },
@@ -203,6 +219,7 @@ export const laptops = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: false,
     isInCart: false,
     amountInCart: 0
   },
@@ -215,6 +232,7 @@ export const laptops = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: false,
     isInCart: false,
     amountInCart: 0
   },
@@ -227,6 +245,7 @@ export const laptops = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: true,
     isInCart: false,
     amountInCart: 0
   },
@@ -239,6 +258,7 @@ export const laptops = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: false,
     isInCart: false,
     amountInCart: 0
   },
@@ -251,6 +271,7 @@ export const laptops = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: false,
     isInCart: false,
     amountInCart: 0
   },
@@ -263,6 +284,7 @@ export const laptops = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: true,
     isInCart: false,
     amountInCart: 0
   },
@@ -275,6 +297,7 @@ export const laptops = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: false,
     isInCart: false,
     amountInCart: 0
   },
@@ -287,6 +310,7 @@ export const laptops = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: true,
     isInCart: false,
     amountInCart: 0
   },
@@ -299,6 +323,7 @@ export const laptops = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: false,
     isInCart: false,
     amountInCart: 0
   },
@@ -311,6 +336,7 @@ export const laptops = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: true,
     isInCart: false,
     amountInCart: 0
   },
@@ -323,6 +349,7 @@ export const laptops = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: false,
     isInCart: false,
     amountInCart: 0
   },
@@ -335,6 +362,7 @@ export const laptops = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: true,
     isInCart: false,
     amountInCart: 0
   },
@@ -347,6 +375,7 @@ export const laptops = [
     "imageWidth": 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: false,
     isInCart: false,
     amountInCart: 0
   },
@@ -359,6 +388,7 @@ export const laptops = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: false,
     isInCart: false,
     amountInCart: 0
   },
@@ -371,6 +401,7 @@ export const laptops = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: true,
     isInCart: false,
     amountInCart: 0
   }
@@ -386,6 +417,7 @@ export const tablets = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: true,
     isInCart: false,
     amountInCart: 0
   },
@@ -398,6 +430,7 @@ export const tablets = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: false,
     isInCart: false,
     amountInCart: 0
   },
@@ -410,6 +443,7 @@ export const tablets = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: true,
     isInCart: false,
     amountInCart: 0
   },
@@ -422,6 +456,7 @@ export const tablets = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: false,
     isInCart: false,
     amountInCart: 0
   },
@@ -434,6 +469,7 @@ export const tablets = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: true,
     isInCart: false,
     amountInCart: 0
   },
@@ -446,6 +482,7 @@ export const tablets = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: false,
     isInCart: false,
     amountInCart: 0
   },
@@ -458,6 +495,7 @@ export const tablets = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: true,
     isInCart: false,
     amountInCart: 0
   },
@@ -470,6 +508,7 @@ export const tablets = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: false,
     isInCart: false,
     amountInCart: 0
   },
@@ -482,6 +521,7 @@ export const tablets = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: true,
     isInCart: false,
     amountInCart: 0
   },
@@ -494,6 +534,7 @@ export const tablets = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: false,
     isInCart: false,
     amountInCart: 0
   },
@@ -506,6 +547,7 @@ export const tablets = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: true,
     isInCart: false,
     amountInCart: 0
   },
@@ -518,6 +560,7 @@ export const tablets = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: false,
     isInCart: false,
     amountInCart: 0
   },
@@ -530,6 +573,7 @@ export const tablets = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: true,
     isInCart: false,
     amountInCart: 0
   },
@@ -542,6 +586,7 @@ export const tablets = [
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
+    hasDiscount: false,
     isInCart: false,
     amountInCart: 0
   }

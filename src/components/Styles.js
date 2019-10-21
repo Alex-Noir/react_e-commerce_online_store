@@ -86,10 +86,20 @@ export const StyledDivPhonesList = window.styled.div`
   min-width: 960px;
 `
 
-//Product
+//MobilePhone/Laptop/TabletItem
 export const StyledProductItem = window.styled.div`
   height: 400px;
   width: 290px;
+`
+
+//MobilePhones/Laptops/TabletItemsDiscount
+export const StyledDivCountdown = window.styled.div`
+  grid-area: 1 / 1 / 2 / 3;
+  justify-self: center;
+`
+export const StyledDivDiscountList = window.styled.div`
+  grid-area: 2 / 1 / 3 / 3;
+  justify-self: center;
 `
 
 //Product Page

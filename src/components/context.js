@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { mobile_phones, productTemplate } from './data';
+import { mobile_phones, laptops, tablets, productTemplate } from './data';
 
 const Context = React.createContext();
 
@@ -7,27 +7,58 @@ class ContextProvider extends Component {
   constructor() {
     super();
     this.state = {
-      products: [],
+      bestOffers: [],
+      mobilePhones: [],
+      laptops: [],
+      tablets: [],
       productTemplate: productTemplate
     };
 
-    this.setProducts = this.setProducts.bind(this);
+    this.setBestOffers = this.setBestOffers.bind(this);
+    this.setMobilePhones = this.setMobilePhones.bind(this);
+    this.setLaptops = this.setLaptops.bind(this);
+    this.setTablets = this.setTablets.bind(this);
     this.getItem = this.getItem.bind(this);
     this.onDetail = this.onDetail.bind(this);
   }
+  
   componentDidMount() {
-    this.setProducts();
+    this.setBestOffers();
+    this.setMobilePhones();
+    this.setLaptops();
+    this.setTablets();
   }
 
-  setProducts() {
-    let tempProducts = JSON.parse(JSON.stringify(mobile_phones));
+  setBestOffers() {
+    let tempBestOffers = JSON.parse(JSON.stringify(mobile_phones));
     this.setState(() => {
-      return {products: tempProducts}
+      return { bestOffers: tempBestOffers }
+    })
+  }
+
+  setMobilePhones() {
+    let tempMobilePhones = JSON.parse(JSON.stringify(mobile_phones));
+    this.setState(() => {
+      return { mobilePhones: tempMobilePhones }
+    })
+  }
+
+  setLaptops() {
+    let tempLaptops = JSON.parse(JSON.stringify(laptops));
+    this.setState(() => {
+      return { laptops: tempLaptops }
+    })
+  }
+
+  setTablets() {
+    let tempTablets = JSON.parse(JSON.stringify(tablets));
+    this.setState(() => {
+      return { tablets: tempTablets }
     })
   }
 
   getItem(id) {
-    const product = this.state.products.find(item => item.id === id);
+    const product = this.state.bestOffers.find(item => item.id === id);
     return product;
   }
 
@@ -42,7 +73,10 @@ class ContextProvider extends Component {
     return (
       <Context.Provider value={{ 
         ...this.state,
-        setProducts: this.setProducts,
+        setBestOffers: this.setBestOffers,
+        setMobilePhones: this.setMobilePhones,
+        setLaptops: this.setLaptops,
+        setTablets: this.setTablets,
         getItem: this.getItem,
         onDetail: this.onDetail
       }}>

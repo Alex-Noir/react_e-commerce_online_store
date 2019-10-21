@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyledDivCarousel } from '../styles';
+import { Link } from "react-router-dom";
 
 export default function Carousel() {
   return (
@@ -11,13 +12,19 @@ export default function Carousel() {
       </ol>
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img className="d-block" src={require('../../img/carousel/lake.jpg')} alt="First slide"/>
+          <Link to='/mobile_phones_discount'>
+            <img className="d-block" src={require('../../img/carousel/01.webp')} alt="First slide"/>
+          </Link>
         </div>
         <div className="carousel-item">
-          <img className="d-block" src={require('../../img/carousel/landscape.jpg')} alt="Second slide"/>
+          <Link to='/laptops_discount'>
+            <img className="d-block" src={require('../../img/carousel/02.webp')} alt="Second slide"/>
+          </Link>
         </div>
         <div className="carousel-item">
-          <img className="d-block" src={require('../../img/carousel/sunset.jpg')} alt="Third slide"/>
+          <Link to='/tablets_discount'>
+            <img className="d-block" src={require('../../img/carousel/03.webp')} alt="Third slide"/>
+          </Link>
         </div>
       </div>
       <a className="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">

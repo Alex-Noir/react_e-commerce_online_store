@@ -1,9 +1,10 @@
 import React from 'react';
+import { Route } from "react-router-dom";
+import { StyledDivWrapper } from './components/styles';
+
 import Header from './components/Header';
 import Container from './components/Container';
 import Footer from './components/Footer';
-import { StyledDivWrapper } from './components/styles';
-import { Route } from "react-router-dom";
 
 export default function App() {
   return (
