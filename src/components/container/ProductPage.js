@@ -1,14 +1,21 @@
-import React, { Component } from 'react';
-import { StyledDivProductPage } from '../styles';
-import { Link } from "react-router-dom";
-import { ContextConsumer } from '../context';
+import React, { Component } from 'react'
+import { StyledDivProductPage } from '../styles'
+import { Link } from "react-router-dom"
+import { ContextConsumer } from '../context'
 
 export default class ProductPage extends Component {
   render() {
     return (
       <ContextConsumer>
         {value => {
-          const { id, title, company, description, img, price, isInCart, amountInCart } = value.productTemplate;
+          const { id, 
+                  title, 
+                  company, 
+                  description, 
+                  img, 
+                  price, 
+                  isInCart, 
+                  amountInCart } = value.productTemplate
         
           return (
             <StyledDivProductPage>
@@ -19,7 +26,7 @@ export default class ProductPage extends Component {
                   <li className="breadcrumb-item active" aria-current="page">{title}</li>
                 </ol>
               </nav>
-              <img src={require(`../../img/products/mobile_phones/${img}`)} alt={title} height="400" width="400"/>
+              <img src={require(`../../img/products/${img}`)} alt={title} height="400" width="400"/>
               <div className="d-flex flex-column">
                 <div className="h1">{title}</div>
                 <div className="h2">Company: {company}</div>

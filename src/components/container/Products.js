@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyledDivProducts } from '../styles';
 import { ContextConsumer } from '../context';
-import Product from './Product';
+
+import MobilePhoneItem from './products/MobilePhoneItem';
 
 export default function Products() {
   return (
@@ -11,8 +12,8 @@ export default function Products() {
         <ContextConsumer>
           {
             value => {
-              return value.bestOffers.map( bestOffer => {
-                return <Product key={bestOffer.id} bestOffer = {bestOffer}/>
+              return value.mobilePhones.map( mobilePhone => {
+                return <MobilePhoneItem key={mobilePhone.id} mobilePhone = {mobilePhone}/>
               })
             }
           }

@@ -1,9 +1,9 @@
-import React from 'react';
-import { StyledDivPhonesList } from '../../styles';
-import { Link } from "react-router-dom";
-import { ContextConsumer } from '../../context';
+import React from 'react'
+import { StyledDivPhonesList } from '../../styles'
+import { Link } from "react-router-dom"
+import { ContextConsumer } from '../../context'
 
-import MobilePhoneItem from './MobilePhoneItem';
+import MobilePhoneItem from './MobilePhoneItem'
 
 export default function MobilePhones() {
   return (
