@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { StyledProductItem } from '../../styles'
-import { Link } from "react-router-dom"
-import { ContextConsumer } from '../../context'
+import { Link } from 'react-router-dom'
+import { ContextConsumer } from '../../../context'
 
-export default class Product extends Component {
+export default class Item extends Component {
   render() {
     const { id, 
             title, 
@@ -14,13 +14,13 @@ export default class Product extends Component {
             imageHeight, 
             price, 
             isInCart, 
-            amountInCart } = this.props.tablet
+            amountInCart } = this.props.dataItem
 
     return (
       <ContextConsumer>
         {
-          (value) => (
-            <StyledProductItem className="d-flex flex-column mr-2 mt-2 p-3 rounded bg-light" onClick={() => value.handleTabletItemInfo(id)}>
+          value => (
+            <StyledProductItem className="d-flex flex-column mr-2 mt-2 p-3 rounded bg-light" onClick={() => value.handleItem(id, category)}>
               <Link to="/product_page" className="d-flex flex-column align-self-center nav-link text-dark">
                 <img 
                   className="align-self-center"

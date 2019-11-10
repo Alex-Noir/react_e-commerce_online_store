@@ -1,11 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { StyledDivPhonesList } from '../../styles'
-import { Link } from "react-router-dom"
-import { ContextConsumer } from '../../context'
+import { Link } from 'react-router-dom'
+import { ContextConsumer } from '../../../context'
+import { mobile_phones } from '../../../components/data'
 
-import MobilePhoneItem from './MobilePhoneItem'
+import Item from './Item'
+import Pagination from '../Pagination'
 
 export default function MobilePhones() {
+  const [currentPage, setCurrentPage] = useState(1)
+  const [postsPerPage] = useState(8)
+
+  const indexOfLastPost = currentPage * postsPerPage
+  const indexOfFirstPost = indexOfLastPost - postsPerPage
+  
+  function paginate(e, pageNumber) {
+    e.preventDefault()
+    window.scrollTo(0, 58)
+    setCurrentPage(pageNumber)
+  }
+
   return (
     <StyledDivPhonesList className="d-flex flex-column justify-content-center">
       <nav aria-label="breadcrumb">
@@ -18,13 +32,17 @@ export default function MobilePhones() {
         <ContextConsumer>
           {
             value => {
-              return value.mobilePhones.map( mobilePhone => {
-                return <MobilePhoneItem key={mobilePhone.id} mobilePhone = {mobilePhone}/>
-              })
+              return value.data
+                .filter( dataItem => dataItem.category === 'Mobile Phones' )
+                .slice( indexOfFirstPost, indexOfLastPost )
+                .map( dataItem => {
+                  return <Item key={dataItem.id} dataItem={dataItem}/>
+                })
             }
           }
         </ContextConsumer>
       </div>
+      <Pagination postsPerPage={postsPerPage} totalPosts={mobile_phones.length} paginate={paginate}/>
     </StyledDivPhonesList>
   )
 }

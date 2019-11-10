@@ -1,10 +1,12 @@
+import styled from 'styled-components'
+
 //App
-export const StyledDivWrapper = window.styled.div`
+export const StyledDivWrapper = styled.div`
   min-height: 100vh;
 `
 
 //Header
-export const StyledHeader = window.styled.header`
+export const StyledHeader = styled.header`
   z-index: 1;
   > div {
     width: 1200px;
@@ -15,7 +17,9 @@ export const StyledHeader = window.styled.header`
     }
   }
 `
-export const StyledFormSearchBar = window.styled.form`
+
+//Search
+export const StyledFormSearchBar = styled.form`
   flex-grow: 2;
   display: flex;
   > input {
@@ -32,12 +36,12 @@ export const StyledFormSearchBar = window.styled.form`
     }
   }
 `
-export const StyledSpanAccount = window.styled.span`
+export const StyledSpanAccount = styled.span`
   font-size: 12px;
 `
 
 //Container
-export const StyledDivGridContainer = window.styled.div`
+export const StyledDivGridContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1200px 1fr;
   flex: 1 1 0;
@@ -51,7 +55,7 @@ export const StyledDivGridContainer = window.styled.div`
 `
 
 //Nav
-export const StyledNav = window.styled.nav`
+export const StyledNav = styled.nav`
   min-width: 305px;
   max-width: 305px;
   position: absolute;
@@ -66,7 +70,7 @@ export const StyledNav = window.styled.nav`
 `
 
 //Carousel
-export const StyledDivCarousel = window.styled.div`
+export const StyledDivCarousel = styled.div`
   width: 960px; 
   grid-area: 1 / 2 / 2 / 3;
   justify-self: center;
@@ -76,34 +80,34 @@ export const StyledDivCarousel = window.styled.div`
 `
 
 //Products
-export const StyledDivProducts = window.styled.div`
+export const StyledDivProducts = styled.div`
   grid-area: 2 / 2 / 3 / 3;
 `
 
 //Mobile Phones
-export const StyledDivPhonesList = window.styled.div`
+export const StyledDivPhonesList = styled.div`
   grid-area: 1 / 2 / 2 / 3;
   min-width: 960px;
 `
 
 //MobilePhone/Laptop/TabletItem
-export const StyledProductItem = window.styled.div`
+export const StyledProductItem = styled.div`
   height: 400px;
   width: 290px;
 `
 
 //MobilePhones/Laptops/TabletItemsDiscount
-export const StyledDivCountdown = window.styled.div`
+export const StyledDivCountdown = styled.div`
   grid-area: 1 / 1 / 2 / 3;
   justify-self: center;
 `
-export const StyledDivDiscountList = window.styled.div`
+export const StyledDivDiscountList = styled.div`
   grid-area: 2 / 1 / 3 / 3;
   justify-self: center;
 `
 
 //Product Page
-export const StyledDivProductPage = window.styled.div`
+export const StyledDivProductPage = styled.div`
   grid-area: 1 / 2 / 2 / 3;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -120,19 +124,19 @@ export const StyledDivProductPage = window.styled.div`
 `
 
 //About
-export const StyledDivAbout = window.styled.div`
+export const StyledDivAbout = styled.div`
   grid-area: 1 / 1 / 2 / 3;
 `
 
 //Contact Us
-export const StyledDivContactForm = window.styled.div`
+export const StyledDivContactForm = styled.div`
   grid-area: 1 / 1 / 2 / 3;
 `
 
 //Footer
-export const StyledUlFooterList = window.styled.ul`
+export const StyledUlFooterList = styled.ul`
   width: 300px;
 `
-export const StyledDivFooter = window.styled.div`
+export const StyledDivFooter = styled.div`
   width: 300px;
 `

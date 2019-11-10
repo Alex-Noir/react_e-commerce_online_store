@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyledDivContactForm } from '../styles';
+import React from 'react'
+import { StyledDivContactForm } from '../../styles'
 
 
 export default function ContactUs() {

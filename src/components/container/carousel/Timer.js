@@ -2,25 +2,25 @@ import React, { Component } from 'react'
 
 export default class Timer extends Component {
   constructor() {
-    super();
+    super()
     this.state = ({
       currentTime: new Date(),
       endTime: new Date(2019, 9, 19, 16, 5)
     })
 
-    this.timer = this.timer.bind(this);
+    this.timer = this.timer.bind(this)
   }
 
   componentDidMount() {
     if (this.state.currentTime !== this.state.endTime) {
-      return this.countdown = setInterval( () => this.timer(), 1000 );
+      return this.countdown = setInterval( () => this.timer(), 1000 )
     } else {
-      return clearInterval(this.countdown);
+      return clearInterval(this.countdown)
     }
   }
   
   componentWillUnmount() {
-    clearInterval(this.countdown);
+    clearInterval(this.countdown)
   }
 
   timer() {
@@ -35,7 +35,8 @@ export default class Timer extends Component {
     }
     return (
       <span>
-        { (Math.sign(this.state.endTime - this.state.currentTime) !== -1) ? 
+        { 
+          (Math.sign(this.state.endTime - this.state.currentTime) !== -1) ? 
           (
             Math.floor((this.state.endTime - this.state.currentTime) / 1000 / 3600 / 24) + 
             ':' +
@@ -43,7 +44,6 @@ export default class Timer extends Component {
           ) : (
             '0:00:00:00'
           )
-
         }
       </span>
     )
