@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import { mobile_phones, laptops, tablets, data, productTemplate } from './components/data'
 
 //ProductConxtext

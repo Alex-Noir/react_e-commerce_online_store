@@ -22,37 +22,37 @@ export default function Nav(props) {
           </Link>
         </li>
         <li className="nav-item">
-          <a href="#" className="nav-link" onClick={props.toggleNav}>
+          <a href="/#" className="nav-link" onClick={props.toggleNav}>
             Lorem ipsum sin amet <i className="fas fa-chevron-right float-right mt-1"></i>
           </a>
         </li>
         <li className="nav-item">
-          <a href="#" className="nav-link" onClick={props.toggleNav}>
+          <a href="/#" className="nav-link" onClick={props.toggleNav}>
             Lorem ipsum sin amet <i className="fas fa-chevron-right float-right mt-1"></i>
           </a>
         </li>
         <li className="nav-item">
-          <a href="#" className="nav-link" onClick={props.toggleNav}>
+          <a href="/#" className="nav-link" onClick={props.toggleNav}>
             Lorem ipsum sin amet <i className="fas fa-chevron-right float-right mt-1"></i>
           </a>
         </li>
         <li className="nav-item">
-          <a href="#" className="nav-link" onClick={props.toggleNav}>
+          <a href="/#" className="nav-link" onClick={props.toggleNav}>
             Lorem ipsum sin amet <i className="fas fa-chevron-right float-right mt-1"></i>
           </a>
         </li>
         <li className="nav-item">
-          <a href="#" className="nav-link" onClick={props.toggleNav}>
+          <a href="/#" className="nav-link" onClick={props.toggleNav}>
             Lorem ipsum sin amet <i className="fas fa-chevron-right float-right mt-1"></i>
           </a>
         </li>
         <li className="nav-item">
-          <a href="#" className="nav-link" onClick={props.toggleNav}>
+          <a href="/#" className="nav-link" onClick={props.toggleNav}>
             Lorem ipsum sin amet <i className="fas fa-chevron-right float-right mt-1"></i>
           </a>
         </li>
         <li className="nav-item">
-          <a href="#" className="nav-link" onClick={props.toggleNav}>
+          <a href="/#" className="nav-link" onClick={props.toggleNav}>
             Lorem ipsum sin amet <i className="fas fa-chevron-right float-right mt-1"></i>
           </a>
         </li>

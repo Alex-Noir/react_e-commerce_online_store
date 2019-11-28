@@ -4,6 +4,16 @@ import styled from 'styled-components'
 export const StyledDivWrapper = styled.div`
   min-height: 100vh;
 `
+export const StyledDivLoginWrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 16;
+  > div {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+`
 
 //Header
 export const StyledHeader = styled.header`
@@ -16,6 +26,9 @@ export const StyledHeader = styled.header`
       outline: none;
     }
   }
+`
+export const StyledButtonLogin = styled.button`
+  font-size: 12px;
 `
 
 //Search
@@ -35,9 +48,6 @@ export const StyledFormSearchBar = styled.form`
       outline: none;
     }
   }
-`
-export const StyledSpanAccount = styled.span`
-  font-size: 12px;
 `
 
 //Container
