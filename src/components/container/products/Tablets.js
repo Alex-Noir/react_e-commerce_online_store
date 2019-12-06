@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { StyledDivPhonesList as StyledDivTabletList } from '../../styles'
+import { DivPhonesList as DivTabletList } from '../../styles'
 import { Link } from "react-router-dom"
 import { ContextConsumer } from '../../../context'
-import { mobile_phones } from '../../../components/data'
+import { tablets } from '../../../components/data'
 
 import Item from './Item'
 import Pagination from '../Pagination'
@@ -10,7 +10,6 @@ import Pagination from '../Pagination'
 export default function Tablets() {
   const [currentPage, setCurrentPage] = useState(1)
   const [postsPerPage] = useState(8)
-
   const indexOfLastPost = currentPage * postsPerPage
   const indexOfFirstPost = indexOfLastPost - postsPerPage
   
@@ -21,7 +20,7 @@ export default function Tablets() {
   }
   
   return (
-    <StyledDivTabletList className="d-flex flex-column justify-content-center">
+    <DivTabletList className="d-flex flex-column justify-content-center">
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item"><Link to="/">Home</Link></li>
@@ -36,13 +35,13 @@ export default function Tablets() {
                 .filter( dataItem => dataItem.category === 'Tablets' )
                 .slice( indexOfFirstPost, indexOfLastPost )
                 .map( dataItem => {
-                  return <Item key={dataItem.id} dataItem = {dataItem}/>
+                  return <Item key={dataItem.id} dataItem={dataItem}/>
                 })
             }
           }
         </ContextConsumer>
       </div>
-      <Pagination postsPerPage={postsPerPage} totalPosts={mobile_phones.length} paginate={paginate}/>
-    </StyledDivTabletList>
+      <Pagination postsPerPage={postsPerPage} totalPosts={tablets.length} paginate={paginate}/>
+    </DivTabletList>
   )
 }

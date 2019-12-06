@@ -1,10 +1,10 @@
 import React from 'react'
-import { StyledDivContactForm } from '../../styles'
+import { DivContactForm } from '../../styles'
 
 
 export default function ContactUs() {
   return (
-    <StyledDivContactForm className="d-flex flex-column bg-light rounded p-5">
+    <DivContactForm className="d-flex flex-column bg-light rounded p-5">
       <h1>Contact us!</h1>
       <form>
         <div className="form-group">
@@ -17,6 +17,6 @@ export default function ContactUs() {
         </div>
         <input className="btn btn-primary" type="submit" value="Submit"></input>
       </form>
-    </StyledDivContactForm>
+    </DivContactForm>
   )
 }

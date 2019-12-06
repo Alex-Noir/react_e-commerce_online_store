@@ -1,11 +1,11 @@
 import React from 'react'
-import { SearchContextConsumer } from '../../../context'
+import { ContextConsumer } from '../../../context'
 
 import SearchResult from './SearchResult'
 
 export default function SearchResults() {
   return (
-    <SearchContextConsumer>
+    <ContextConsumer>
       {
         value => {
           return value.results.map(result => {
@@ -13,6 +13,6 @@ export default function SearchResults() {
           })
         }
       }
-    </SearchContextConsumer>
+    </ContextConsumer>
   )
 }

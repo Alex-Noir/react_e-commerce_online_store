@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
 //App
-export const StyledDivWrapper = styled.div`
+export const DivWrapper = styled.div`
   min-height: 100vh;
 `
-export const StyledDivLoginWrapper = styled.div`
+export const DivLoginWrapper = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: rgba(0,0,0,0.6);
@@ -27,12 +27,21 @@ export const StyledHeader = styled.header`
     }
   }
 `
-export const StyledButtonLogin = styled.button`
+export const ButtonLogin = styled.button`
   font-size: 12px;
+`
+export const DivIconAmountInCart = styled.div`
+  width: 21px;
+  height: 21px;
+  font-size: 0.8em;
+  text-align: center;
+  vertical-align: middle;
+  top: 13px;
+  right: 8px;
 `
 
 //Search
-export const StyledFormSearchBar = styled.form`
+export const FormSearchBar = styled.form`
   flex-grow: 2;
   display: flex;
   > input {
@@ -51,15 +60,14 @@ export const StyledFormSearchBar = styled.form`
 `
 
 //Container
-export const StyledDivGridContainer = styled.div`
+export const DivGridContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1200px 1fr;
   flex: 1 1 0;
   > div {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
+    grid-area: 1 / 2 / 2 / 3;
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, auto);
   }
 `
@@ -80,45 +88,46 @@ export const StyledNav = styled.nav`
 `
 
 //Carousel
-export const StyledDivCarousel = styled.div`
-  width: 960px; 
-  grid-area: 1 / 2 / 2 / 3;
+export const DivCarousel = styled.div`
+  width: 960px;
+  height: 500px;
+  grid-area: 1 / 1 / 2 / 3;
   justify-self: center;
   > div > div {
     transition: transform 0.5s ease-in-out !important;
   }
 `
 
-//Products
-export const StyledDivProducts = styled.div`
-  grid-area: 2 / 2 / 3 / 3;
-`
-
-//Mobile Phones
-export const StyledDivPhonesList = styled.div`
-  grid-area: 1 / 2 / 2 / 3;
-  min-width: 960px;
-`
-
-//MobilePhone/Laptop/TabletItem
-export const StyledProductItem = styled.div`
-  height: 400px;
-  width: 290px;
-`
-
 //MobilePhones/Laptops/TabletItemsDiscount
-export const StyledDivCountdown = styled.div`
+export const DivCountdown = styled.div`
   grid-area: 1 / 1 / 2 / 3;
   justify-self: center;
 `
-export const StyledDivDiscountList = styled.div`
+export const DivDiscountList = styled.div`
   grid-area: 2 / 1 / 3 / 3;
   justify-self: center;
 `
 
+//Products
+export const DivProducts = styled.div`
+  grid-area: 2 / 1 / 3 / 3;
+`
+
+//Mobile Phones/Laptops/Tablets
+export const DivPhonesList = styled.div`
+  grid-area: 1 / 1 / 2 / 3;
+  min-width: 960px;
+`
+
+//Item
+export const DivProductItem = styled.div`
+  height: 400px;
+  width: 290px;
+`
+
 //Product Page
-export const StyledDivProductPage = styled.div`
-  grid-area: 1 / 2 / 2 / 3;
+export const DivProductPage = styled.div`
+  grid-area: 1 / 1 / 2 / 3;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto 1fr;
@@ -132,21 +141,62 @@ export const StyledDivProductPage = styled.div`
     grid-area: 2 / 2 / 3 / 3;
   }
 `
+export const DivInfo = styled.div`
+  width: 120px;
+  background-color: rgba(248,80,50,1);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  top: -5px;
+  left: 105%;
+  z-index: 1;
+`
+
+//Cart
+export const DivCart = styled.div`
+  grid-area: 1 / 1 / 3 / 3;
+  > button {
+    position: relative;
+    left: 1032px;
+  }
+`
+
+//CartListItem
+export const DivCartListItem = styled.div`
+  display: grid;
+  grid-template-columns: auto 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  > img {
+    grid-area: 1 / 1 / 2 / 2;
+    margin-right: 1rem;
+  }
+  > div :first-child {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  > div :nth-child(2) {
+    grid-area: 1 / 3 / 2 / 4;
+  }
+  > div :last-child {
+    grid-area: 1 / 4 / 2 / 5;
+  }
+`
 
 //About
-export const StyledDivAbout = styled.div`
-  grid-area: 1 / 1 / 2 / 3;
+export const DivAbout = styled.div`
+  grid-area: 1 / 1 / 3 / 3;
 `
 
 //Contact Us
-export const StyledDivContactForm = styled.div`
-  grid-area: 1 / 1 / 2 / 3;
+export const DivContactForm = styled.div`
+  grid-area: 1 / 1 / 3 / 3;
 `
 
 //Footer
-export const StyledUlFooterList = styled.ul`
+export const UlFooterList = styled.ul`
   width: 300px;
 `
-export const StyledDivFooter = styled.div`
+export const DivFooter = styled.div`
   width: 300px;
 `

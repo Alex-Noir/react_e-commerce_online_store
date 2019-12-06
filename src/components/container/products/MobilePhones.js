@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { StyledDivPhonesList } from '../../styles'
+import { DivPhonesList } from '../../styles'
 import { Link } from 'react-router-dom'
 import { ContextConsumer } from '../../../context'
 import { mobile_phones } from '../../../components/data'
@@ -10,7 +10,6 @@ import Pagination from '../Pagination'
 export default function MobilePhones() {
   const [currentPage, setCurrentPage] = useState(1)
   const [postsPerPage] = useState(8)
-
   const indexOfLastPost = currentPage * postsPerPage
   const indexOfFirstPost = indexOfLastPost - postsPerPage
   
@@ -21,7 +20,7 @@ export default function MobilePhones() {
   }
 
   return (
-    <StyledDivPhonesList className="d-flex flex-column justify-content-center">
+    <DivPhonesList className="d-flex flex-column justify-content-center">
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item"><Link to="/">Home</Link></li>
@@ -43,6 +42,6 @@ export default function MobilePhones() {
         </ContextConsumer>
       </div>
       <Pagination postsPerPage={postsPerPage} totalPosts={mobile_phones.length} paginate={paginate}/>
-    </StyledDivPhonesList>
+    </DivPhonesList>
   )
 }

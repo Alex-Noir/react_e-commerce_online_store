@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Route } from "react-router-dom"
-import { StyledDivWrapper, StyledDivLoginWrapper } from './components/styles'
+import { DivWrapper, DivLoginWrapper } from './components/styles'
 
 import Header from './components/Header'
 import Authentication from './components/Authentication'
@@ -32,7 +32,7 @@ export default function App() {
   }
 
   return (
-    <StyledDivWrapper className="d-flex flex-column position-relative">
+    <DivWrapper className="d-flex flex-column position-relative">
       <Route path="/" render={(props) => 
         <Header {...props} 
                 handleVisibility={handleVisibility}
@@ -42,16 +42,16 @@ export default function App() {
       {
         isAuthModalVisible
         ? (
-          <StyledDivLoginWrapper className="position-absolute overflow-auto" id="outsideAuthModal" onClick={(e) => {closeAuthModal(e)}}>
+          <DivLoginWrapper className="position-absolute overflow-auto" id="outsideAuthModal" onClick={(e) => {closeAuthModal(e)}}>
             <Authentication isLogInTabVisible={isLogInTabVisible}
                             handleVisibility={handleVisibility}
             />
-          </StyledDivLoginWrapper>
+          </DivLoginWrapper>
         )
         : null
       }
       <Route path="/" component={Container}/>
       <Route path="/" component={Footer}/>
-    </StyledDivWrapper>
+    </DivWrapper>
   )
 }

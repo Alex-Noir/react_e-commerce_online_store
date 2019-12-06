@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyledDivCountdown, StyledDivDiscountList } from '../../styles'
+import { DivCountdown, DivDiscountList } from '../../styles'
 import { ContextConsumer } from '../../../context'
 
 import Timer from './Timer'
@@ -8,12 +8,12 @@ import Item from '../products/Item'
 export default function MobilePhonesDiscount() {
   return (
     <>
-      <StyledDivCountdown>
+      <DivCountdown>
         <img src={require('../../../img/carousel/01.webp')} alt=""/>
         <hr/>
         <span>Offer ends in: <Timer/> </span>
-      </StyledDivCountdown>
-      <StyledDivDiscountList className="d-flex flex-wrap justify-content-start">
+      </DivCountdown>
+      <DivDiscountList className="d-flex flex-wrap justify-content-start">
         <ContextConsumer>
           {
             value => {
@@ -25,7 +25,7 @@ export default function MobilePhonesDiscount() {
             }
           }
         </ContextConsumer>
-      </StyledDivDiscountList>
+      </DivDiscountList>
     </>
   )
 }

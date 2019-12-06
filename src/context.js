@@ -1,5 +1,5 @@
-import React, { Component, useState } from 'react'
-import { mobile_phones, laptops, tablets, data, productTemplate } from './components/data'
+import React, { Component } from 'react'
+import { mobile_phones, laptops, tablets, data } from './components/data'
 
 //ProductConxtext
 const Context = React.createContext()
@@ -9,26 +9,28 @@ class ContextProvider extends Component {
     super()
     this.state = {
       bestOffers: [],
-      mobilePhones: [],
-      laptops: [],
-      tablets: [],
       data: [],
-      productTemplate: productTemplate
+      value: '',
+      results: tablets,
+      areResultsVisible: false,
+      cartList: [],
+      cartSubTotalPrice: 0,
+      cartTax: 0,
+      cartTotalPrice: 0,
     }
 
     this.setBestOffers = this.setBestOffers.bind(this)
-    this.setMobilePhones = this.setMobilePhones.bind(this)
-    this.setLaptops = this.setLaptops.bind(this)
-    this.setTablets = this.setTablets.bind(this)
     this.setData = this.setData.bind(this)
-    this.handleItem = this.handleItem.bind(this)
+    this.addToCart = this.addToCart.bind(this)
+    this.cartCounter = this.cartCounter.bind(this)
+    this.deleteItemFromCart = this.deleteItemFromCart.bind(this)
+    this.clearCart = this.clearCart.bind(this)
+    this.evaluateTotalPrice = this.evaluateTotalPrice.bind(this)
+    this.handleSearch = this.handleSearch.bind(this)
   }
   
   componentDidMount() {
     this.setBestOffers()
-    this.setMobilePhones()
-    this.setLaptops()
-    this.setTablets()
     this.setData()
   }
 
@@ -39,27 +41,6 @@ class ContextProvider extends Component {
     })
   }
 
-  setMobilePhones() {
-    let tempMobilePhones = JSON.parse(JSON.stringify(mobile_phones))
-    this.setState(() => {
-      return { mobilePhones: tempMobilePhones }
-    })
-  }
-
-  setLaptops() {
-    let tempLaptops = JSON.parse(JSON.stringify(laptops))
-    this.setState(() => {
-      return { laptops: tempLaptops }
-    })
-  }
-
-  setTablets() {
-    let tempTablets = JSON.parse(JSON.stringify(tablets))
-    this.setState(() => {
-      return { tablets: tempTablets }
-    })
-  }
-
   setData() {
     let tempData = JSON.parse(JSON.stringify(data))
     this.setState(() => {
@@ -67,60 +48,84 @@ class ContextProvider extends Component {
     })
   }
 
-  handleItem(id, category) {
-    const mobilePhone = this.state.mobilePhones.find(mobilePhone => mobilePhone.id === id)
-    const laptop = this.state.laptops.find(laptop => laptop.id === id)
-    const tablet = this.state.tablets.find(tablet => tablet.id === id)
-
-    if (category === 'Mobile Phones') {
+  addToCart(id, inputValue) {
+    const item = data[id]
+    const price = item.price
+    const cartList = this.state.cartList
+    const arrayOfIds = cartList.map(cartListItem => cartListItem.id)
+    const idOfCartListItem = cartList.findIndex(( cartListItem => cartListItem.id === id ))
+    
+    if (inputValue >= 1 && arrayOfIds.indexOf(id) === -1) {
+      item.isInCart = true
+      item.amountInCart += Number.parseFloat(inputValue)
+      const amountInCart = item.amountInCart
+      item.totalPrice = Number.parseFloat((price * amountInCart).toFixed(2))
+      cartList.push(item)
       this.setState(() => {
-        return { productTemplate: mobilePhone }
+        return { cartList }
       })
-    } else if (category === 'Laptops') {
-      this.setState(() => {
-        return { productTemplate: laptop }
-      })
-    } else if (category === 'Tablets') {
-      this.setState(() => {
-        return { productTemplate: tablet }
-      })
-    }
+    } else if (inputValue >= 1 && arrayOfIds.indexOf(id) !== -1) {
+      cartList[idOfCartListItem].amountInCart += inputValue
+      const amountInCart = item.amountInCart
+      item.totalPrice = Number.parseFloat((price * amountInCart).toFixed(2))
+    } else { return null }
   }
 
-  render() {
-    return (
-      <Context.Provider value={{ 
-        ...this.state,
-        setBestOffers: this.setBestOffers,
-        setMobilePhones: this.setMobilePhones,
-        setLaptops: this.setLaptops,
-        setTablets: this.setTablets,
-        setData: this.setData,
-        handleItem: this.handleItem
-      }}>
-        {this.props.children}
-      </Context.Provider>
-    )
-  }
-}
+  cartCounter(e, id) {
+    const item = data[id]
+    const price = item.price
+    const cartList = this.state.cartList
+    const idOfCartListItem = cartList.findIndex(( cartListItem => cartListItem.id === id ))
 
-const ContextConsumer = Context.Consumer
-
-export { Context, ContextProvider, ContextConsumer }
-
-// SearchContext
-const SearchContext = React.createContext()
-
-class SearchContextProvider extends Component {
-  constructor() {
-    super()
-    this.state = {
-      value: '',
-      results: tablets,
-      areResultsVisible: false
+    if (e.target.name === '-' && cartList[idOfCartListItem].amountInCart > 1) {
+      cartList[idOfCartListItem].amountInCart -= 1
+      const amountInCart = item.amountInCart
+      item.totalPrice = Number.parseFloat((price * amountInCart).toFixed(2))
+      this.setState(() => {
+        return { cartList }
+      })
+    } else if (e.target.name === '-' && cartList[idOfCartListItem].amountInCart <= 1) {
+      return null
+    } else if (e.target.name === '+') {
+      cartList[idOfCartListItem].amountInCart += 1
+      const amountInCart = item.amountInCart
+      item.totalPrice = Number.parseFloat((price * amountInCart).toFixed(2))
+      this.setState(() => {
+        return { cartList }
+      })
     }
+    
+  }
 
-    this.handleSearch = this.handleSearch.bind(this)
+  deleteItemFromCart(id) {
+    const cartList = this.state.cartList
+    const cartListItemIndex = cartList.findIndex(cartListItem => cartListItem.id === id)
+    cartList.splice(cartListItemIndex, 1)
+    this.setState(() => {
+      return { cartList }
+    })
+  }
+
+  clearCart() {
+    this.setState(() => {
+      return { cartList: [] }
+    })
+  }
+
+  evaluateTotalPrice() {
+    const cartList = this.state.cartList
+    let cartSubTotalPrice = 0
+    this.state.cartList.map(cartListItem => cartSubTotalPrice += cartListItem.totalPrice)
+    const cartTax = parseFloat((cartSubTotalPrice * 0.1).toFixed(2))
+    const cartTotalPrice = cartSubTotalPrice + cartTax
+    this.setState(() => {
+      return {
+        cartList,
+        cartSubTotalPrice,
+        cartTax,
+        cartTotalPrice
+      }
+    })
   }
 
   handleSearch(e) {
@@ -137,16 +142,26 @@ class SearchContextProvider extends Component {
 
   render() {
     return (
-      <SearchContext.Provider value = {{
+      <Context.Provider value={{ 
         ...this.state,
+        setBestOffers: this.setBestOffers,
+        setMobilePhones: this.setMobilePhones,
+        setLaptops: this.setLaptops,
+        setTablets: this.setTablets,
+        setData: this.setData,
+        addToCart: this.addToCart,
+        cartCounter: this.cartCounter,
+        deleteItemFromCart: this.deleteItemFromCart,
+        clearCart: this.clearCart,
+        evaluateTotalPrice: this.evaluateTotalPrice,
         handleSearch: this.handleSearch
       }}>
         {this.props.children}
-      </SearchContext.Provider>
+      </Context.Provider>
     )
   }
 }
 
-const SearchContextConsumer = SearchContext.Consumer
+const ContextConsumer = Context.Consumer
 
-export { SearchContextProvider, SearchContextConsumer }
+export { Context, ContextProvider, ContextConsumer }

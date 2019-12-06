@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { SearchContextConsumer } from '../../../context'
+import { ContextConsumer } from '../../../context'
 
 export default class SearchResult extends Component {
   render() {
@@ -15,7 +15,7 @@ export default class SearchResult extends Component {
             amountInCart } = this.props.result
 
     return (
-      <SearchContextConsumer>
+      <ContextConsumer>
         {
           value => (
             <div className="border border-dark">
@@ -29,7 +29,7 @@ export default class SearchResult extends Component {
             </div>
           )
         }
-      </SearchContextConsumer>
+      </ContextConsumer>
     )
   }
 }

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { StyledDivPhonesList as StyledDivLaptopList } from '../../styles'
+import { DivPhonesList as DivLaptopList } from '../../styles'
 import { Link } from 'react-router-dom'
 import { ContextConsumer } from '../../../context'
-import { mobile_phones } from '../../../components/data'
+import { laptops } from '../../../components/data'
 
 import Item from './Item'
 import Pagination from '../Pagination'
@@ -10,7 +10,6 @@ import Pagination from '../Pagination'
 export default function Laptops() {
   const [currentPage, setCurrentPage] = useState(1)
   const [postsPerPage] = useState(8)
-
   const indexOfLastPost = currentPage * postsPerPage
   const indexOfFirstPost = indexOfLastPost - postsPerPage
   
@@ -21,7 +20,7 @@ export default function Laptops() {
   }
 
   return (
-    <StyledDivLaptopList className="d-flex flex-column justify-content-center">
+    <DivLaptopList className="d-flex flex-column justify-content-center">
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item"><Link to="/">Home</Link></li>
@@ -36,13 +35,13 @@ export default function Laptops() {
                 .filter( dataItem => dataItem.category === 'Laptops' )
                 .slice( indexOfFirstPost, indexOfLastPost )
                 .map( dataItem => {
-                  return <Item key={dataItem.id} dataItem = {dataItem}/>
+                  return <Item key={dataItem.id} dataItem={dataItem}/>
                 })
             }
           }
         </ContextConsumer>
       </div>
-      <Pagination postsPerPage={postsPerPage} totalPosts={mobile_phones.length} paginate={paginate}/>
-    </StyledDivLaptopList>
+      <Pagination postsPerPage={postsPerPage} totalPosts={laptops.length} paginate={paginate}/>
+    </DivLaptopList>
   )
 }

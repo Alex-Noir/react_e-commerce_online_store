@@ -1,10 +1,10 @@
 import React from 'react'
-import { StyledDivCarousel } from '../styles'
+import { DivCarousel } from '../styles'
 import { Link } from 'react-router-dom'
 
 export default function Carousel() {
   return (
-    <StyledDivCarousel id="carouselIndicators" className="carousel slide" data-ride="carousel">
+    <DivCarousel id="carouselIndicators" className="carousel slide" data-ride="carousel">
       <ol className="carousel-indicators">
         <li data-target="#carouselIndicators" data-slide-to="0" className="active"></li>
         <li data-target="#carouselIndicators" data-slide-to="1"></li>
@@ -35,6 +35,6 @@ export default function Carousel() {
         <span className="carousel-control-next-icon" aria-hidden="true"></span>
         <span className="sr-only">Next</span>
       </a>
-    </StyledDivCarousel>
+    </DivCarousel>
   )
 }
