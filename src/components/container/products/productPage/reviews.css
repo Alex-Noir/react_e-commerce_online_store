@@ -1,0 +1,16 @@
+div#editor > div.ql-toolbar {
+  background-color: f8f9fa;
+  margin: auto;
+  margin-top: 3rem;
+  width: 96%;
+}
+div.ql-container {
+  background-color: white;
+  min-height: 150px;
+  width: 96%;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+div.ql-editor {
+  min-height: 150px;
+}

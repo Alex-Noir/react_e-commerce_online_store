@@ -1,10 +1,10 @@
 import React from 'react'
 import { StyledHeader, ButtonLogin, DivIconAmountInCart } from './styles'
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom'
 import { ContextConsumer } from '../context'
 
-import Catalogue from "./header/Catalogue"
-import Search from "./header/Search"
+import Catalogue from './header/Catalogue'
+import Search from './header/Search'
 
 export default function Header(props) {
   return (

@@ -96,6 +96,17 @@ export const DivCarousel = styled.div`
   > div > div {
     transition: transform 0.5s ease-in-out !important;
   }
+  > a {
+    background-color: black;
+    opacity: 0.1;
+  }
+  > a:hover {
+    background-color: black;
+    opacity: 0.5;
+  }
+  > a:first-child {
+    background-color: black;
+  }
 `
 
 //MobilePhones/Laptops/TabletItemsDiscount
@@ -130,19 +141,31 @@ export const DivProductPage = styled.div`
   grid-area: 1 / 1 / 2 / 3;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto 1fr auto;
   > nav {
     grid-area: 1 / 1 / 2 / 3;
   }
-  > img {
+  > :nth-child(2) {
+    width: 400px;
+    height: 400px;
     grid-area: 2 / 1 / 3 / 2;
   }
-  > div {
+  > :nth-child(3) {
     grid-area: 2 / 2 / 3 / 3;
+  }
+  > :nth-child(4) {
+    grid-area: 3 / 1 / 4 / 3;
+  }
+  > :nth-child(5) {
+    grid-area: 4 / 1 / 5 / 3;
+    > div > button {
+      width: auto;
+    }
   }
 `
 export const DivInfo = styled.div`
   width: 120px;
+  margin-top: 7px;
   background-color: rgba(248,80,50,1);
   color: #fff;
   text-align: center;
@@ -152,6 +175,47 @@ export const DivInfo = styled.div`
   top: -5px;
   left: 105%;
   z-index: 1;
+`
+
+//StarRating
+export const IStar = styled.i`
+  display: inline-block;
+  width: 14px;
+  overflow: hidden;
+  &:hover {
+    cursor: pointer;
+  }
+`
+
+//Review
+export const DivReview = styled.div`
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: auto 1fr;
+  margin: 1.5rem;
+  padding: 1.5rem;
+  > img {
+    grid-area: 1 / 1 / 3 / 2;
+  }
+  > span {
+    grid-area: 1 / 2 / 2 / 3;
+    > :nth-child(1):hover {
+      opacity: 0.5;
+      cursor: pointer;
+    }
+    > :nth-child(2) {
+      margin-right: 1.2rem;
+    }
+  }
+  > :nth-child(3) {
+    grid-area: 2 / 2 / 3 / 3;
+    > div {
+      border: grey solid 1px;
+    }
+  }
+  > :nth-child(4) {
+    grid-area: 3 / 2 / 4 / 3;
+  }
 `
 
 //Cart
@@ -172,13 +236,13 @@ export const DivCartListItem = styled.div`
     grid-area: 1 / 1 / 2 / 2;
     margin-right: 1rem;
   }
-  > div :first-child {
+  > :nth-child(2) {
     grid-area: 1 / 2 / 2 / 3;
   }
-  > div :nth-child(2) {
+  > :nth-child(3) {
     grid-area: 1 / 3 / 2 / 4;
   }
-  > div :last-child {
+  > :last-child {
     grid-area: 1 / 4 / 2 / 5;
   }
 `

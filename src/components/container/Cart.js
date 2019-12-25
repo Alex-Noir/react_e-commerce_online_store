@@ -3,6 +3,7 @@ import { ContextConsumer } from '../../context'
 import { DivCart } from '../styles'
 
 import CartList from './cart/CartList'
+import PayPalCheckoutButton from './cart/PayPalCheckoutButton'
 
 export default function Cart() {
   return (
@@ -12,16 +13,17 @@ export default function Cart() {
           value => {
             return (
               value.cartList < 1
-              ? <span>Your cart is empty</span>
+              ? <span>Your shopping cart is empty</span>
               : <React.Fragment>
-                  <CartList/>
+                  <CartList value={value}/>
                   <button type="button" 
-                          className="btn btn-outline-danger" 
+                          className="btn btn-danger"
                           onClick={() => {value.clearCart()}}>Clear shopping cart</button>
                   <div className="d-flex flex-column">
                     <h2>Subtotal: {value.cartSubTotalPrice}</h2>
                     <h2>Tax: {value.cartTax}</h2>
                     <h1>Total: {value.cartTotalPrice}</h1>
+                    <PayPalCheckoutButton cartTotalPrice={value.cartTotalPrice}/>
                   </div>
                 </React.Fragment>
             )

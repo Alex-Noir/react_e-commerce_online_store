@@ -16,7 +16,7 @@ class ContextProvider extends Component {
       cartList: [],
       cartSubTotalPrice: 0,
       cartTax: 0,
-      cartTotalPrice: 0,
+      cartTotalPrice: 0
     }
 
     this.setBestOffers = this.setBestOffers.bind(this)
@@ -27,6 +27,7 @@ class ContextProvider extends Component {
     this.clearCart = this.clearCart.bind(this)
     this.evaluateTotalPrice = this.evaluateTotalPrice.bind(this)
     this.handleSearch = this.handleSearch.bind(this)
+    this.postReview = this.postReview.bind(this)
   }
   
   componentDidMount() {
@@ -140,21 +141,29 @@ class ContextProvider extends Component {
     })
   }
 
+  postReview(id, html) {
+    const review = {
+      user: "User",
+      content: html
+    }
+    const item = data[id]
+    const reviews = item.reviews
+    reviews.push(review)    
+  }
+
   render() {
     return (
       <Context.Provider value={{ 
         ...this.state,
         setBestOffers: this.setBestOffers,
-        setMobilePhones: this.setMobilePhones,
-        setLaptops: this.setLaptops,
-        setTablets: this.setTablets,
         setData: this.setData,
         addToCart: this.addToCart,
         cartCounter: this.cartCounter,
         deleteItemFromCart: this.deleteItemFromCart,
         clearCart: this.clearCart,
         evaluateTotalPrice: this.evaluateTotalPrice,
-        handleSearch: this.handleSearch
+        handleSearch: this.handleSearch,
+        postReview: this.postReview
       }}>
         {this.props.children}
       </Context.Provider>

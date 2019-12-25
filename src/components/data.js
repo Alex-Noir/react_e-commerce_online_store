@@ -5,14 +5,16 @@ export const mobile_phones = [
     company: "Samsung",
     category: "Mobile Phones",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "mobile_phones/samsung-galaxy-s10-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
     hasDiscount: false,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 1,
@@ -20,14 +22,16 @@ export const mobile_phones = [
     company: "Samsung",
     category: "Mobile Phones",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "mobile_phones/samsung-galaxy-s9-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 250,
     hasDiscount: false,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 2,
@@ -35,14 +39,16 @@ export const mobile_phones = [
     company: "Samsung",
     category: "Mobile Phones",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "mobile_phones/samsung-galaxy-s8-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
     hasDiscount: true,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 3,
@@ -50,14 +56,16 @@ export const mobile_phones = [
     company: "Apple",
     category: "Mobile Phones",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "mobile_phones/iphone-x-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
     hasDiscount: false,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 4,
@@ -65,14 +73,16 @@ export const mobile_phones = [
     company: "Apple",
     category: "Mobile Phones",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "mobile_phones/iphone-xr-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 250,
     hasDiscount: false,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 5,
@@ -80,14 +90,16 @@ export const mobile_phones = [
     company: "Apple",
     category: "Mobile Phones",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "mobile_phones/iphone-xs-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
     hasDiscount: true,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 6,
@@ -95,14 +107,16 @@ export const mobile_phones = [
     company: "Sony",
     category: "Mobile Phones",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "mobile_phones/sony-xperia-1-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
     hasDiscount: false,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 7,
@@ -110,14 +124,16 @@ export const mobile_phones = [
     company: "Sony",
     category: "Mobile Phones",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "mobile_phones/sony-xperia-xz2-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 250,
     hasDiscount: false,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 8,
@@ -125,14 +141,16 @@ export const mobile_phones = [
     company: "Sony",
     category: "Mobile Phones",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "mobile_phones/sony-xperia-xz3-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
     hasDiscount: true,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 9,
@@ -140,14 +158,16 @@ export const mobile_phones = [
     company: "Xiaomi",
     category: "Mobile Phones",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "mobile_phones/xiaomi-redmi-7-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
     hasDiscount: false,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 10,
@@ -155,14 +175,16 @@ export const mobile_phones = [
     company: "Xiaomi",
     category: "Mobile Phones",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "mobile_phones/xiaomi-redmi-6-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 250,
     hasDiscount: false,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 11,
@@ -170,14 +192,16 @@ export const mobile_phones = [
     company: "Xiaomi",
     category: "Mobile Phones",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "mobile_phones/xiaomi-redmi-5-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
     hasDiscount: true,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 12,
@@ -185,14 +209,16 @@ export const mobile_phones = [
     company: "Huawei",
     category: "Mobile Phones",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "mobile_phones/huawei-p30-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
     hasDiscount: false,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 13,
@@ -200,14 +226,16 @@ export const mobile_phones = [
     company: "Huawei",
     category: "Mobile Phones",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    "img": "mobile_phones/huawei-p20-1.webp",
+    "img": "01.webp",
     "imageWidth": 200,
     imageHeight: 200,
     price: 250,
     hasDiscount: false,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 14,
@@ -215,14 +243,16 @@ export const mobile_phones = [
     company: "Huawei",
     category: "Mobile Phones",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "mobile_phones/huawei-p10-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
     hasDiscount: true,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   }
 ];
 
@@ -233,14 +263,16 @@ export const laptops = [
     company: "Acer",
     category: "Laptops",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "laptops/acer-aspire-3-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
     hasDiscount: true,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 16,
@@ -248,14 +280,16 @@ export const laptops = [
     company: "Acer",
     category: "Laptops",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "laptops/acer-aspire-5-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 250,
     hasDiscount: false,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 17,
@@ -263,14 +297,16 @@ export const laptops = [
     company: "Acer",
     category: "Laptops",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "laptops/acer-aspire-7-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
     hasDiscount: false,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 18,
@@ -278,14 +314,16 @@ export const laptops = [
     company: "Apple",
     category: "Laptops",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "laptops/apple-macbook-air-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 200,
     hasDiscount: true,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 19,
@@ -293,14 +331,16 @@ export const laptops = [
     company: "Apple",
     category: "Laptops",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "laptops/apple-macbook-pro-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
     hasDiscount: false,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 20,
@@ -308,14 +348,16 @@ export const laptops = [
     company: "Asus",
     category: "Laptops",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "laptops/asuspro-p5440-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
     hasDiscount: false,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 21,
@@ -323,14 +365,16 @@ export const laptops = [
     company: "Asus",
     category: "Laptops",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "laptops/asus-vivobook-s15-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 250,
     hasDiscount: true,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 22,
@@ -338,14 +382,16 @@ export const laptops = [
     company: "Asus",
     category: "Laptops",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "laptops/asus-zenbook-s-ux391-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
     hasDiscount: false,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 23,
@@ -353,14 +399,16 @@ export const laptops = [
     company: "Dell",
     category: "Laptops",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "laptops/dell-latitude-7400-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 200,
     hasDiscount: true,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 24,
@@ -368,14 +416,16 @@ export const laptops = [
     company: "Dell",
     category: "Laptops",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "laptops/dell-vostro-15-5000-5581-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
     hasDiscount: false,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 25,
@@ -383,14 +433,16 @@ export const laptops = [
     company: "HP",
     category: "Laptops",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "laptops/hp-elitebook-850-g5-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
     hasDiscount: true,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 26,
@@ -398,14 +450,16 @@ export const laptops = [
     company: "HP",
     category: "Laptops",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "laptops/hp-probook-650-g1-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 200,
     hasDiscount: false,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 27,
@@ -413,14 +467,16 @@ export const laptops = [
     company: "MSI",
     category: "Laptops",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "laptops/msi-gl63-9se-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 200,
     hasDiscount: true,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 28,
@@ -428,14 +484,16 @@ export const laptops = [
     company: "MSI",
     category: "Laptops",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    "img": "laptops/msi-gl73-8rc-408ca-1.webp",
+    "img": "01.webp",
     "imageWidth": 200,
     imageHeight: 200,
     price: 300,
     hasDiscount: false,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 29,
@@ -443,14 +501,16 @@ export const laptops = [
     company: "Razer",
     category: "Laptops",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "laptops/razer-blade-pro-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
     hasDiscount: false,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 30,
@@ -458,14 +518,16 @@ export const laptops = [
     company: "Razer",
     category: "Laptops",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "laptops/razer-blade-stealth-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 200,
     hasDiscount: true,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   }
 ];
 
@@ -476,14 +538,16 @@ export const tablets = [
     company: "Apple",
     category: "Tablets",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "tablets/apple-ipad-air-2-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 200,
     hasDiscount: true,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 32,
@@ -491,14 +555,16 @@ export const tablets = [
     company: "Apple",
     category: "Tablets",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "tablets/apple-ipad-pro-11-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
     hasDiscount: false,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 33,
@@ -506,14 +572,16 @@ export const tablets = [
     company: "BQ",
     category: "Tablets",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "tablets/bq-7036l-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 200,
     hasDiscount: true,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 34,
@@ -521,14 +589,16 @@ export const tablets = [
     company: "BQ",
     category: "Tablets",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "tablets/bq-8067l-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
     hasDiscount: false,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 35,
@@ -536,14 +606,16 @@ export const tablets = [
     company: "Huawei",
     category: "Tablets",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "tablets/huawei-mediapad-m5-lite-8-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 200,
     hasDiscount: true,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 36,
@@ -551,14 +623,16 @@ export const tablets = [
     company: "Huawei",
     category: "Tablets",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "tablets/huawei-mediapad-t5-10-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
     hasDiscount: false,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 37,
@@ -566,14 +640,16 @@ export const tablets = [
     company: "Lenovo",
     category: "Tablets",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "tablets/lenovo-tab-4-plus-tb-x704f-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 200,
     hasDiscount: true,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 38,
@@ -581,14 +657,16 @@ export const tablets = [
     company: "Lenovo",
     category: "Tablets",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "tablets/lenovo-tab-e10-tb-x104l-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
     hasDiscount: false,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 39,
@@ -596,14 +674,16 @@ export const tablets = [
     company: "Microsoft",
     category: "Tablets",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "tablets/microsoft-surface-go-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 200,
     hasDiscount: true,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 40,
@@ -611,14 +691,16 @@ export const tablets = [
     company: "Microsoft",
     category: "Tablets",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "tablets/microsoft-surface-pro-6-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
     hasDiscount: false,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 41,
@@ -626,14 +708,16 @@ export const tablets = [
     company: "Samsung",
     category: "Tablets",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "tablets/samsung-galaxy-tab-a-101-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 200,
     hasDiscount: true,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 42,
@@ -641,14 +725,16 @@ export const tablets = [
     company: "Samsung",
     category: "Tablets",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "tablets/samsung-galaxy-tab-s6-t860-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
     hasDiscount: false,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 43,
@@ -656,14 +742,16 @@ export const tablets = [
     company: "Xiaomi",
     category: "Tablets",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "tablets/xiaomi-mipad-4-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 300,
     hasDiscount: true,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   },
   {
     id: 44,
@@ -671,14 +759,16 @@ export const tablets = [
     company: "Xiaomi",
     category: "Tablets",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium harum ipsam maiores excepturi, enim quae ex consectetur magnam quo temporibus error, vel iure eveniet id quas expedita cum cupiditate autem!",
-    img: "tablets/xiaomi-mipad-4-plus-1.webp",
+    img: "01.webp",
     imageWidth: 200,
     imageHeight: 200,
     price: 200,
     hasDiscount: false,
     isInCart: false,
     amountInCart: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    reviews: [],
+    rating: 0
   }
 ];
 

@@ -1,20 +1,25 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { DivProductPage, DivInfo } from '../../styles'
-import { Link } from "react-router-dom"
 import { ContextConsumer } from '../../../context'
 
-export default function ProductPage(props) {
+import StarRating from './productPage/StarRating'
+import Reviews from './productPage/Reviews'
+import Comments from './productPage/Comments'
+import Slider from './productPage/Slider'
 
+export default function ProductPage(props) {
   const [ inputValue, setInputValue ] = useState(0)
   const [ isInfoVisible, setIsInfoVisible] = useState(false)
+  const [ isReviewsTabVisible, setIsReviewsTabVisible ] = useState(true)
 
   const { id,
           title, 
           company,
           category, 
           description, 
-          img, 
-          price } = props.dataItem
+          price,
+          rating } = props.dataItem
 
   function counter(e) {
     if (e.target.name === "-" && inputValue > 0) {
@@ -35,6 +40,14 @@ export default function ProductPage(props) {
     } else { return null }
   }
 
+  function toggleTabs(e) {
+    if (e.target.name === 'reviews') {
+      setIsReviewsTabVisible(true)
+    } else if (e.target.name === 'comments') {
+      setIsReviewsTabVisible(false)
+    }
+  }
+
   return (
     <DivProductPage>
       <nav aria-label="breadcrumb" className="align-self-start">
@@ -51,27 +64,41 @@ export default function ProductPage(props) {
                   return <Link to="/tablets">{category}</Link>
                 }  
               })()
-            }                      
+            }
           </li>
           <li className="breadcrumb-item active" aria-current="page">{title}</li>
         </ol>
       </nav>
-      <img src={require(`../../../img/products/${img}`)} alt={title} height="400" width="400"/>
+      <Slider dataItem={props.dataItem} />
       <div className="d-flex flex-column">
-        <div className="h1">{title}</div>
-        <div className="h2">Company: {company}</div>
-        <div className="h2">Price: {price}</div>
-        <div className="h3">Info: {description}</div>
-        <span className="h3">Amount: 
-          <button name="-" onClick={(e) => {counter(e)}}>-</button>
-          <input type="text" value={inputValue} size="1" readOnly />
-          <button name="+" onClick={(e) => {counter(e)}}>+</button>
-        </span>
+        <h1>{title}</h1>
+        <h2>Company: {company}</h2>
+        <StarRating rating={rating} />
+        <h2>Price: {price}</h2>
+        <h3>Info: {description}</h3>
+        <h3>Amount: 
+          <button className="btn btn-outline-dark border-right-0 rounded-0 ml-3"
+                  type="button" 
+                  value="-" 
+                  name="-" 
+                  onClick={(e) => {counter(e)}}> - </button>
+          <input  className="btn btn-outline-dark border-left-0 border-right-0 rounded-0"
+                  type="text" 
+                  value={inputValue} 
+                  size="1" 
+                  readOnly />
+          <button className="btn btn-outline-dark border-left-0 rounded-0" 
+                  type="button" 
+                  value="+" 
+                  name="+" 
+                  onClick={(e) => {counter(e)}}> + </button>
+        </h3>
         <ContextConsumer>
           {
             value => (
               <div className="position-relative w-25">
-                <button className="w-100"
+                <button type="button"
+                        className="btn btn-warning w-100"
                         onClick={() => {  value.addToCart(id, inputValue)
                                           showInfo(inputValue)
                                           value.evaluateTotalPrice()  }}>Add to cart</button>
@@ -80,7 +107,32 @@ export default function ProductPage(props) {
             )
           }
         </ContextConsumer>
-      </div>   
+      </div>
+      <div>
+        <button type="button" 
+                name="reviews" 
+                className="btn btn-light w-50 mt-5 border-right border-top rounded-0 px-4 shadow-none" 
+                onClick={(e) => toggleTabs(e)}
+                >Product Reviews</button>
+        <button type="button"
+                name="comments"
+                className="btn btn-light w-50 mt-5 border-left border-top rounded-0 px-4 shadow-none" 
+                onClick={(e) => toggleTabs(e)}
+                >Comments</button>
+      </div>
+      {
+        isReviewsTabVisible
+        ? (
+          <ContextConsumer>
+            {
+              value => (
+                <Reviews dataItem={props.dataItem} value={value} />
+              )
+            }
+          </ContextConsumer>
+        )
+        : <Comments />
+      }
     </DivProductPage>
   )
 }

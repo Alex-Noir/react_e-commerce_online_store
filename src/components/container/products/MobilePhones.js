@@ -35,7 +35,7 @@ export default function MobilePhones() {
                 .filter( dataItem => dataItem.category === 'Mobile Phones' )
                 .slice( indexOfFirstPost, indexOfLastPost )
                 .map( dataItem => {
-                  return <Item key={dataItem.id} dataItem={dataItem}/>
+                  return <Item key={dataItem.id} dataItem={dataItem} />
                 })
             }
           }

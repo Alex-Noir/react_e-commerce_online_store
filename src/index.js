@@ -6,9 +6,11 @@ import { ContextProvider } from './context';
 import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
-  <ContextProvider>
-    <Router>
-      <App />
-    </Router>
-  </ContextProvider>, 
+  <React.StrictMode>
+    <ContextProvider>
+      <Router>
+        <App />
+      </Router>
+    </ContextProvider>
+  </React.StrictMode>, 
   document.getElementById('root'));

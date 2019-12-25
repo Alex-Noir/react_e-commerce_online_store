@@ -22,7 +22,7 @@ export default function Authentication(props) {
       },
       { withCredetials: true })
       .then(res => { console.log(res) })
-      .catch(err => { console.error('Since it is a demo SPA, you cannot register. ' + err) })
+      .catch(err => { console.error(err) })
   }
 
   function handleLogInSubmit(e) {
@@ -49,8 +49,14 @@ export default function Authentication(props) {
   return (
     <div className="position-absolute mt-5 p-5 bg-light" id="authModal">
       <div>
-        <button type="button" name="signIn" className="btn btn-light border-left border-top border-right rounded-0 px-4 shadow-none" onClick={(e) => props.handleVisibility(e)}>Log In</button>
-        <button type="button" name="registration" className="btn btn-light border-left border-top border-right rounded-0 px-4 shadow-none" onClick={(e) => props.handleVisibility(e)}>Registration</button>
+        <button type="button" 
+                name="signIn" 
+                className="btn btn-light border-left border-top border-right rounded-0 px-4 shadow-none" 
+                onClick={(e) => props.handleVisibility(e)}>Log In</button>
+        <button type="button" 
+                name="registration" 
+                className="btn btn-light border-left border-top border-right rounded-0 px-4 shadow-none" 
+                onClick={(e) => props.handleVisibility(e)}>Registration</button>
       </div>
       {
         props.isLogInTabVisible

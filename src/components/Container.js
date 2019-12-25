@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route } from "react-router-dom"
+import { Route, Redirect } from "react-router-dom"
 import { DivGridContainer } from './styles'
 import { ContextConsumer } from '../context'
 
@@ -37,18 +37,14 @@ export default function Container() {
                     <Route path="/laptops" component={Laptops}/>
                     <Route path="/tablets" component={Tablets}/>
                     <Route path="/cart" component={Cart}/>
-                    <ContextConsumer>
-                      {
-                        value => {
-                          return value.data.map( dataItem => {
-                            return <Route key={dataItem.id}
-                                          path={`/product_page/${dataItem.id}`} 
-                                          render={(props) => <ProductPage {...props} dataItem={dataItem}/>}
-                                    />
-                          })
-                        }                      
-                      }
-                    </ContextConsumer>
+                    {
+                      value.data.map( dataItem => {
+                        return <Route key={dataItem.id}
+                                      path={`/product_page/${dataItem.id}`} 
+                                      render={(props) => <ProductPage {...props} dataItem={dataItem} value={value}/>}
+                                />
+                      })
+                    }
                     <Route path="/about" component={About}/>
                     <Route path="/contact_us" component={ContactUs}/>
                   </React.Fragment>
@@ -63,4 +59,4 @@ export default function Container() {
   )
 }
 
-
+{/* <Redirect exact from="/*" to="/" /> */}

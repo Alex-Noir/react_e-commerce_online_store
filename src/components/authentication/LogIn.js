@@ -16,8 +16,8 @@ export default function LogIn(props) {
           Password:
           <input  type="password" 
                   name="password" 
-                  value={props.password} 
-                  onChange={(e) => props.handleChange(e)} 
+                  value={props.password}
+                  onChange={(e) => props.handleChange(e)}
                   required />
         </label>
         <button type='submit' className="mt-1">Log In</button>

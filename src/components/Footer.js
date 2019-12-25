@@ -4,55 +4,55 @@ import { Link } from 'react-router-dom'
 
 export default function Footer() {    
   return (
-    <footer className="d-flex bg-dark mt-4 justify-content-center">
+    <footer className="d-flex bg-dark mt-5 justify-content-center">
       <UlFooterList className="list-group list-group-flush">
-        <li className="list-group-item bg-dark p-0">
+        <li className="list-group-item bg-transparent p-0">
           <Link to="/about" className="text-warning nav-link">About</Link>
         </li>
-        <li className="list-group-item bg-dark p-0">
+        <li className="list-group-item bg-transparent p-0">
           <Link to="/contact_us" className="text-warning nav-link">Contact Us</Link>
         </li>
-        <li className="list-group-item bg-dark p-0">
+        <li className="list-group-item bg-transparent p-0">
           <a href="/#" className="text-warning nav-link">Lorem ipsum sin amet</a>
         </li>
-        <li className="list-group-item bg-dark p-0">
+        <li className="list-group-item bg-transparent p-0">
           <a href="/#" className="text-warning nav-link">Lorem ipsum sin amet</a>
         </li>
-        <li className="list-group-item bg-dark p-0">
-          <a href="/#" className="text-warning nav-link">Lorem ipsum sin amet</a>
-        </li>
-      </UlFooterList>
-      <UlFooterList className="list-group list-group-flush">
-        <li className="list-group-item bg-dark p-0">
-          <a href="/#" className="text-warning nav-link">Lorem ipsum sin amet</a>
-        </li>
-        <li className="list-group-item bg-dark p-0">
-          <a href="/#" className="text-warning nav-link">Lorem ipsum sin amet</a>
-        </li>
-        <li className="list-group-item bg-dark p-0">
-          <a href="/#" className="text-warning nav-link">Lorem ipsum sin amet</a>
-        </li>
-        <li className="list-group-item bg-dark p-0">
-          <a href="/#" className="text-warning nav-link">Lorem ipsum sin amet</a>
-        </li>
-        <li className="list-group-item bg-dark p-0">
+        <li className="list-group-item bg-transparent p-0">
           <a href="/#" className="text-warning nav-link">Lorem ipsum sin amet</a>
         </li>
       </UlFooterList>
       <UlFooterList className="list-group list-group-flush">
-        <li className="list-group-item bg-dark p-0">
+        <li className="list-group-item bg-transparent p-0">
           <a href="/#" className="text-warning nav-link">Lorem ipsum sin amet</a>
         </li>
-        <li className="list-group-item bg-dark p-0">
+        <li className="list-group-item bg-transparent p-0">
           <a href="/#" className="text-warning nav-link">Lorem ipsum sin amet</a>
         </li>
-        <li className="list-group-item bg-dark p-0">
+        <li className="list-group-item bg-transparent p-0">
           <a href="/#" className="text-warning nav-link">Lorem ipsum sin amet</a>
         </li>
-        <li className="list-group-item bg-dark p-0">
+        <li className="list-group-item bg-transparent p-0">
           <a href="/#" className="text-warning nav-link">Lorem ipsum sin amet</a>
         </li>
-        <li className="list-group-item bg-dark p-0">
+        <li className="list-group-item bg-transparent p-0">
+          <a href="/#" className="text-warning nav-link">Lorem ipsum sin amet</a>
+        </li>
+      </UlFooterList>
+      <UlFooterList className="list-group list-group-flush">
+        <li className="list-group-item bg-transparent p-0">
+          <a href="/#" className="text-warning nav-link">Lorem ipsum sin amet</a>
+        </li>
+        <li className="list-group-item bg-transparent p-0">
+          <a href="/#" className="text-warning nav-link">Lorem ipsum sin amet</a>
+        </li>
+        <li className="list-group-item bg-transparent p-0">
+          <a href="/#" className="text-warning nav-link">Lorem ipsum sin amet</a>
+        </li>
+        <li className="list-group-item bg-transparent p-0">
+          <a href="/#" className="text-warning nav-link">Lorem ipsum sin amet</a>
+        </li>
+        <li className="list-group-item bg-transparent p-0">
           <a href="/#" className="text-warning nav-link">Lorem ipsum sin amet</a>
         </li>
       </UlFooterList>

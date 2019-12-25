@@ -4,15 +4,13 @@ import { Link } from 'react-router-dom'
 
 export default class Item extends Component {
   render() {
-    const { id, 
-            title, 
-            company,
-            category,
-            img, 
-            imageWidth, 
-            imageHeight, 
-            price, 
-            isInCart, 
+    const { id,
+            title,
+            img,
+            imageWidth,
+            imageHeight,
+            price,
+            isInCart,
             amountInCart } = this.props.dataItem
 
     return (
@@ -23,7 +21,7 @@ export default class Item extends Component {
             alt="Item"
             width={imageWidth}
             heigth={imageHeight}
-            src={require(`../../../img/products/${img}`)}
+            src={require(`../../../img/products/data/${id}/01.webp`)}
           />
           <h4>{title}</h4>
           <div>{price}</div>
