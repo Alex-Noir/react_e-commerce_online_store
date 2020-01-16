@@ -2,9 +2,13 @@ import styled from 'styled-components'
 
 //App
 export const DivWrapper = styled.div`
-  min-height: 100vh;
+  min-height: 100%;
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr 1200px 1fr;
 `
-export const DivLoginWrapper = styled.div`
+export const DivAuthWrapper = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: rgba(0,0,0,0.6);
@@ -12,23 +16,37 @@ export const DivLoginWrapper = styled.div`
   > div {
     left: 50%;
     transform: translateX(-50%);
-  }
+  }  
 `
 
 //Header
 export const StyledHeader = styled.header`
+  grid-area: 1 / 1 / 2 / 4;
   z-index: 1;
-  > div {
-    width: 1200px;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  > :first-child {
+    grid-area: 1 / 1 / 2 / 2;
+    justify-self: center;
+    align-self: center;
   }
-  > div > div > button {
-    &:focus {
-      outline: none;
+  > :nth-child(2) {
+    grid-area: 1 / 2 / 2 / 3;
+    justify-self: center;
+    align-self: center;
+  }
+  > :nth-child(3) {
+    grid-area: 1 / 3 / 2 / 4;
+  }
+  > :last-child {
+    grid-area: 1 / 4 / 2 / 5;
+    > button {
+      font-size: 12px;
+      &:focus {
+        outline: none;
+      }
     }
   }
-`
-export const ButtonLogin = styled.button`
-  font-size: 12px;
 `
 export const DivIconAmountInCart = styled.div`
   width: 21px;
@@ -42,48 +60,40 @@ export const DivIconAmountInCart = styled.div`
 
 //Search
 export const FormSearchBar = styled.form`
-  flex-grow: 2;
-  display: flex;
+  width: 100%;
+  align-self: center;
   > input {
-    flex-grow: 2;
-    border: none;
-    &:focus {
-      outline: none;
-    }
+    width: 96%;
+    padding-left: 5px;
+    padding-right: 5px;
   }
   > button {
-    right: 27px;
-    &:focus {
-      outline: none;
-    }
-  }
-`
-
-//Container
-export const DivGridContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1200px 1fr;
-  flex: 1 1 0;
-  > div {
-    grid-area: 1 / 2 / 2 / 3;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, auto);
+    width: 4%;
   }
 `
 
 //Nav
 export const StyledNav = styled.nav`
-  min-width: 305px;
-  max-width: 305px;
+  min-width: 255px;
+  max-width: 255px;
   position: absolute;
-  top: 58px;
-  left: 355px;
+  top: 48px;
+  left: -163px;
   > ul > li {
     border-left: 2px solid red;
     border-bottom: 1px solid #acacac;
     border-right: 1px solid #acacac;
     font-size: 0.8125rem;
+  }
+`
+
+//Container
+export const DivGridContainer = styled.div`
+  grid-area: 2 / 2 / 3 / 3;
+  > div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
   }
 `
 
@@ -136,7 +146,7 @@ export const DivProductItem = styled.div`
   width: 290px;
 `
 
-//Product Page
+//Product Page, SearchResult
 export const DivProductPage = styled.div`
   grid-area: 1 / 1 / 2 / 3;
   display: grid;
@@ -164,16 +174,15 @@ export const DivProductPage = styled.div`
   }
 `
 export const DivInfo = styled.div`
-  width: 120px;
+  display: inline-block;
+  width: auto;
   margin-top: 7px;
   background-color: rgba(248,80,50,1);
   color: #fff;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
-  position: absolute;
-  top: -5px;
-  left: 105%;
+  position: relative;
   z-index: 1;
 `
 
@@ -218,6 +227,44 @@ export const DivReview = styled.div`
   }
 `
 
+//SearchResults
+export const DivSearchResults = styled.div`
+  grid-area: 1 / 1 / 3 / 3;
+  > div {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto 1fr 1fr 1fr;
+    > :first-child {
+      grid-area: 1 / 1 / 2 / 2;
+      margin-right: 1rem;
+    }
+    > :nth-child(2) {
+      grid-area: 1 / 2 / 2 / 3;
+      align-self: start;
+      justify-self: start;
+      > a, a:hover, a:focus {
+        text-decoration: none;
+      }
+      > a:hover, a:focus {
+        text-shadow: 2px 2px 20px;
+      }
+    }
+    > :nth-child(3) {
+      grid-area: 1 / 3 / 2 / 4;
+      align-self: center;
+      justify-self: center;
+      > :nth-child(2), :last-child {
+        width: auto;
+      }
+    }
+    > :nth-child(4) {
+      grid-area: 1 / 4 / 2 / 5;
+      align-self: start;
+      justify-self: end;
+    }
+  }
+`
+
 //Cart
 export const DivCart = styled.div`
   grid-area: 1 / 1 / 3 / 3;
@@ -258,9 +305,26 @@ export const DivContactForm = styled.div`
 `
 
 //Footer
-export const UlFooterList = styled.ul`
-  width: 300px;
+export const StyledFooter = styled.footer`
+  grid-area: 3 / 1 / 4 / 4;
+  display: grid;
+  grid-template-columns: 1fr repeat(4, 300px) 1fr;
+  > :first-child {
+    grid-column: 2 / 3;
+  }
+  > :nth-child(2) {
+    grid-column: 3 / 4;
+  }
+  > :nth-child(3) {
+    grid-column: 4 / 5;
+  }
+  > :last-child {
+    grid-column: 5 / 6;
+  }
 `
-export const DivFooter = styled.div`
-  width: 300px;
-`
+// export const UlFooterList = styled.ul`
+//   width: 300px;
+// `
+// export const DivFooter = styled.div`
+//   width: 300px;
+// `

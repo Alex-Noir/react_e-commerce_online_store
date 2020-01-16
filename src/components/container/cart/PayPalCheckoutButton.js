@@ -1,7 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export default function PayPalCheckoutButton(props) {
   const [ isBeingPaidFor, setIsBeingPaidFor ] = useState(false)
+
+  const [ t, i18n ] = useTranslation()
 
   const paypalRef = useRef()
 
@@ -46,7 +49,7 @@ export default function PayPalCheckoutButton(props) {
     <div className="w-25">
       {
         isBeingPaidFor
-        ? <h1>Success!</h1>
+        ? <h1>{t('PayPalCheckoutButton|1')}</h1>
         : <div ref={paypalRef}/>
       }
     </div>

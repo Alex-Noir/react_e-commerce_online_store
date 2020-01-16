@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { DivPhonesList } from '../../styles'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { ContextConsumer } from '../../../context'
 import { mobile_phones } from '../../../components/data'
 
@@ -13,6 +14,8 @@ export default function MobilePhones() {
   const indexOfLastPost = currentPage * postsPerPage
   const indexOfFirstPost = indexOfLastPost - postsPerPage
   
+  const [ t, i18n ] = useTranslation()
+  
   function paginate(e, pageNumber) {
     e.preventDefault()
     window.scrollTo(0, 58)
@@ -23,8 +26,8 @@ export default function MobilePhones() {
     <DivPhonesList className="d-flex flex-column justify-content-center">
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
-          <li className="breadcrumb-item"><Link to="/">Home</Link></li>
-          <li className="breadcrumb-item active" aria-current="page">Mobile Phones</li>
+          <li className="breadcrumb-item"><Link to="/">{t('MobilePhones|1')}</Link></li>
+          <li className="breadcrumb-item active" aria-current="page">{t('Nav|1')}</li>
         </ol>
       </nav>
       <div className="d-flex flex-wrap justify-content-start">
@@ -35,7 +38,7 @@ export default function MobilePhones() {
                 .filter( dataItem => dataItem.category === 'Mobile Phones' )
                 .slice( indexOfFirstPost, indexOfLastPost )
                 .map( dataItem => {
-                  return <Item key={dataItem.id} dataItem={dataItem} />
+                  return <Item key={dataItem.id} dataItem={dataItem} value={value} />
                 })
             }
           }

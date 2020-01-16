@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { DivPhonesList as DivTabletList } from '../../styles'
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { ContextConsumer } from '../../../context'
 import { tablets } from '../../../components/data'
 
@@ -12,6 +13,8 @@ export default function Tablets() {
   const [postsPerPage] = useState(8)
   const indexOfLastPost = currentPage * postsPerPage
   const indexOfFirstPost = indexOfLastPost - postsPerPage
+
+  const [ t, i18n ] = useTranslation()
   
   function paginate(e, pageNumber) {
     e.preventDefault()
@@ -23,8 +26,8 @@ export default function Tablets() {
     <DivTabletList className="d-flex flex-column justify-content-center">
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
-          <li className="breadcrumb-item"><Link to="/">Home</Link></li>
-          <li className="breadcrumb-item active" aria-current="page">Tablets</li>
+          <li className="breadcrumb-item"><Link to="/">{t('MobilePhones|1')}</Link></li>
+          <li className="breadcrumb-item active" aria-current="page">{t('Nav|3')}</li>
         </ol>
       </nav>
       <div className="d-flex flex-wrap justify-content-start">
@@ -35,7 +38,7 @@ export default function Tablets() {
                 .filter( dataItem => dataItem.category === 'Tablets' )
                 .slice( indexOfFirstPost, indexOfLastPost )
                 .map( dataItem => {
-                  return <Item key={dataItem.id} dataItem={dataItem}/>
+                  return <Item key={dataItem.id} dataItem={dataItem} value={value} />
                 })
             }
           }

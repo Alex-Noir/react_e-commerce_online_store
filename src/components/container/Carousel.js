@@ -1,8 +1,11 @@
 import React from 'react'
 import { DivCarousel } from '../styles'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 export default function Carousel() {
+  const [ t, i18n ] = useTranslation()
+
   return (
     <DivCarousel id="carouselIndicators" className="carousel slide" data-ride="carousel">
       <ol className="carousel-indicators">
@@ -29,11 +32,11 @@ export default function Carousel() {
       </div>
       <a className="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="sr-only">Previous</span>
+        <span className="sr-only">{t('Carousel|1')}</span>
       </a>
       <a className="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
         <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        <span className="sr-only">Next</span>
+        <span className="sr-only">{t('Carousel|2')}</span>
       </a>
     </DivCarousel>
   )

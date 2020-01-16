@@ -1,18 +1,28 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { ContextConsumer } from '../../../context'
+import { DivSearchResults } from '../../styles'
 
 import SearchResult from './SearchResult'
 
-export default function SearchResults() {
+export default function SearchResults(props) {
+  useEffect(() => {
+    return () => {
+      props.value.makeResultsInvisible()
+      props.value.nullifySearchValue()
+    }
+  }, [])
+
   return (
-    <ContextConsumer>
-      {
-        value => {
-          return value.results.map(result => {
-            return <SearchResult key={result.id} result = {result}/>
-          })
+    <DivSearchResults className="d-flex flex-column">
+      <ContextConsumer>
+        {
+          value => {
+            return value.results.map(result => {
+              return <SearchResult key={result.id} result={result} value={value} />
+            })
+          }
         }
-      }
-    </ContextConsumer>
+      </ContextConsumer>
+    </DivSearchResults>
   )
 }

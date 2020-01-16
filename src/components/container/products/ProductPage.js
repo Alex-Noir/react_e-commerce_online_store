@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { DivProductPage, DivInfo } from '../../styles'
-import { ContextConsumer } from '../../../context'
+import { useTranslation } from 'react-i18next'
 
 import StarRating from './productPage/StarRating'
 import Reviews from './productPage/Reviews'
@@ -9,10 +9,6 @@ import Comments from './productPage/Comments'
 import Slider from './productPage/Slider'
 
 export default function ProductPage(props) {
-  const [ inputValue, setInputValue ] = useState(0)
-  const [ isInfoVisible, setIsInfoVisible] = useState(false)
-  const [ isReviewsTabVisible, setIsReviewsTabVisible ] = useState(true)
-
   const { id,
           title, 
           company,
@@ -20,6 +16,32 @@ export default function ProductPage(props) {
           description, 
           price,
           rating } = props.dataItem
+          
+  const [ inputValue, setInputValue ] = useState(0)
+  const [ isInfoVisible, setIsInfoVisible] = useState(false)
+  const [ isReviewsTabVisible, setIsReviewsTabVisible ] = useState(true)
+  const [ customRating, setCustomRating ] = useState(rating || null)
+  const [ tempRating, setTempRating ] = useState(null)
+  
+  const prevCount = usePrevious(customRating)
+  
+  const [ t, i18n ] = useTranslation()
+
+  let currencyRate = 1
+
+  if (props.value.currency === '$') {
+    currencyRate = props.value.fetchedRates.USD
+  } else if (props.value.currency === '₽') {
+    currencyRate = props.value.fetchedRates.RUB
+  } else if (props.value.currency === 'Ch¥') {
+    currencyRate = props.value.fetchedRates.CNY
+  } else if (props.value.currency === 'Jp¥') {
+    currencyRate = props.value.fetchedRates.JPY
+  } else if (props.value.currency === '₩') {
+    currencyRate = props.value.fetchedRates.KRW
+  } else if (props.value.currency === '₹') {
+    currencyRate = props.value.fetchedRates.INR
+  }
 
   function counter(e) {
     if (e.target.name === "-" && inputValue > 0) {
@@ -48,20 +70,44 @@ export default function ProductPage(props) {
     }
   }
 
+  function handleMouseover(rating) {
+    setCustomRating(rating)
+    setTempRating(prevCount)
+  }
+
+  function rate(rating) {
+    setCustomRating(rating)
+    setTempRating(rating)
+  }
+
+  function handleMouseout() {
+    setCustomRating(prevCount)
+  }
+
+  function usePrevious(value) {
+    const ref = useRef()
+    
+    useEffect(() => {
+      ref.current = value
+    }, [value])    
+
+    return ref.current
+  }
+
   return (
     <DivProductPage>
       <nav aria-label="breadcrumb" className="align-self-start">
         <ol className="breadcrumb">
-          <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+          <li className="breadcrumb-item"><Link to="/">{t('MobilePhones|1')}</Link></li>
           <li className="breadcrumb-item">
             {
-              (function() {
+              (() => {
                 if (category === 'Mobile Phones') {
-                  return <Link to="/mobile_phones">{category}</Link>
+                  return <Link to="/mobile_phones">{t('Nav|1')}</Link>
                 } else if (category === 'Laptops') {
-                  return <Link to="/laptops">{category}</Link>
+                  return <Link to="/laptops">{t('Nav|2')}</Link>
                 } else if (category === 'Tablets') {
-                  return <Link to="/tablets">{category}</Link>
+                  return <Link to="/tablets">{t('Nav|3')}</Link>
                 }  
               })()
             }
@@ -72,16 +118,23 @@ export default function ProductPage(props) {
       <Slider dataItem={props.dataItem} />
       <div className="d-flex flex-column">
         <h1>{title}</h1>
-        <h2>Company: {company}</h2>
-        <StarRating rating={rating} />
-        <h2>Price: {price}</h2>
-        <h3>Info: {description}</h3>
-        <h3>Amount: 
+        <h2>{t('ProductPage|1')}: {company}</h2>
+        <StarRating rating={rating} 
+                    customRating={customRating}
+                    handleMouseover={handleMouseover}
+                    rate={rate}
+                    handleMouseout={handleMouseout} />
+        <h5>{t('ProductPage|2')}: {rating}</h5>
+        <h5>{t('ProductPage|3')}: { ((customRating + 1) / 2).toFixed(1) }</h5>
+        <h2>{t('ProductPage|4')}: {props.value.currency} {parseFloat((price * currencyRate).toFixed(2))}</h2>
+        <br />
+        <h3>{t('ProductPage|5')}: {description}</h3>
+        <h3>{t('ProductPage|6')}: 
           <button className="btn btn-outline-dark border-right-0 rounded-0 ml-3"
                   type="button" 
                   value="-" 
                   name="-" 
-                  onClick={(e) => {counter(e)}}> - </button>
+                  onClick={e => {counter(e)}}> - </button>
           <input  className="btn btn-outline-dark border-left-0 border-right-0 rounded-0"
                   type="text" 
                   value={inputValue} 
@@ -91,46 +144,34 @@ export default function ProductPage(props) {
                   type="button" 
                   value="+" 
                   name="+" 
-                  onClick={(e) => {counter(e)}}> + </button>
+                  onClick={e => {counter(e)}}> + </button>
         </h3>
-        <ContextConsumer>
-          {
-            value => (
-              <div className="position-relative w-25">
-                <button type="button"
-                        className="btn btn-warning w-100"
-                        onClick={() => {  value.addToCart(id, inputValue)
-                                          showInfo(inputValue)
-                                          value.evaluateTotalPrice()  }}>Add to cart</button>
-                <DivInfo className={isInfoVisible ? "visible" : "invisible"}> +{inputValue} items added! </DivInfo>
-              </div>
-            )
-          }
-        </ContextConsumer>
+        <div className="position-relative">
+          <button type="button"
+                  className="btn btn-warning mr-2"
+                  onClick={() => {  props.value.addToCart(id, inputValue)
+                                    showInfo(inputValue)
+                                    props.value.evaluateTotalPrice()  }}>{t('ProductPage|7')}</button>
+          <DivInfo className={isInfoVisible ? "visible" : "invisible"}> 
+            +{inputValue} {t('ProductPage|8')} 
+          </DivInfo>
+        </div>
       </div>
       <div>
         <button type="button" 
                 name="reviews" 
                 className="btn btn-light w-50 mt-5 border-right border-top rounded-0 px-4 shadow-none" 
-                onClick={(e) => toggleTabs(e)}
-                >Product Reviews</button>
+                onClick={e => toggleTabs(e)}
+                >{t('ProductPage|9')}</button>
         <button type="button"
                 name="comments"
                 className="btn btn-light w-50 mt-5 border-left border-top rounded-0 px-4 shadow-none" 
-                onClick={(e) => toggleTabs(e)}
-                >Comments</button>
+                onClick={e => toggleTabs(e)}
+                >{t('ProductPage|10')}</button>
       </div>
       {
         isReviewsTabVisible
-        ? (
-          <ContextConsumer>
-            {
-              value => (
-                <Reviews dataItem={props.dataItem} value={value} />
-              )
-            }
-          </ContextConsumer>
-        )
+        ? <Reviews dataItem={props.dataItem} value={props.value} />
         : <Comments />
       }
     </DivProductPage>

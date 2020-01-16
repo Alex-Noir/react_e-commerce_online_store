@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { mobile_phones, laptops, tablets, data } from './components/data'
+import { mobile_phones, data } from './components/data'
+import axios from 'axios'
 
-//ProductConxtext
 const Context = React.createContext()
 
 class ContextProvider extends Component {
@@ -10,29 +10,45 @@ class ContextProvider extends Component {
     this.state = {
       bestOffers: [],
       data: [],
-      value: '',
-      results: tablets,
+      searchValue: '',
+      results: data,
       areResultsVisible: false,
       cartList: [],
       cartSubTotalPrice: 0,
       cartTax: 0,
-      cartTotalPrice: 0
+      cartTotalPrice: 0,
+      fetchedRates: {},
+      currency: '€'
     }
 
     this.setBestOffers = this.setBestOffers.bind(this)
     this.setData = this.setData.bind(this)
+    this.makeResultsInvisible = this.makeResultsInvisible.bind(this)
     this.addToCart = this.addToCart.bind(this)
     this.cartCounter = this.cartCounter.bind(this)
     this.deleteItemFromCart = this.deleteItemFromCart.bind(this)
     this.clearCart = this.clearCart.bind(this)
     this.evaluateTotalPrice = this.evaluateTotalPrice.bind(this)
+    this.setSearchValue = this.setSearchValue.bind(this)
     this.handleSearch = this.handleSearch.bind(this)
+    this.nullifySearchValue = this.nullifySearchValue.bind(this)
     this.postReview = this.postReview.bind(this)
+    this.changeCurrency = this.changeCurrency.bind(this)
   }
   
   componentDidMount() {
     this.setBestOffers()
     this.setData()
+
+    axios.get('https://api.exchangeratesapi.io/latest')
+      .then(res => {
+        this.setState(() => {
+          return { fetchedRates: res.data.rates }
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   setBestOffers() {
@@ -49,13 +65,19 @@ class ContextProvider extends Component {
     })
   }
 
+  makeResultsInvisible() {
+    this.setState(() => {
+      return { areResultsVisible: false }
+    })
+  }
+
   addToCart(id, inputValue) {
-    const item = data[id]
+    const item = this.state.data[id]
     const price = item.price
     const cartList = this.state.cartList
     const arrayOfIds = cartList.map(cartListItem => cartListItem.id)
     const idOfCartListItem = cartList.findIndex(( cartListItem => cartListItem.id === id ))
-    
+
     if (inputValue >= 1 && arrayOfIds.indexOf(id) === -1) {
       item.isInCart = true
       item.amountInCart += Number.parseFloat(inputValue)
@@ -73,7 +95,7 @@ class ContextProvider extends Component {
   }
 
   cartCounter(e, id) {
-    const item = data[id]
+    const item = this.state.data[id]
     const price = item.price
     const cartList = this.state.cartList
     const idOfCartListItem = cartList.findIndex(( cartListItem => cartListItem.id === id ))
@@ -88,7 +110,7 @@ class ContextProvider extends Component {
     } else if (e.target.name === '-' && cartList[idOfCartListItem].amountInCart <= 1) {
       return null
     } else if (e.target.name === '+') {
-      cartList[idOfCartListItem].amountInCart += 1
+      cartList[idOfCartListItem].amountInCart += 1 
       const amountInCart = item.amountInCart
       item.totalPrice = Number.parseFloat((price * amountInCart).toFixed(2))
       this.setState(() => {
@@ -129,14 +151,33 @@ class ContextProvider extends Component {
     })
   }
 
+  setSearchValue(e) {
+    let searchQuery = (String(e.target.value)).trim()
+    this.setState(() => {
+      return {
+        searchValue: searchQuery
+      }
+    })
+  }
+
   handleSearch(e) {
     e.preventDefault()
     e.persist()
+    let filteredData = this.state.data.filter(dataItem => dataItem.title.toLowerCase().includes(this.state.searchValue.toLowerCase()))
+    if (this.state.value !== '') {
+      this.setState(() => {
+        return {
+          results: filteredData,
+          areResultsVisible: true
+        }
+      })
+    } else { return null }    
+  }
+
+  nullifySearchValue() {
     this.setState(() => {
       return {
-        value: ('' + e.target.value).trim(),
-        results: this.state.results.filter(elem => elem.title.toLowerCase().includes(this.state.value.toLowerCase())),
-        areResultsVisible: true
+        searchValue: ''
       }
     })
   }
@@ -151,19 +192,32 @@ class ContextProvider extends Component {
     reviews.push(review)    
   }
 
+  changeCurrency(e) {
+    const selectedCurrency = e.target.value
+    this.setState(() => {
+      return {
+        currency: selectedCurrency
+      }
+    })
+  }
+
   render() {
     return (
       <Context.Provider value={{ 
         ...this.state,
         setBestOffers: this.setBestOffers,
         setData: this.setData,
+        makeResultsInvisible: this.makeResultsInvisible,
         addToCart: this.addToCart,
         cartCounter: this.cartCounter,
         deleteItemFromCart: this.deleteItemFromCart,
         clearCart: this.clearCart,
         evaluateTotalPrice: this.evaluateTotalPrice,
+        setSearchValue: this.setSearchValue,
         handleSearch: this.handleSearch,
-        postReview: this.postReview
+        nullifySearchValue: this.nullifySearchValue,
+        postReview: this.postReview,
+        changeCurrency: this.changeCurrency
       }}>
         {this.props.children}
       </Context.Provider>

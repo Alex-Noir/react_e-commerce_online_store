@@ -1,8 +1,11 @@
 import React, { useState, useRef } from 'react'
 import { DivReview } from '../../../styles'
 import ReactQuill from 'react-quill'
+import { useTranslation } from 'react-i18next'
 
 export default function Review({...props}) {
+  const [ t, i18n ] = useTranslation()
+
   const [ isLikePressed, setIsLikePressed ] = useState(false)
   const [ isDislikePressed, setIsDislikePressed ] = useState(false)
   const [ isReviewReadOnly, setIsReviewReadOnly ] = useState(true)
@@ -55,18 +58,18 @@ export default function Review({...props}) {
               <button type="button"
                       className={isLikePressed ? 'btn btn-success ml-4' : 'btn btn-outline-success ml-4'}
                       onClick={toggleLike}>
-                Argee <i className="fas fa-thumbs-up"></i>
+                {t('Review|1')} <i className="fas fa-thumbs-up"></i>
               </button>
               <button type="button"
                       className={isDislikePressed ? 'btn btn-danger ml-2' : 'btn btn-outline-danger ml-2'}
                       onClick={toggleDislike}>
-                Disagree <i className="fas fa-thumbs-down"></i>
+                {t('Review|2')} <i className="fas fa-thumbs-down"></i>
               </button>
             </React.Fragment>
           )
           : <button ref={acceptButtonRef}
                     className="btn btn-primary ml-4"
-                    onClick={() => { setIsReviewReadOnly(true) }}>Accept Changes</button>
+                    onClick={() => { setIsReviewReadOnly(true) }}>{t('Review|3')}</button>
         }
       </div>
     </DivReview>

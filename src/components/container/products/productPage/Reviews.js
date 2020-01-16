@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import ReactQuill from 'react-quill'
+import { useTranslation } from 'react-i18next'
 import './reviews.css'
 
 import Review from './Review'
 
 export default function Reviews({...props}) {
   const { data } = props.value
+
+  const [ t, i18n ] = useTranslation()
 
   const [ text, setText ] = useState('')
   const [ isEditorReadOnly, setIsEditorReadOnly ] = useState(false)
@@ -84,13 +87,13 @@ export default function Reviews({...props}) {
                         value={text}
                         onChange={handleChange}
                         readOnly={isEditorReadOnly}
-                        placeholder="You can write and post a reviews here, but refreshing or leaving the page will nullify them."
+                        placeholder={t('Reviews|1')}
                         modules={modules}
                         formats={formats}
                         theme="snow" />
             <div>
               <button className="btn btn-primary ml-4 mb-4"
-                      onClick={() => postReview(reviews)}>Post Review</button>
+                      onClick={() => postReview(reviews)}>{t('Reviews|2')}</button>
             </div>
           </React.Fragment>
         )

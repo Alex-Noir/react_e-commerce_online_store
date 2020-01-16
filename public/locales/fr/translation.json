@@ -1,0 +1,93 @@
+{
+  "Header": {
+    "1": "S'identifier",
+    "2": "S'enregistrer"
+  },
+  "Catalogue": {
+    "1": "Catalogues"
+  },
+  "Nav": {
+    "1": "Téléphones portables",
+    "2": "Portables",
+    "3": "Tablettes"
+  },
+  "Authentication": {
+    "1": "Enregistrement"
+  },
+  "LogIn": {
+    "1": "Email",
+    "2": "Mot de passe"
+  },
+  "Registration": {
+    "1": "Votre nom",
+    "2": "Confirmez le mot de passe"
+  },
+  "Carousel": {
+    "1": "Précédent",
+    "2": "Prochain"
+  },
+  "Timer": {
+    "1": "L'offre se termine dans"
+  },
+  "Products": {
+    "1": "Meilleures offres"
+  },
+  "MobilePhones": {
+    "1": "Page d'accueil"
+  },
+  "ProductPage": {
+    "1": "Entreprise",
+    "2": "Évaluation globale",
+    "3": "Votre note",
+    "4": "Prix",
+    "5": "Info",
+    "6": "Montant",
+    "7": "Ajouter au chariot",
+    "8": "articles ajoutés!",
+    "9": "Avis sur les produits",
+    "10": "Commentaires"
+  },
+  "Reviews": {
+    "1": "Vous pouvez écrire et publier un avis ici, mais l'actualisation ou la sortie de la page l'annulera.",
+    "2": "Publier Revue"
+  },
+  "Review": {
+    "1": "Se mettre d'accord",
+    "2": "Être en désaccord",
+    "3": "Accepter les modifications"
+  },
+  "SearchResult": {
+    "1": "Dans un chariot"
+  },
+  "Cart": {
+    "1": "Votre panier est vide",
+    "2": "Panier clair",
+    "3": "Subtotal",
+    "4": "Impôt",
+    "5": "Total"
+  },
+  "PayPalCheckoutButton": {
+    "1": "Succès!"
+  },
+  "Footer": {
+    "1": "Sur",
+    "2": "Nous contacter",
+    "3": "Abonnez-vous aux nouvelles!",
+    "4": "Nos réseaux sociaux",
+    "5": "Tous les droits sont réservés."
+  },
+  "I18nButtons": {
+    "1": "Langue",
+    "2": "Devise",
+    "3": "Pays"
+  },
+  "About": {
+    "1": "La société Alimazon est la plus grande entreprise au monde! Après avoir acheté Google, Facebook, Apple et Microsoft, il n'y a plus de rivaux pour nous :) Ah, ce doux goût sucré de monopole ... nous pouvons faire ce que nous voulons et les gens nous donneront toujours leur argent! :)",
+    "2": "Le PDG d'Alimazon est M. John Doe - c'est l'homme le plus riche du monde! Il est également l'homme d'affaires le plus prospère du monde! Personne ne sait s'il paie ses impôts, mais tu dois admettre - il a l'air foutrement bien dans ce costume. ;)"
+  },
+  "ContactUs": {
+    "1": "Votre e-mail",
+    "2": "Votre message",
+    "3": "Soumettre"
+  }
+}

@@ -4,6 +4,7 @@ export default function Comments() {
   useEffect(() => {
     window.FB.XFBML.parse()
   })
+  
   return (
     <div className="bg-light">
       <div  className="fb-comments" 

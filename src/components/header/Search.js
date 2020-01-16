@@ -1,21 +1,35 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { useHistory } from 'react-router-dom'
 import { FormSearchBar } from '../styles'
 import { ContextConsumer } from '../../context'
 
-export default class Search extends Component {
-  render() {
-    return (
-      <ContextConsumer>
-        {
-          value => (
-            <FormSearchBar onSubmit={value.handleSearch}>
-              <input type="search" name="search" className="border border-dark rounded"/>
-              <button type="submit" value="submit" className="bg-warning border-0 text-danger rounded-right position-relative">
-                <i className="fas fa-search"></i>
-              </button>
-            </FormSearchBar>
-        )}
-      </ContextConsumer>
-    )
+export default function Search() {
+  const history = useHistory()
+  
+  function redirectToSearchResults() {
+    history.push('/')
   }
+
+  return (
+    <ContextConsumer>
+      {
+        value => (
+          <FormSearchBar id="formSearchBar" onSubmit={e => {value.handleSearch(e)
+                                                            redirectToSearchResults()}}>
+            <input  type="search" 
+                    name="search" 
+                    value={value.searchValue}
+                    className="border border-dark border-right-0 rounded-left"
+                    onChange={e => value.setSearchValue(e)} />
+            <button type="submit" 
+                    value="submit"
+                    form="formSearchBar"
+                    className="bg-warning border border-warning text-danger rounded-right">
+              <i className="fas fa-search"></i>
+            </button>
+          </FormSearchBar>
+        )
+      }
+    </ContextConsumer>
+  )
 }

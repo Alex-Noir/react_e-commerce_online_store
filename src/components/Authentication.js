@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { useTranslation } from 'react-i18next'
 
 import LogIn from './authentication/LogIn'
 import Registration from './authentication/Registration'
@@ -9,6 +10,8 @@ export default function Authentication(props) {
   const [ name, setName ] = useState('')
   const [ password, setPassword ] = useState('')
   const [ passwordConfirm, setPasswordConfirm ] = useState('')
+
+  const [ t, i18n ] = useTranslation()
 
   function handleRegistrationSubmit(e) {
     e.preventDefault()
@@ -52,11 +55,11 @@ export default function Authentication(props) {
         <button type="button" 
                 name="signIn" 
                 className="btn btn-light border-left border-top border-right rounded-0 px-4 shadow-none" 
-                onClick={(e) => props.handleVisibility(e)}>Log In</button>
+                onClick={(e) => props.handleVisibility(e)}>{t('Header|1')}</button>
         <button type="button" 
                 name="registration" 
                 className="btn btn-light border-left border-top border-right rounded-0 px-4 shadow-none" 
-                onClick={(e) => props.handleVisibility(e)}>Registration</button>
+                onClick={(e) => props.handleVisibility(e)}>{t('Authentication|1')}</button>
       </div>
       {
         props.isLogInTabVisible

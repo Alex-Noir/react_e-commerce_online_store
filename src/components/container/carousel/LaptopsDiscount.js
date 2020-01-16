@@ -7,11 +7,11 @@ import Item from '../products/Item'
 
 export default function LaptopsDiscount() {
   return (
-    <>
+    <React.Fragment>
       <DivCountdown>
         <img src={require('../../../img/carousel/02.webp')} alt=""/>
         <hr/>
-        <span>Offer ends in: <Timer/> </span>
+        <Timer />
       </DivCountdown>
       <DivDiscountList className="d-flex flex-wrap justify-content-start">
         <ContextConsumer>
@@ -20,12 +20,12 @@ export default function LaptopsDiscount() {
               return value.data
                 .filter( dataItem => dataItem.category === 'Laptops' && dataItem.hasDiscount === true )
                 .map( dataItem => {
-                  return <Item key={dataItem.id} dataItem = {dataItem}/>
+                  return <Item key={dataItem.id} dataItem={dataItem} value={value} />
                 })
             }
           }
         </ContextConsumer>
       </DivDiscountList>
-    </>
+    </React.Fragment>
   )
 }

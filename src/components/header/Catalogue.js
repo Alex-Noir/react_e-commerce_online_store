@@ -1,43 +1,28 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
-import Nav from '../container/Nav'
+import Nav from './Nav'
 
-export default class Catalogue extends Component {
-  constructor() {
-    super()
-    this.state = {
-      isNavVisible: false
-    }
+export default function Catalogue() {
+  const [ isNavVisible, setIsNavVisible ] = useState(false)
+  const [ t, i18n ] = useTranslation()
 
-    this.toggleNav = this.toggleNav.bind(this)
+  function toggleNav() {
+    setIsNavVisible(!isNavVisible)
   }
 
-  toggleNav() {
-    !this.state.isNavVisible
-    ? (
-        this.setState({
-          isNavVisible: true
-        })
-      )
-    : (
-        this.setState({
-          isNavVisible: false
-        })
-      )
-  }
-
-  render() {
-    return (
-      <div>
-        <button type="button" className="mr-3 btn btn-light bg-transparent text-primary font-weight-bold border" onClick={this.toggleNav}>
-          Catalogs
-        </button>
-        {
-          this.state.isNavVisible
-          ? ( <Nav toggleNav={this.toggleNav}/> )
-          : ( null )
-        }
-      </div>
-    )
-  }
+  return (
+    <div className="position-relative mr-3">
+      <button type="button" 
+              className="btn btn-light bg-transparent text-primary font-weight-bold border" 
+              onClick={toggleNav}>
+        {t('Catalogue|1')}
+      </button>
+      {
+        isNavVisible
+        ? <Nav toggleNav={toggleNav} />
+        : null
+      }
+    </div>
+  )
 }

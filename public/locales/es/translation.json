@@ -1,0 +1,93 @@
+{
+  "Header": {
+    "1": "Iniciar sesión",
+    "2": "Cantar más fuerte"
+  },
+  "Catalogue": {
+    "1": "Catálogos"
+  },
+  "Nav": {
+    "1": "Teléfonos móviles",
+    "2": "Ordenador portátil",
+    "3": "Tabletas"
+  },
+  "Authentication": {
+    "1": "Registro"
+  },
+  "LogIn": {
+    "1": "Email",
+    "2": "Contraseña"
+  },
+  "Registration": {
+    "1": "Tu nombre",
+    "2": "Confirmar contraseña"
+  },
+  "Carousel": {
+    "1": "Anterior",
+    "2": "Próximo"
+  },
+  "Timer": {
+    "1": "La oferta termina en"
+  },
+  "Products": {
+    "1": "Mejores ofertas"
+  },
+  "MobilePhones": {
+    "1": "Página de inicio"
+  },
+  "ProductPage": {
+    "1": "Empresa",
+    "2": "Calificación global",
+    "3": "Tu clasificación",
+    "4": "Precio",
+    "5": "Informacion",
+    "6": "Cantidad",
+    "7": "Añadir al carrito",
+    "8": "artículos añadidos!",
+    "9": "Revisiones de Productos",
+    "10": "Comentarios"
+  },
+  "Reviews": {
+    "1": "Puede escribir y publicar una reseña aquí, pero actualizar o abandonar la página la anulará.",
+    "2": "Publicar Revisión"
+  },
+  "Review": {
+    "1": "De acuerdo",
+    "2": "Discrepar",
+    "3": "Aceptar cambios"
+  },
+  "SearchResult": {
+    "1": "En el carrito"
+  },
+  "Cart": {
+    "1": "Su cesta está vacía",
+    "2": "Carrito de compras claro",
+    "3": "Subtotal parcial",
+    "4": "Impuesto",
+    "5": "Total parcial"
+  },
+  "PayPalCheckoutButton": {
+    "1": "¡Éxito!"
+  },
+  "Footer": {
+    "1": "Acerca de",
+    "2": "Contáctenos",
+    "3": "Suscríbete a las noticias!",
+    "4": "Nuestras redes sociales",
+    "5": "Todos los derechos reservados."
+  },
+  "I18nButtons": {
+    "1": "Idioma",
+    "2": "Moneda",
+    "3": "País"
+  },
+  "About": {
+    "1": "¡La compañía Alimazon es la compañía más grande del mundo! Después de comprar Google, Facebook, Apple y Microsoft, no quedan rivales para nosotros :) Ah, este dulce sabor dulce de monopolio ... ¡podemos hacer lo que queramos y la gente aún nos dará su dinero! :)",
+    "2": "El CEO de Alimazon es el Sr. John Doe, ¡es el hombre más rico del mundo! ¡También es el empresario más exitoso vivo! Nadie sabe si paga sus impuestos, pero debes admitirlo: se ve muy bien con ese traje. ;)"
+  },
+  "ContactUs": {
+    "1": "Tu correo electrónico",
+    "2": "Tu mensaje",
+    "3": "Enviar"
+  }
+}
