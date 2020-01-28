@@ -16,7 +16,7 @@ export default function Products() {
           {
             value => {
               return value.data
-                .filter( dataItem => dataItem.category === 'Mobile Phones' )
+                .filter( dataItem => dataItem.price === 250 )
                 .map( dataItem => {
                   return <Item key={dataItem.id} dataItem={dataItem} value={value} />
                 })

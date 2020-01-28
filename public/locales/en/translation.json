@@ -12,22 +12,30 @@
     "3": "Tablets"
   },
   "Authentication": {
-    "1": "Registration"
+    "1": "Registration",
+    "2": "Reset Password"
   },
   "LogIn": {
-    "1": "Email",
-    "2": "Password"
+    "1": "Email:",
+    "2": "Password:",
+    "3": "Remember me",
+    "4": "Forgot password?"
   },
   "Registration": {
-    "1": "Your name",
-    "2": "Confirm password"
+    "1": "Your name:",
+    "2": "Confirm password:"
+  },
+  "ResetPassword": {
+    "1": "Go Back",
+    "2": "Please, write your email and we'll send your new password:",
+    "3": "Send New Password"
   },
   "Carousel": {
     "1": "Previous",
     "2": "Next"
   },
   "Timer": {
-    "1": "Offer ends in"
+    "1": "Offer ends in:"
   },
   "Products": {
     "1": "Best offers"
@@ -36,12 +44,12 @@
     "1": "Home"
   },
   "ProductPage": {
-    "1": "Company",
-    "2": "Global rating",
-    "3": "Your rating",
-    "4": "Price",
-    "5": "Info",
-    "6": "Amount",
+    "1": "Company:",
+    "2": "Global rating:",
+    "3": "Your rating:",
+    "4": "Price:",
+    "5": "Info:",
+    "6": "Amount:",
     "7": "Add to cart",
     "8": "items added!",
     "9": "Product Reviews",
@@ -57,14 +65,14 @@
     "3": "Accept Changes"
   },
   "SearchResult": {
-    "1": "In cart"
+    "1": "In cart:"
   },
   "Cart": {
     "1": "Your shopping cart is empty",
     "2": "Clear shopping cart",
-    "3": "Subtotal",
-    "4": "Tax",
-    "5": "Total"
+    "3": "Subtotal:",
+    "4": "Tax:",
+    "5": "Total:"
   },
   "PayPalCheckoutButton": {
     "1": "Success!"
@@ -73,21 +81,24 @@
     "1": "About",
     "2": "Contact Us",
     "3": "Subscribe on the news!",
-    "4": "Our social media",
+    "4": "Our social media:",
     "5": "All rights reserved."
   },
   "I18nButtons": {
-    "1": "Language",
-    "2": "Currency",
-    "3": "Country"
+    "1": "Language:",
+    "2": "Currency:",
+    "3": "Country:"
   },
   "About": {
     "1": "Alimazon company is the largest company in the world! After we've bought Google, Facebook, Apple and Microsoft there are no rivals left for us :) Ah, this sweet sweet taste of monopoly... we can do whatever we want and people still will give us their money! :)",
     "2": "The CEO of Alimazon is Mr. John Doe - he is the richest man in the world! He is also the most successful businessman alive! Nobody knows whether he pays his taxes, but you gotta admit - he looks damn good in that suit. ;)"
   },
   "ContactUs": {
-    "1": "Your e-mail",
-    "2": "Your message",
+    "1": "Your e-mail:",
+    "2": "Your message:",
     "3": "Submit"
+  },
+  "NoSuchPage": {
+    "1": "Sorry, there is no such page..."
   }
 }

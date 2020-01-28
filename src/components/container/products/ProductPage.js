@@ -9,12 +9,18 @@ import Comments from './productPage/Comments'
 import Slider from './productPage/Slider'
 
 export default function ProductPage(props) {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+  
   const { id,
           title, 
           company,
           category, 
           description, 
           price,
+          hasDiscount,
+          discount,
           rating } = props.dataItem
           
   const [ inputValue, setInputValue ] = useState(0)
@@ -43,6 +49,16 @@ export default function ProductPage(props) {
     currencyRate = props.value.fetchedRates.INR
   }
 
+  let productCategory
+
+  if (category === 'Mobile Phones') {
+    productCategory = <Link to="/mobile-phones">{t('Nav|1')}</Link>
+  } else if (category === 'Laptops') {
+    productCategory = <Link to="/laptops">{t('Nav|2')}</Link>
+  } else if (category === 'Tablets') {
+    productCategory = <Link to="/tablets">{t('Nav|3')}</Link>
+  } 
+
   function counter(e) {
     if (e.target.name === "-" && inputValue > 0) {
       setIsInfoVisible(false)
@@ -58,7 +74,7 @@ export default function ProductPage(props) {
   function showInfo(inputValue) {
     if (inputValue >= 1) {
       setIsInfoVisible(true)
-      setTimeout(() => setIsInfoVisible(false), 3000)
+      setTimeout(() => setIsInfoVisible(false), 1500)
     } else { return null }
   }
 
@@ -99,42 +115,42 @@ export default function ProductPage(props) {
       <nav aria-label="breadcrumb" className="align-self-start">
         <ol className="breadcrumb">
           <li className="breadcrumb-item"><Link to="/">{t('MobilePhones|1')}</Link></li>
-          <li className="breadcrumb-item">
-            {
-              (() => {
-                if (category === 'Mobile Phones') {
-                  return <Link to="/mobile_phones">{t('Nav|1')}</Link>
-                } else if (category === 'Laptops') {
-                  return <Link to="/laptops">{t('Nav|2')}</Link>
-                } else if (category === 'Tablets') {
-                  return <Link to="/tablets">{t('Nav|3')}</Link>
-                }  
-              })()
-            }
-          </li>
+          <li className="breadcrumb-item">{productCategory}</li>
           <li className="breadcrumb-item active" aria-current="page">{title}</li>
         </ol>
       </nav>
       <Slider dataItem={props.dataItem} />
       <div className="d-flex flex-column">
         <h1>{title}</h1>
-        <h2>{t('ProductPage|1')}: {company}</h2>
+        <h2>{t('ProductPage|1')} {company}</h2>
         <StarRating rating={rating} 
                     customRating={customRating}
                     handleMouseover={handleMouseover}
                     rate={rate}
                     handleMouseout={handleMouseout} />
-        <h5>{t('ProductPage|2')}: {rating}</h5>
-        <h5>{t('ProductPage|3')}: { ((customRating + 1) / 2).toFixed(1) }</h5>
-        <h2>{t('ProductPage|4')}: {props.value.currency} {parseFloat((price * currencyRate).toFixed(2))}</h2>
+        <h5>{t('ProductPage|2')} {rating}</h5>
+        <h5>{t('ProductPage|3')} { ((customRating + 1) / 2).toFixed(1) }</h5>
+        <h2>{t('ProductPage|4')} &nbsp;
+          {
+            hasDiscount
+            ? <span>
+                <s>{props.value.currency} {parseFloat((price * currencyRate).toFixed(2))}</s>
+                &nbsp;
+                <span className="text-danger">
+                  {props.value.currency} {parseFloat(((price * currencyRate) * discount).toFixed(2))}
+                </span>
+              </span>
+            : <span>{props.value.currency} {parseFloat((price * currencyRate).toFixed(2))}</span>
+          }          
+        </h2>
         <br />
-        <h3>{t('ProductPage|5')}: {description}</h3>
-        <h3>{t('ProductPage|6')}: 
+        <h3>{t('ProductPage|5')} {description}</h3>
+        <h3>{t('ProductPage|6')} 
           <button className="btn btn-outline-dark border-right-0 rounded-0 ml-3"
                   type="button" 
                   value="-" 
                   name="-" 
-                  onClick={e => {counter(e)}}> - </button>
+                  onClick={counter}> - </button>
           <input  className="btn btn-outline-dark border-left-0 border-right-0 rounded-0"
                   type="text" 
                   value={inputValue} 
@@ -144,12 +160,12 @@ export default function ProductPage(props) {
                   type="button" 
                   value="+" 
                   name="+" 
-                  onClick={e => {counter(e)}}> + </button>
+                  onClick={counter}> + </button>
         </h3>
         <div className="position-relative">
           <button type="button"
                   className="btn btn-warning mr-2"
-                  onClick={() => {  props.value.addToCart(id, inputValue)
+                  onClick={() => {  props.value.addToCart(id, inputValue, hasDiscount)
                                     showInfo(inputValue)
                                     props.value.evaluateTotalPrice()  }}>{t('ProductPage|7')}</button>
           <DivInfo className={isInfoVisible ? "visible" : "invisible"}> 
@@ -160,13 +176,13 @@ export default function ProductPage(props) {
       <div>
         <button type="button" 
                 name="reviews" 
-                className="btn btn-light w-50 mt-5 border-right border-top rounded-0 px-4 shadow-none" 
-                onClick={e => toggleTabs(e)}
+                className={`btn ${isReviewsTabVisible ? "btn-light" : "btn-info"} w-50 mt-5 border-right border-top rounded-0 px-4 shadow-none`} 
+                onClick={toggleTabs}
                 >{t('ProductPage|9')}</button>
         <button type="button"
                 name="comments"
-                className="btn btn-light w-50 mt-5 border-left border-top rounded-0 px-4 shadow-none" 
-                onClick={e => toggleTabs(e)}
+                className={`btn ${isReviewsTabVisible ? "btn-info" : "btn-light"} w-50 mt-5 border-left border-top rounded-0 px-4 shadow-none`} 
+                onClick={toggleTabs}
                 >{t('ProductPage|10')}</button>
       </div>
       {

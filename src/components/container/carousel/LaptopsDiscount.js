@@ -8,9 +8,9 @@ import Item from '../products/Item'
 export default function LaptopsDiscount() {
   return (
     <React.Fragment>
-      <DivCountdown>
-        <img src={require('../../../img/carousel/02.webp')} alt=""/>
-        <hr/>
+      <DivCountdown className="d-flex flex-column">
+        <img src={require('../../../img/carousel/02.webp')} alt="" />
+        <hr />
         <Timer />
       </DivCountdown>
       <DivDiscountList className="d-flex flex-wrap justify-content-start">

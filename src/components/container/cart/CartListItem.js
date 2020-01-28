@@ -1,14 +1,15 @@
 import React from 'react'
 import { DivCartListItem } from '../../styles'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 
 export default function CartListItem(props) {
   const { id,
           title, 
           company,
           img, 
-          price,
           amountInCart,
+          hasDiscount,
           totalPrice } = props.cartListItem
   
   const [ t, i18n ] = useTranslation()
@@ -33,13 +34,13 @@ export default function CartListItem(props) {
     <DivCartListItem className="rounded bg-light border border-danger m-1 p-3 justify-content-start">
       <img src={require(`../../../img/products/data/${id}/${img}`)} alt={title} height="100" width="100" />
       <div>
-        <div className="h5 p-1">{title}</div>
-        <div className="h6 p-1">{t('ProductPage|1')}: {company}</div>
+        <Link to={`/product-page/${id}`}><h5 className="p-1 text-dark">{title}</h5></Link>
+        <h6 className="p-1">{t('ProductPage|1')} {company} </h6>
       </div>
-      <div className="h6">
+      <h6>
         <button className="btn btn-outline-dark border-right-0 rounded-0"
                 name="-"
-                onClick={e => { props.value.cartCounter(e, id) 
+                onClick={e => { props.value.cartCounter(e, id, hasDiscount) 
                                 props.value.evaluateTotalPrice() }}> - </button>
         <input  className="btn btn-outline-dark border-left-0 border-right-0 rounded-0" 
                 type="text" 
@@ -48,9 +49,9 @@ export default function CartListItem(props) {
                 readOnly />
         <button className="btn btn-outline-dark border-left-0 rounded-0"
                 name="+" 
-                onClick={e => { props.value.cartCounter(e, id) 
+                onClick={e => { props.value.cartCounter(e, id, hasDiscount) 
                                 props.value.evaluateTotalPrice() }}> + </button>
-      </div>
+      </h6>
       <div>
         <button type="button" 
                 className="close text-danger"
@@ -59,9 +60,9 @@ export default function CartListItem(props) {
                                   props.value.evaluateTotalPrice()  }}>
           <span aria-hidden="true">&times;</span>
         </button>
-        <div className="h6">
-          {t('ProductPage|4')}: {props.value.currency} {parseFloat((totalPrice * currencyRate).toFixed(2))}
-        </div>
+        <h6>
+          {t('ProductPage|4')} {props.value.currency} {parseFloat((totalPrice * currencyRate).toFixed(2))}
+        </h6>
       </div>
     </DivCartListItem>
   )

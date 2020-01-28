@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import ReactQuill from 'react-quill'
 import { useTranslation } from 'react-i18next'
 import './reviews.css'
@@ -9,6 +9,11 @@ export default function Reviews({...props}) {
   const { data } = props.value
 
   const [ t, i18n ] = useTranslation()
+  const reactQuillRef = useRef(null)
+  useEffect(() => {
+    reactQuillRef.current.editor.root.dataset.placeholder = t('Reviews|1')
+  }, [t])
+
 
   const [ text, setText ] = useState('')
   const [ isEditorReadOnly, setIsEditorReadOnly ] = useState(false)
@@ -27,8 +32,9 @@ export default function Reviews({...props}) {
     setArray([])
   }
 
-  function postReview(reviews) { 
-    if (text === '') {
+  function postReview() { 
+    console.log(text)
+    if (text === '' || text === '<p><br></p>') {
       return null
     }
 
@@ -36,7 +42,6 @@ export default function Reviews({...props}) {
 
     const myEditor = document.querySelector('#editor > :nth-child(2)')
     const html = myEditor.children[0].innerHTML
-
     const review = {
       content: html
     }
@@ -46,10 +51,9 @@ export default function Reviews({...props}) {
                                                             modules={modules}
                                                             formats={formats}
                                                             handleChange={handleChange}
-                                                            deleteReview={deleteReview}/> })
+                                                            deleteReview={deleteReview} /> })
     setArray(reviewList)
 
-    setText('')
     setIsEditorReadOnly(false)
   }
 
@@ -84,6 +88,7 @@ export default function Reviews({...props}) {
         ? (
           <React.Fragment>
             <ReactQuill id="editor"
+                        ref={reactQuillRef}
                         value={text}
                         onChange={handleChange}
                         readOnly={isEditorReadOnly}
@@ -93,7 +98,7 @@ export default function Reviews({...props}) {
                         theme="snow" />
             <div>
               <button className="btn btn-primary ml-4 mb-4"
-                      onClick={() => postReview(reviews)}>{t('Reviews|2')}</button>
+                      onClick={postReview}>{t('Reviews|2')}</button>
             </div>
           </React.Fragment>
         )

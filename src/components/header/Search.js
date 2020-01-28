@@ -20,7 +20,7 @@ export default function Search() {
                     name="search" 
                     value={value.searchValue}
                     className="border border-dark border-right-0 rounded-left"
-                    onChange={e => value.setSearchValue(e)} />
+                    onChange={value.setSearchValue} />
             <button type="submit" 
                     value="submit"
                     form="formSearchBar"

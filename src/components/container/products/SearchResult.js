@@ -11,6 +11,8 @@ export default function SearchResult(props) {
           title, 
           category,
           price, 
+          hasDiscount,
+          discount,
           isInCart, 
           amountInCart, 
           rating } = props.result
@@ -38,6 +40,16 @@ export default function SearchResult(props) {
   } else if (props.value.currency === '₹') {
     currencyRate = props.value.fetchedRates.INR
   }
+
+  let productCategory
+
+  if (category === 'Mobile Phones') {
+    productCategory = <Link to="/mobile-phones">{t('Nav|1')}</Link>
+  } else if (category === 'Laptops') {
+    productCategory = <Link to="/laptops">{t('Nav|2')}</Link>
+  } else if (category === 'Tablets') {
+    productCategory = <Link to="/tablets">{t('Nav|3')}</Link>
+  } 
   
   function handleMouseover(rating) {
     setCustomRating(rating)
@@ -93,9 +105,9 @@ export default function SearchResult(props) {
               width="121"
               heigth="121"
             />
-            <div className='d-flex flex-column'>
-              <Link to={`/product_page/${id}`} className="text-dark"><h4>{title}</h4></Link>
-              <h6 className="text-primary">{category}</h6>
+            <div className="d-flex flex-column">
+              <Link to={`/product-page/${id}`} className="text-dark"><h4>{title}</h4></Link>
+              <h6 className="text-primary">{productCategory}</h6>
               <div className="d-flex flex-row">
                 <StarRating rating={rating}
                             customRating={customRating}
@@ -111,7 +123,7 @@ export default function SearchResult(props) {
                         type="button" 
                         value="-" 
                         name="-" 
-                        onClick={e => counter(e)}> - </button>
+                        onClick={counter}> - </button>
                 <input  className="btn btn-outline-dark border-left-0 border-right-0 rounded-0"
                         type="text" 
                         value={inputValue} 
@@ -121,22 +133,37 @@ export default function SearchResult(props) {
                         type="button" 
                         value="+" 
                         name="+" 
-                        onClick={e => counter(e)}> + </button>
+                        onClick={counter}> + </button>
               </div>
               <button type="button"
                       className="btn btn-warning"
-                      onClick={() => {  value.addToCart(id, inputValue)
+                      onClick={() => {  value.addToCart(id, inputValue, hasDiscount)
                                         showInfo(inputValue)
                                         value.evaluateTotalPrice()  }}>{t('ProductPage|7')}</button>
               <DivInfo className={isInfoVisible ? "visible" : "invisible"}> 
                 +{inputValue} {t('ProductPage|8')}
               </DivInfo>
             </div>
-            <div className="d-flex flex-column">
+            <div className="d-flex flex-column align-items-end">
               <h3>
-                {value.currency} {parseFloat((price * currencyRate).toFixed(2))}
+                {
+                  !hasDiscount
+                  ? <span>{value.currency} {parseFloat((price * currencyRate).toFixed(2))}</span>
+                  : <React.Fragment>
+                      <span>
+                        <s>{value.currency} {parseFloat((price * currencyRate).toFixed(2))}</s>
+                        &nbsp;                      
+                        <span className="text-danger">
+                          {value.currency} {parseFloat(((price * currencyRate) * discount).toFixed(2))}
+                        </span>
+                      </span>
+                    </React.Fragment>
+                }
+                
               </h3>
-              <h6 className={isInCart ? "bg-danger text-white" : null}>{t('SearchResult|1')}: {amountInCart}</h6>
+              <h6 className={isInCart ? "bg-danger text-white p-1 rounded" : null}>
+                {t('SearchResult|1')} {amountInCart}
+              </h6>
             </div>
           </div>
         )

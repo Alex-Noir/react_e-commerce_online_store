@@ -6,6 +6,8 @@ import SearchResult from './SearchResult'
 
 export default function SearchResults(props) {
   useEffect(() => {
+    window.scrollTo(0, 0)
+    
     return () => {
       props.value.makeResultsInvisible()
       props.value.nullifySearchValue()

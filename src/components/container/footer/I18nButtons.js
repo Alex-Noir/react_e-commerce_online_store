@@ -15,7 +15,7 @@ export default function I18nButtons() {
 
   return (
     <div className="d-flex flex-column justify-content-around align-items-center">
-      <div className="bg-success p-2 text-light rounded">{t('I18nButtons|1')}:
+      <div className="bg-success p-2 text-light rounded">{t('I18nButtons|1')}
         <select className="ml-2 bg-success text-light border border-success" 
                 onChange={changeLanguage}>
           <option value="en">English</option>
@@ -33,9 +33,9 @@ export default function I18nButtons() {
       <ContextConsumer>
         {
           value => (
-            <div className="bg-info p-2 text-light rounded">{t('I18nButtons|2')}:
+            <div className="bg-info p-2 text-light rounded">{t('I18nButtons|2')}
               <select className="ml-2 bg-info text-light border border-info"
-                      onChange={e => {value.changeCurrency(e)}}>
+                      onChange={value.changeCurrency}>
                 <option value="€">€ (EUR) Euro</option>
                 <option value="$">$ (USD) U.S. Dollar</option>
                 <option value="₽">₽ (RUB) Russian Ruble</option>
@@ -48,7 +48,7 @@ export default function I18nButtons() {
           )
         }
       </ContextConsumer>
-      <div className="bg-primary p-2 text-light rounded">{t('I18nButtons|3')}:
+      <div className="bg-primary p-2 text-light rounded">{t('I18nButtons|3')}
         <select className="ml-2 bg-primary text-light border border-primary">
           <option value="UK">United Kingdom</option>
           <option value="USA">United States</option>

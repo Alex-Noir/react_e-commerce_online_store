@@ -1,41 +1,19 @@
-import React, { useState } from 'react'
-import axios from 'axios'
+import React, { useState, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import LogIn from './authentication/LogIn'
 import Registration from './authentication/Registration'
+import ResetPassword from './authentication/ResetPassword'
 
 export default function Authentication(props) {
+  const [ isResetPasswordVisible, setIsResetPasswordVisible ] = useState(false)
   const [ email, setEmail ] = useState('')
   const [ name, setName ] = useState('')
   const [ password, setPassword ] = useState('')
   const [ passwordConfirm, setPasswordConfirm ] = useState('')
+  const checkbox = useRef(null)
 
   const [ t, i18n ] = useTranslation()
-
-  function handleRegistrationSubmit(e) {
-    e.preventDefault()
-    axios
-      .post('https://test-47d09.firebaseio.com/users.json',
-      {
-        name: name,
-        email: email,
-        password: password,
-        role: 'user'
-      },
-      { withCredetials: true })
-      .then(res => { console.log(res) })
-      .catch(err => { console.error(err) })
-  }
-
-  function handleLogInSubmit(e) {
-    e.preventDefault()
-    axios
-      .get('https://test-47d09.firebaseio.com/users.json',
-      { withCredetials: true })
-      .then(res => { console.log(res) })
-      .catch(err => { console.error(err) })
-  }
 
   function handleChange(e) {
     if (e.target.name === 'email') {
@@ -49,32 +27,69 @@ export default function Authentication(props) {
     }
   }
 
+  function handleRegistrationSubmit(e) {
+    e.preventDefault()
+    if (password === passwordConfirm && password.length >= 6) {
+      alert(`Your email is: ${email}, \nyour name is: ${name}, \nyour password is: ${password}.`)
+    } else if (password !== passwordConfirm) {
+      alert('Passwords should coincide.')
+    } else if (password.length < 6) {
+      alert('Password(s) should be 6 characters minimum.')
+    }
+  }
+
+  function handleLogInSubmit(e) {
+    e.preventDefault()
+    alert(`Your email is: ${email}, \nyour password is: ${password}, \nyou ${checkbox.current.checked ? 'checked' : 'didn\'t check'} checkbox.`)
+  }
+
+  function showResetPassword(e) {
+    e.preventDefault()
+    setIsResetPasswordVisible(true)
+  }
+
+  function hideResetPassword() {
+    setIsResetPasswordVisible(false)
+  }
+
   return (
     <div className="position-absolute mt-5 p-5 bg-light" id="authModal">
-      <div>
-        <button type="button" 
-                name="signIn" 
-                className="btn btn-light border-left border-top border-right rounded-0 px-4 shadow-none" 
-                onClick={(e) => props.handleVisibility(e)}>{t('Header|1')}</button>
-        <button type="button" 
-                name="registration" 
-                className="btn btn-light border-left border-top border-right rounded-0 px-4 shadow-none" 
-                onClick={(e) => props.handleVisibility(e)}>{t('Authentication|1')}</button>
-      </div>
       {
-        props.isLogInTabVisible
-        ? <LogIn email={email}
-                 password={password}
-                 handleLogInSubmit={handleLogInSubmit}
-                 handleChange={handleChange}
-          />
-        : <Registration email={email}
-                        name={name}
-                        password={password}
-                        passwordConfirm={passwordConfirm}
-                        handleRegistrationSubmit={handleRegistrationSubmit}
-                        handleChange={handleChange}
-          />
+        !isResetPasswordVisible
+        ? (
+          <div>
+            <button type="button" 
+                    name="signIn" 
+                    className={`btn ${props.isLogInTabVisible ? "btn-light" : "btn-info"} w-50 border-left border-top border-right rounded-0 px-auto shadow-none`} 
+                    onClick={props.handleVisibility}>{t('Header|1')}</button>
+            <button type="button" 
+                    name="registration" 
+                    className={`btn ${props.isLogInTabVisible ? "btn-info" : "btn-light"} w-50 border-left border-top border-right rounded-0 px-0 shadow-none`} 
+                    onClick={props.handleVisibility}>{t('Authentication|1')}</button>
+          </div>
+        )
+        : <div className="d-flex justify-content-center border-left border-top border-right pt-2"> 
+            {t('Authentication|2')}
+          </div>
+      }
+      {
+        !isResetPasswordVisible
+        ? (
+          props.isLogInTabVisible
+          ? <LogIn  email={email}
+                    password={password}
+                    showResetPassword={showResetPassword} 
+                    handleChange={handleChange} 
+                    handleLogInSubmit={handleLogInSubmit} 
+                    checkbox={checkbox} />
+          : <Registration email={email} 
+                          name={name}
+                          password={password}
+                          passwordConfirm={passwordConfirm} 
+                          handleChange={handleChange} 
+                          handleRegistrationSubmit={handleRegistrationSubmit} />
+        )
+        : <ResetPassword hideResetPassword={hideResetPassword} />
       }
     </div>
   )

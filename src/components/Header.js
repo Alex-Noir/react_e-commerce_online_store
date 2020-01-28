@@ -33,8 +33,14 @@ export default function Header(props) {
                   : null
                 }
               </Link>
-              <button type="button" name="signIn" onClick={e => props.handleVisibility(e)} className="btn btn-link d-flex flex-nowrap p-0 mx-1"> {t('Header|1')} </button>
-              <button type="button" name="registration" onClick={e => props.handleVisibility(e)} className="btn btn-link d-flex flex-nowrap p-0 mx-1"> {t('Header|2')} </button>
+              <button className="btn btn-link d-flex flex-nowrap p-0 mx-1"
+                      type="button" 
+                      name="signIn" 
+                      onClick={props.handleVisibility}> {t('Header|1')} </button>
+              <button className="btn btn-link d-flex flex-nowrap p-0 mx-1"
+                      type="button" 
+                      name="registration" 
+                      onClick={props.handleVisibility}> {t('Header|2')} </button>
             </div>
           </StyledHeader>
       }

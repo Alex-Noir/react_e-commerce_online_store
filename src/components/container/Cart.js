@@ -1,5 +1,4 @@
 import React from 'react'
-import { ContextConsumer } from '../../context'
 import { DivCart } from '../styles'
 import { useTranslation } from 'react-i18next'
 
@@ -35,16 +34,18 @@ export default function Cart(props) {
     <DivCart className="w-100">
       {
         props.value.cartList < 1
-        ? <span>{t('Cart|1')}</span>
+        ? <div className="d-flex justify-content-center">
+            <h2>{t('Cart|1')}</h2>
+          </div>
         : <React.Fragment>
             <CartList value={props.value} />
             <button type="button" 
                     className="btn btn-danger"
-                    onClick={() => props.value.clearCart()}>{t('Cart|2')}</button>
+                    onClick={props.value.clearCart}>{t('Cart|2')}</button>
             <div className="d-flex flex-column">
-              <h2>{t('Cart|3')}: {currency} {subTotalPrice}</h2>
-              <h2>{t('Cart|4')}: {currency} {cartTax}</h2>
-              <h1>{t('Cart|5')}: {currency} {cartTotalPrice}</h1>
+              <h2>{t('Cart|3')} {currency} {subTotalPrice}</h2>
+              <h2>{t('Cart|4')} {currency} {cartTax}</h2>
+              <h1>{t('Cart|5')} {currency} {cartTotalPrice}</h1>
               <PayPalCheckoutButton cartTotalPrice={cartTotalPrice} />
             </div>
           </React.Fragment>

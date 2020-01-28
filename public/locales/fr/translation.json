@@ -12,22 +12,30 @@
     "3": "Tablettes"
   },
   "Authentication": {
-    "1": "Enregistrement"
+    "1": "Enregistrement",
+    "2": "Réinitialiser Le Mot De Passe"
   },
   "LogIn": {
-    "1": "Email",
-    "2": "Mot de passe"
+    "1": "Email:",
+    "2": "Mot de passe:",
+    "3": "Souviens-toi de moi",
+    "4": "Ьot de passe oublié?"
   },
   "Registration": {
-    "1": "Votre nom",
-    "2": "Confirmez le mot de passe"
+    "1": "Votre nom:",
+    "2": "Confirmez le mot de passe:"
+  },
+  "ResetPassword": {
+    "1": "Retourner",
+    "2": "Veuillez écrire votre e-mail et nous vous enverrons votre nouveau mot de passe:",
+    "3": "Envoyer un nouveau mot de passe"
   },
   "Carousel": {
     "1": "Précédent",
     "2": "Prochain"
   },
   "Timer": {
-    "1": "L'offre se termine dans"
+    "1": "L'offre se termine dans:"
   },
   "Products": {
     "1": "Meilleures offres"
@@ -36,12 +44,12 @@
     "1": "Page d'accueil"
   },
   "ProductPage": {
-    "1": "Entreprise",
-    "2": "Évaluation globale",
-    "3": "Votre note",
-    "4": "Prix",
-    "5": "Info",
-    "6": "Montant",
+    "1": "Entreprise:",
+    "2": "Évaluation globale:",
+    "3": "Votre note:",
+    "4": "Prix:",
+    "5": "Info:",
+    "6": "Montant:",
     "7": "Ajouter au chariot",
     "8": "articles ajoutés!",
     "9": "Avis sur les produits",
@@ -57,14 +65,14 @@
     "3": "Accepter les modifications"
   },
   "SearchResult": {
-    "1": "Dans un chariot"
+    "1": "Dans un chariot:"
   },
   "Cart": {
     "1": "Votre panier est vide",
     "2": "Panier clair",
-    "3": "Subtotal",
-    "4": "Impôt",
-    "5": "Total"
+    "3": "Subtotal:",
+    "4": "Impôt:",
+    "5": "Total:"
   },
   "PayPalCheckoutButton": {
     "1": "Succès!"
@@ -73,21 +81,24 @@
     "1": "Sur",
     "2": "Nous contacter",
     "3": "Abonnez-vous aux nouvelles!",
-    "4": "Nos réseaux sociaux",
+    "4": "Nos réseaux sociaux::",
     "5": "Tous les droits sont réservés."
   },
   "I18nButtons": {
-    "1": "Langue",
-    "2": "Devise",
-    "3": "Pays"
+    "1": "Langue:",
+    "2": "Devise:",
+    "3": "Pays:"
   },
   "About": {
     "1": "La société Alimazon est la plus grande entreprise au monde! Après avoir acheté Google, Facebook, Apple et Microsoft, il n'y a plus de rivaux pour nous :) Ah, ce doux goût sucré de monopole ... nous pouvons faire ce que nous voulons et les gens nous donneront toujours leur argent! :)",
     "2": "Le PDG d'Alimazon est M. John Doe - c'est l'homme le plus riche du monde! Il est également l'homme d'affaires le plus prospère du monde! Personne ne sait s'il paie ses impôts, mais tu dois admettre - il a l'air foutrement bien dans ce costume. ;)"
   },
   "ContactUs": {
-    "1": "Votre e-mail",
-    "2": "Votre message",
+    "1": "Votre e-mail:",
+    "2": "Votre message:",
     "3": "Soumettre"
+  },
+  "NoSuchPage": {
+    "1": "Désolé, il n'y a pas une telle page..."
   }
 }

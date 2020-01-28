@@ -50,7 +50,7 @@ export default function PayPalCheckoutButton(props) {
       {
         isBeingPaidFor
         ? <h1>{t('PayPalCheckoutButton|1')}</h1>
-        : <div ref={paypalRef}/>
+        : <div ref={paypalRef} />
       }
     </div>
   )

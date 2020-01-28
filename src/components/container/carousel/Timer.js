@@ -2,14 +2,16 @@ import React, { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export default function Timer() {
-  const [ currentTime, setCurrentTime ] = useState(new Date())
-  const [ endTime, setEndTime ] = useState(new Date(2020, 0, 12, 17, 27))
+  const [ currentTime, setCurrentTime ] = useState(new Date().getTime())
+  const [ deadline, setDeadline ] = useState(new Date(2021, 0, 0).getTime())
   const [ countdown, setCountdown ] = useState(null)
 
   const [ t, i18n ] = useTranslation()
 
+  let timeDifference = deadline - currentTime
+
   useEffect(() => {
-    if (currentTime !== endTime) {
+    if (currentTime !== deadline) {
       setCountdown(setInterval( () => timer(), 1000 ))
     } else {
       return clearInterval(countdown)
@@ -20,55 +22,26 @@ export default function Timer() {
     }
   }, [])
 
-  if (Math.sign(endTime - currentTime) === -1) { 
+  if (Math.sign(timeDifference) === -1) { 
     clearInterval(countdown)
   }
 
   function timer() {
-    setCurrentTime(new Date())
+    setCurrentTime(new Date().getTime())  
   }
 
   return (
-    <span> {t('Timer|1')}: 
-      { 
-        (Math.sign(endTime - currentTime) !== -1) 
-        ? (
-          Math.floor((endTime - currentTime) / 1000 / 3600 / 24) + 
-          ':' +
-          new Date(endTime - currentTime).toLocaleTimeString(undefined, {hour12: false, timeZone: 'UTC'} )
-        ) : (
-          '0:00:00:00'
-        )
-      }
-    </span>
+    <h1>
+      <span> {t('Timer|1')}&nbsp;
+        { 
+          Math.sign(timeDifference) !== -1
+          ? (`${Math.floor(timeDifference / (1000 * 3600 * 24))} : 
+              ${Math.floor((timeDifference % (1000 * 3600 * 24)) / (1000 * 3600))} : 
+              ${Math.floor((timeDifference % (1000 * 3600)) / (1000 * 60))} : 
+              ${Math.floor((timeDifference % (1000 * 60)) / 1000)}`)
+          : "0 : 0 : 0 : 0"
+        }
+      </span>
+    </h1>
   )
 }
-
-
-// constructor() {
-//   super()
-//   this.state = ({
-//     currentTime: new Date(),
-//     endTime: new Date(2019, 9, 19, 16, 5)
-//   })
-
-//   this.timer = this.timer.bind(this)
-// }
-
-//   componentDidMount() {
-//     if (this.state.currentTime !== this.state.endTime) {
-//       return this.countdown = setInterval( () => this.timer(), 1000 )
-//     } else {
-//       return clearInterval(this.countdown)
-//     }
-//   }
-  
-//   componentWillUnmount() {
-//     clearInterval(this.countdown)
-//   }
-
-//   timer() {
-//     this.setState({
-//       currentTime: new Date()
-//     })
-//   }

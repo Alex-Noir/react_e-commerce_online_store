@@ -8,9 +8,9 @@ import Item from '../products/Item'
 export default function MobilePhonesDiscount() {
   return (
     <React.Fragment>
-      <DivCountdown>
-        <img src={require('../../../img/carousel/01.webp')} alt=""/>
-        <hr/>
+      <DivCountdown className="d-flex flex-column">
+        <img src={require('../../../img/carousel/01.webp')} alt="" />
+        <hr />
         <Timer />
       </DivCountdown>
       <DivDiscountList className="d-flex flex-wrap justify-content-start">
@@ -20,7 +20,7 @@ export default function MobilePhonesDiscount() {
               return value.data
                 .filter( dataItem => dataItem.category === 'Mobile Phones' && dataItem.hasDiscount === true )
                 .map( dataItem => {
-                  return <Item key={dataItem.id} dataItem={dataItem} value={value}/>
+                  return <Item key={dataItem.id} dataItem={dataItem} value={value} />
                 })
             }
           }

@@ -10,7 +10,6 @@ import Footer from './components/Footer'
 export default function App() {
   const [ isAuthModalVisible, setIsAuthModalVisible ] = useState(false)
   const [ isLogInTabVisible, setIsLogInTabVisible ] = useState(null)
-  const [ isUserLoggedIn, setIsUserLoggedIn ] = useState(false)
 
   function closeAuthModal(e) {
     if (e.target.id === 'outsideAuthModal') {
@@ -35,15 +34,12 @@ export default function App() {
     <DivWrapper>
       <Route path="/" render={props => 
         <Header {...props} 
-                handleVisibility={handleVisibility}
-                isUserLoggedIn={isUserLoggedIn} />}
+                handleVisibility={handleVisibility} />}
       />
       {
         isAuthModalVisible
         ? (
-          <DivAuthWrapper  className="position-absolute overflow-auto" 
-                id="outsideAuthModal"
-                onClick={e => {closeAuthModal(e)}}>
+          <DivAuthWrapper className="position-absolute overflow-auto" id="outsideAuthModal" onClick={closeAuthModal}>
             <Authentication isLogInTabVisible={isLogInTabVisible}
                             handleVisibility={handleVisibility} />
           </DivAuthWrapper>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Redirect } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import { DivGridContainer } from './styles'
 import { ContextConsumer } from '../context'
 
@@ -16,6 +16,7 @@ import Cart from './container/Cart'
 import About from './container/footer/About'
 import ContactUs from './container/footer/ContactUs'
 import SearchResults from './container/products/SearchResults'
+import NoSuchPage from './NoSuchPage'
 
 export default function Container() {
   return (
@@ -29,23 +30,26 @@ export default function Container() {
                 ? (
                   <React.Fragment>
                     <Route exact path="/" component={Carousel} />
-                    <Route exact path="/" component={Products} />
-                    <Route path="/mobile_phones_discount" component={MobilePhonesDiscount} />
-                    <Route path="/laptops_discount" component={LaptopsDiscount} />
-                    <Route path="/tablets_discount" component={TabletsDiscount} />
-                    <Route path="/mobile_phones" component={MobilePhones} />
-                    <Route path="/laptops" component={Laptops} />
-                    <Route path="/tablets" component={Tablets} />
-                    <Route path="/cart" render={props => <Cart {...props} value={value} />} />
-                    {
-                      value.data.map( dataItem => {
-                        return <Route key={dataItem.id}
-                                      path={`/product_page/${dataItem.id}`}
-                                      render={props => <ProductPage {...props} dataItem={dataItem} value={value} />} />
-                      })
-                    }
-                    <Route path="/about" component={About} />
-                    <Route path="/contact_us" component={ContactUs} />
+                    <Switch>
+                      <Route exact path="/" component={Products} />
+                      <Route path="/mobile-phones-discount" component={MobilePhonesDiscount} />
+                      <Route path="/laptops-discount" component={LaptopsDiscount} />
+                      <Route path="/tablets-discount" component={TabletsDiscount} />
+                      <Route path="/mobile-phones" component={MobilePhones} />
+                      <Route path="/laptops" component={Laptops} />
+                      <Route path="/tablets" component={Tablets} />
+                      <Route path="/cart" render={props => <Cart {...props} value={value} />} />
+                      {
+                        value.data.map( dataItem => {
+                          return <Route key={dataItem.id}
+                                        path={`/product-page/${dataItem.id}`}
+                                        render={props => <ProductPage {...props} dataItem={dataItem} value={value}/>} />
+                        })
+                      }
+                      <Route path="/about" component={About} />
+                      <Route path="/contact-us" component={ContactUs} />
+                      <Route component={NoSuchPage} />
+                    </Switch>
                   </React.Fragment>
                 )
                 : <Route exact path="/" render={props => <SearchResults {...props} value={value} />} />
@@ -57,5 +61,3 @@ export default function Container() {
     </DivGridContainer>
   )
 }
-
-{/* <Redirect exact from="/*" to="/" /> */}

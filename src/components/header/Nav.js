@@ -10,52 +10,52 @@ export default function Nav(props) {
     <StyledNav>
       <ul className="nav flex-column bg-light">
         <li className="nav-item">
-          <Link to="/mobile_phones" className="nav-link" onClick={props.toggleNav}>
+          <Link to="/mobile-phones" className="nav-link" onClick={props.showNav}>
             {t('Nav|1')}
           </Link>
         </li>
         <li className="nav-item">
-          <Link to="/laptops" className="nav-link" onClick={props.toggleNav}>
+          <Link to="/laptops" className="nav-link" onClick={props.showNav}>
             {t('Nav|2')}
           </Link>
         </li>
         <li className="nav-item">
-          <Link to="/tablets" className="nav-link" onClick={props.toggleNav}>
+          <Link to="/tablets" className="nav-link" onClick={props.showNav}>
             {t('Nav|3')}
           </Link>
         </li>
         <li className="nav-item">
-          <a href="/#" className="nav-link" onClick={props.toggleNav}>
+          <a href="/#" className="nav-link" onClick={props.showNav}>
             Lorem ipsum sin amet 
           </a>
         </li>
         <li className="nav-item">
-          <a href="/#" className="nav-link" onClick={props.toggleNav}>
+          <a href="/#" className="nav-link" onClick={props.showNav}>
             Lorem ipsum sin amet 
           </a>
         </li>
         <li className="nav-item">
-          <a href="/#" className="nav-link" onClick={props.toggleNav}>
+          <a href="/#" className="nav-link" onClick={props.showNav}>
             Lorem ipsum sin amet 
           </a>
         </li>
         <li className="nav-item">
-          <a href="/#" className="nav-link" onClick={props.toggleNav}>
+          <a href="/#" className="nav-link" onClick={props.showNav}>
             Lorem ipsum sin amet 
           </a>
         </li>
         <li className="nav-item">
-          <a href="/#" className="nav-link" onClick={props.toggleNav}>
+          <a href="/#" className="nav-link" onClick={props.showNav}>
             Lorem ipsum sin amet 
           </a>
         </li>
         <li className="nav-item">
-          <a href="/#" className="nav-link" onClick={props.toggleNav}>
+          <a href="/#" className="nav-link" onClick={props.showNav}>
             Lorem ipsum sin amet 
           </a>
         </li>
         <li className="nav-item">
-          <a href="/#" className="nav-link" onClick={props.toggleNav}>
+          <a href="/#" className="nav-link" onClick={props.showNav}>
             Lorem ipsum sin amet 
           </a>
         </li>

@@ -12,22 +12,30 @@
     "3": "Tablets"
   },
   "Authentication": {
-    "1": "Registrazione"
+    "1": "Registrazione",
+    "2": "Resetta la password"
   },
   "LogIn": {
-    "1": "Email",
-    "2": "Parola d'ordine"
+    "1": "Email:",
+    "2": "Parola d'ordine:",
+    "3": "Ricordati di me",
+    "4": "Ha dimenticato la password?"
   },
   "Registration": {
-    "1": "Il tuo nome",
-    "2": "Conferma password"
+    "1": "Il tuo nome:",
+    "2": "Conferma password:"
+  },
+  "ResetPassword": {
+    "1": "Torna indietro",
+    "2": "Per favore, scrivi la tua e-mail e ti invieremo la tua nuova password:",
+    "3": "Invia nuova password"
   },
   "Carousel": {
     "1": "Precedente",
     "2": "Il prossimo"
   },
   "Timer": {
-    "1": "L'offerta termina tra"
+    "1": "L'offerta termina tra:"
   },
   "Products": {
     "1": "Le migliori offerte"
@@ -36,12 +44,12 @@
     "1": "Pagina iniziale"
   },
   "ProductPage": {
-    "1": "Società",
-    "2": "Valutazione globale",
-    "3": "Il tuo punteggio",
-    "4": "Prezzo",
-    "5": "Informazioni",
-    "6": "Quantità",
+    "1": "Società:",
+    "2": "Valutazione globale:",
+    "3": "Il tuo punteggio:",
+    "4": "Prezzo:",
+    "5": "Informazioni:",
+    "6": "Quantità:",
     "7": "Aggiungi al carrello",
     "8": "oggetti aggiunti!",
     "9": "Recensioni dei prodotti",
@@ -57,14 +65,14 @@
     "3": "Accetta modifiche"
   },
   "SearchResult": {
-    "1": "Nel carrello"
+    "1": "Nel carrello:"
   },
   "Cart": {
     "1": "Il tuo carrello è vuoto",
     "2": "Cancella carrello",
-    "3": "Sottotale",
-    "4": "Imposta",
-    "5": "Totale"
+    "3": "Sottotale:",
+    "4": "Imposta:",
+    "5": "Totale:"
   },
   "PayPalCheckoutButton": {
     "1": "Successo!"
@@ -73,21 +81,24 @@
     "1": "Di",
     "2": "Contattaci",
     "3": "Iscriviti alle notizie!",
-    "4": "I nostri social media",
+    "4": "I nostri social media:",
     "5": "Tutti i diritti riservati."
   },
   "I18nButtons": {
-    "1": "Linguaggio",
-    "2": "Moneta",
-    "3": "Nazione"
+    "1": "Linguaggio:",
+    "2": "Moneta:",
+    "3": "Nazione:"
   },
   "About": {
     "1": "La compagnia Alimazon è la più grande compagnia al mondo! Dopo aver acquistato Google, Facebook, Apple e Microsoft non ci sono più rivali per noi :) Ah, questo dolce sapore dolce di monopolio ... possiamo fare quello che vogliamo e le persone ci daranno ancora i loro soldi! :)",
     "2": "Il CEO di Alimazon è John Doe, l'uomo più ricco del mondo! È anche l'uomo d'affari di maggior successo vivo! Nessuno sa se paga le tasse, ma devi ammetterlo - sembra dannatamente bello con quel vestito. ;)"
   },
   "ContactUs": {
-    "1": "La tua email",
-    "2": "Il tuo messaggio",
+    "1": "La tua email:",
+    "2": "Il tuo messaggio:",
     "3": "Invia"
+  },
+  "NoSuchPage": {
+    "1": "Spiacenti, non esiste una pagina simile..."
   }
 }

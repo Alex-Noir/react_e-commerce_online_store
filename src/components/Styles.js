@@ -9,6 +9,7 @@ export const DivWrapper = styled.div`
   grid-template-columns: 1fr 1200px 1fr;
 `
 export const DivAuthWrapper = styled.div`
+  grid-area: 1 / 1 / 4 / 4;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0,0,0,0.6);
@@ -103,26 +104,15 @@ export const DivCarousel = styled.div`
   height: 500px;
   grid-area: 1 / 1 / 2 / 3;
   justify-self: center;
-  > div > div {
-    transition: transform 0.5s ease-in-out !important;
-  }
-  > a {
-    background-color: black;
-    opacity: 0.1;
-  }
-  > a:hover {
-    background-color: black;
-    opacity: 0.5;
-  }
-  > a:first-child {
-    background-color: black;
-  }
 `
 
 //MobilePhones/Laptops/TabletItemsDiscount
 export const DivCountdown = styled.div`
   grid-area: 1 / 1 / 2 / 3;
   justify-self: center;
+  > :last-child {
+    margin: auto;
+  }
 `
 export const DivDiscountList = styled.div`
   grid-area: 2 / 1 / 3 / 3;
@@ -285,6 +275,12 @@ export const DivCartListItem = styled.div`
   }
   > :nth-child(2) {
     grid-area: 1 / 2 / 2 / 3;
+    > a, a:hover, a:focus {
+      text-decoration: none;
+    }
+    > a:hover, a:focus {
+      text-shadow: 2px 2px 20px;
+    }
   }
   > :nth-child(3) {
     grid-area: 1 / 3 / 2 / 4;
@@ -322,9 +318,8 @@ export const StyledFooter = styled.footer`
     grid-column: 5 / 6;
   }
 `
-// export const UlFooterList = styled.ul`
-//   width: 300px;
-// `
-// export const DivFooter = styled.div`
-//   width: 300px;
-// `
+
+//NoSuchPage
+export const Div404 = styled.div`
+  grid-area: 1 / 1 / 3 / 3;
+`

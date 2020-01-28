@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { mobile_phones, data } from './components/data'
+import { data } from './components/data'
 import axios from 'axios'
 
 const Context = React.createContext()
@@ -8,7 +8,6 @@ class ContextProvider extends Component {
   constructor() {
     super()
     this.state = {
-      bestOffers: [],
       data: [],
       searchValue: '',
       results: data,
@@ -21,7 +20,6 @@ class ContextProvider extends Component {
       currency: '€'
     }
 
-    this.setBestOffers = this.setBestOffers.bind(this)
     this.setData = this.setData.bind(this)
     this.makeResultsInvisible = this.makeResultsInvisible.bind(this)
     this.addToCart = this.addToCart.bind(this)
@@ -37,7 +35,6 @@ class ContextProvider extends Component {
   }
   
   componentDidMount() {
-    this.setBestOffers()
     this.setData()
 
     axios.get('https://api.exchangeratesapi.io/latest')
@@ -49,13 +46,6 @@ class ContextProvider extends Component {
       .catch(err => {
         console.log(err)
       })
-  }
-
-  setBestOffers() {
-    let tempBestOffers = JSON.parse(JSON.stringify(mobile_phones))
-    this.setState(() => {
-      return { bestOffers: tempBestOffers }
-    })
   }
 
   setData() {
@@ -71,9 +61,10 @@ class ContextProvider extends Component {
     })
   }
 
-  addToCart(id, inputValue) {
+  addToCart(id, inputValue, hasDiscount) {
     const item = this.state.data[id]
     const price = item.price
+    const discount = item.discount
     const cartList = this.state.cartList
     const arrayOfIds = cartList.map(cartListItem => cartListItem.id)
     const idOfCartListItem = cartList.findIndex(( cartListItem => cartListItem.id === id ))
@@ -82,7 +73,11 @@ class ContextProvider extends Component {
       item.isInCart = true
       item.amountInCart += Number.parseFloat(inputValue)
       const amountInCart = item.amountInCart
-      item.totalPrice = Number.parseFloat((price * amountInCart).toFixed(2))
+      if (hasDiscount) {
+        item.totalPrice = Number.parseFloat(((price * amountInCart) * discount).toFixed(2))
+      } else {
+        item.totalPrice = Number.parseFloat((price * amountInCart).toFixed(2))
+      }
       cartList.push(item)
       this.setState(() => {
         return { cartList }
@@ -90,20 +85,29 @@ class ContextProvider extends Component {
     } else if (inputValue >= 1 && arrayOfIds.indexOf(id) !== -1) {
       cartList[idOfCartListItem].amountInCart += inputValue
       const amountInCart = item.amountInCart
-      item.totalPrice = Number.parseFloat((price * amountInCart).toFixed(2))
+      if (hasDiscount) {
+        item.totalPrice = Number.parseFloat(((price * amountInCart) * discount).toFixed(2))
+      } else {
+        item.totalPrice = Number.parseFloat((price * amountInCart).toFixed(2))
+      }
     } else { return null }
   }
 
-  cartCounter(e, id) {
+  cartCounter(e, id, hasDiscount) {
     const item = this.state.data[id]
     const price = item.price
+    const discount = item.discount
     const cartList = this.state.cartList
     const idOfCartListItem = cartList.findIndex(( cartListItem => cartListItem.id === id ))
 
     if (e.target.name === '-' && cartList[idOfCartListItem].amountInCart > 1) {
       cartList[idOfCartListItem].amountInCart -= 1
       const amountInCart = item.amountInCart
-      item.totalPrice = Number.parseFloat((price * amountInCart).toFixed(2))
+      if (hasDiscount) {
+        item.totalPrice = Number.parseFloat(((price * amountInCart) * discount).toFixed(2))
+      } else {
+        item.totalPrice = Number.parseFloat((price * amountInCart).toFixed(2))
+      }
       this.setState(() => {
         return { cartList }
       })
@@ -112,15 +116,22 @@ class ContextProvider extends Component {
     } else if (e.target.name === '+') {
       cartList[idOfCartListItem].amountInCart += 1 
       const amountInCart = item.amountInCart
-      item.totalPrice = Number.parseFloat((price * amountInCart).toFixed(2))
+      if (hasDiscount) {
+        item.totalPrice = Number.parseFloat(((price * amountInCart) * discount).toFixed(2))
+      } else {
+        item.totalPrice = Number.parseFloat((price * amountInCart).toFixed(2))
+      }
       this.setState(() => {
         return { cartList }
       })
-    }
-    
+    }    
   }
 
   deleteItemFromCart(id) {
+    const item = this.state.data[id]
+    item.isInCart = false
+    item.amountInCart = 0
+
     const cartList = this.state.cartList
     const cartListItemIndex = cartList.findIndex(cartListItem => cartListItem.id === id)
     cartList.splice(cartListItemIndex, 1)
@@ -130,6 +141,12 @@ class ContextProvider extends Component {
   }
 
   clearCart() {
+    const data = this.state.data
+    data.forEach(item => {
+      item.isInCart = false
+      item.amountInCart = 0      
+    })
+    
     this.setState(() => {
       return { cartList: [] }
     })
@@ -152,7 +169,7 @@ class ContextProvider extends Component {
   }
 
   setSearchValue(e) {
-    let searchQuery = (String(e.target.value)).trim()
+    let searchQuery = String(e.target.value)
     this.setState(() => {
       return {
         searchValue: searchQuery
@@ -163,15 +180,17 @@ class ContextProvider extends Component {
   handleSearch(e) {
     e.preventDefault()
     e.persist()
-    let filteredData = this.state.data.filter(dataItem => dataItem.title.toLowerCase().includes(this.state.searchValue.toLowerCase()))
-    if (this.state.value !== '') {
+
+    let filteredData = this.state.data.filter(dataItem => dataItem.title.toLowerCase().includes(this.state.searchValue.toLowerCase().trim()))
+    if (this.state.searchValue !== '') {
       this.setState(() => {
         return {
           results: filteredData,
-          areResultsVisible: true
+          areResultsVisible: true,
+          searchValue: this.state.searchValue.trim()
         }
       })
-    } else { return null }    
+    } else { return null } 
   }
 
   nullifySearchValue() {
@@ -205,7 +224,6 @@ class ContextProvider extends Component {
     return (
       <Context.Provider value={{ 
         ...this.state,
-        setBestOffers: this.setBestOffers,
         setData: this.setData,
         makeResultsInvisible: this.makeResultsInvisible,
         addToCart: this.addToCart,
