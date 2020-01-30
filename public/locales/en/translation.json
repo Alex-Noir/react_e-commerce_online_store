@@ -1,5 +1,5 @@
 {
-  "Header": {
+  "AuthButtons": {
     "1": "Log In",
     "2": "Sing Up"
   },
@@ -43,17 +43,21 @@
   "MobilePhones": {
     "1": "Home"
   },
-  "ProductPage": {
+  "ProductInfo": {
     "1": "Company:",
     "2": "Global rating:",
     "3": "Your rating:",
     "4": "Price:",
-    "5": "Info:",
-    "6": "Amount:",
-    "7": "Add to cart",
-    "8": "items added!",
-    "9": "Product Reviews",
-    "10": "Comments"
+    "5": "Info:"
+  },
+  "AddToCart": {
+    "1": "Amount:",
+    "2": "Add to cart",
+    "3": "items added!"
+  },
+  "ToggleButtons": {
+    "1": "Product Reviews",
+    "2": "Comments"
   },
   "Reviews": {
     "1": "You can write and post a review here, but refreshing or leaving the page will nullify it.",
@@ -77,17 +81,41 @@
   "PayPalCheckoutButton": {
     "1": "Success!"
   },
-  "Footer": {
+  "Lists": {
     "1": "About",
-    "2": "Contact Us",
-    "3": "Subscribe on the news!",
-    "4": "Our social media:",
-    "5": "All rights reserved."
+    "2": "Contact Us"
+  },
+  "Social": {
+    "1": "Subscribe on the news!",
+    "2": "Our social media:",
+    "3": "All rights reserved."
   },
   "I18nButtons": {
     "1": "Language:",
     "2": "Currency:",
     "3": "Country:"
+  },
+  "Currencies": {
+    "1": "Euro",
+    "2": "U.S. Dollar",
+    "3": "Russian Ruble",
+    "4": "Chinese Yuan",
+    "5": "Japanese Yen",
+    "6": "Korean Won",
+    "7": "Indian Rupee"
+  },
+  "Countries": {
+    "1": "United Kingdom",
+    "2": "United States",
+    "3": "Germany",
+    "4": "France",
+    "5": "Spain",
+    "6": "Italy",
+    "7": "Russia",
+    "8": "China",
+    "9": "Japan",
+    "10": "Korea",
+    "11": "India"
   },
   "About": {
     "1": "Alimazon company is the largest company in the world! After we've bought Google, Facebook, Apple and Microsoft there are no rivals left for us :) Ah, this sweet sweet taste of monopoly... we can do whatever we want and people still will give us their money! :)",

@@ -1,9 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { DivProductPage, DivInfo } from '../../styles'
+import { DivProductPage } from '../../styles'
 import { useTranslation } from 'react-i18next'
 
-import StarRating from './productPage/StarRating'
+import ProductInfo from './productPage/ProductInfo'
+import AddToCart from './productPage/AddToCart'
+import ToggleButtons from './productPage/ToggleButtons'
 import Reviews from './productPage/Reviews'
 import Comments from './productPage/Comments'
 import Slider from './productPage/Slider'
@@ -13,41 +15,11 @@ export default function ProductPage(props) {
     window.scrollTo(0, 0)
   }, [])
   
-  const { id,
-          title, 
-          company,
-          category, 
-          description, 
-          price,
-          hasDiscount,
-          discount,
-          rating } = props.dataItem
+  const { title, category } = props.dataItem
           
-  const [ inputValue, setInputValue ] = useState(0)
-  const [ isInfoVisible, setIsInfoVisible] = useState(false)
   const [ isReviewsTabVisible, setIsReviewsTabVisible ] = useState(true)
-  const [ customRating, setCustomRating ] = useState(rating || null)
-  const [ tempRating, setTempRating ] = useState(null)
-  
-  const prevCount = usePrevious(customRating)
-  
+
   const [ t, i18n ] = useTranslation()
-
-  let currencyRate = 1
-
-  if (props.value.currency === '$') {
-    currencyRate = props.value.fetchedRates.USD
-  } else if (props.value.currency === '₽') {
-    currencyRate = props.value.fetchedRates.RUB
-  } else if (props.value.currency === 'Ch¥') {
-    currencyRate = props.value.fetchedRates.CNY
-  } else if (props.value.currency === 'Jp¥') {
-    currencyRate = props.value.fetchedRates.JPY
-  } else if (props.value.currency === '₩') {
-    currencyRate = props.value.fetchedRates.KRW
-  } else if (props.value.currency === '₹') {
-    currencyRate = props.value.fetchedRates.INR
-  }
 
   let productCategory
 
@@ -59,55 +31,12 @@ export default function ProductPage(props) {
     productCategory = <Link to="/tablets">{t('Nav|3')}</Link>
   } 
 
-  function counter(e) {
-    if (e.target.name === "-" && inputValue > 0) {
-      setIsInfoVisible(false)
-      setInputValue(inputValue - 1)
-    } else if (e.target.name === "-" && inputValue <= 0) {
-      return null
-    } else if (e.target.name === "+") {
-      setIsInfoVisible(false)
-      setInputValue(inputValue + 1)
-    }
-  }
-
-  function showInfo(inputValue) {
-    if (inputValue >= 1) {
-      setIsInfoVisible(true)
-      setTimeout(() => setIsInfoVisible(false), 1500)
-    } else { return null }
-  }
-
   function toggleTabs(e) {
     if (e.target.name === 'reviews') {
       setIsReviewsTabVisible(true)
     } else if (e.target.name === 'comments') {
       setIsReviewsTabVisible(false)
     }
-  }
-
-  function handleMouseover(rating) {
-    setCustomRating(rating)
-    setTempRating(prevCount)
-  }
-
-  function rate(rating) {
-    setCustomRating(rating)
-    setTempRating(rating)
-  }
-
-  function handleMouseout() {
-    setCustomRating(prevCount)
-  }
-
-  function usePrevious(value) {
-    const ref = useRef()
-    
-    useEffect(() => {
-      ref.current = value
-    }, [value])    
-
-    return ref.current
   }
 
   return (
@@ -121,70 +50,10 @@ export default function ProductPage(props) {
       </nav>
       <Slider dataItem={props.dataItem} />
       <div className="d-flex flex-column">
-        <h1>{title}</h1>
-        <h2>{t('ProductPage|1')} {company}</h2>
-        <StarRating rating={rating} 
-                    customRating={customRating}
-                    handleMouseover={handleMouseover}
-                    rate={rate}
-                    handleMouseout={handleMouseout} />
-        <h5>{t('ProductPage|2')} {rating}</h5>
-        <h5>{t('ProductPage|3')} { ((customRating + 1) / 2).toFixed(1) }</h5>
-        <h2>{t('ProductPage|4')} &nbsp;
-          {
-            hasDiscount
-            ? <span>
-                <s>{props.value.currency} {parseFloat((price * currencyRate).toFixed(2))}</s>
-                &nbsp;
-                <span className="text-danger">
-                  {props.value.currency} {parseFloat(((price * currencyRate) * discount).toFixed(2))}
-                </span>
-              </span>
-            : <span>{props.value.currency} {parseFloat((price * currencyRate).toFixed(2))}</span>
-          }          
-        </h2>
-        <br />
-        <h3>{t('ProductPage|5')} {description}</h3>
-        <h3>{t('ProductPage|6')} 
-          <button className="btn btn-outline-dark border-right-0 rounded-0 ml-3"
-                  type="button" 
-                  value="-" 
-                  name="-" 
-                  onClick={counter}> - </button>
-          <input  className="btn btn-outline-dark border-left-0 border-right-0 rounded-0"
-                  type="text" 
-                  value={inputValue} 
-                  size="1" 
-                  readOnly />
-          <button className="btn btn-outline-dark border-left-0 rounded-0" 
-                  type="button" 
-                  value="+" 
-                  name="+" 
-                  onClick={counter}> + </button>
-        </h3>
-        <div className="position-relative">
-          <button type="button"
-                  className="btn btn-warning mr-2"
-                  onClick={() => {  props.value.addToCart(id, inputValue, hasDiscount)
-                                    showInfo(inputValue)
-                                    props.value.evaluateTotalPrice()  }}>{t('ProductPage|7')}</button>
-          <DivInfo className={isInfoVisible ? "visible" : "invisible"}> 
-            +{inputValue} {t('ProductPage|8')} 
-          </DivInfo>
-        </div>
+        <ProductInfo value={props.value} dataItem={props.dataItem} />
+        <AddToCart value={props.value} dataItem={props.dataItem} />
       </div>
-      <div>
-        <button type="button" 
-                name="reviews" 
-                className={`btn ${isReviewsTabVisible ? "btn-light" : "btn-info"} w-50 mt-5 border-right border-top rounded-0 px-4 shadow-none`} 
-                onClick={toggleTabs}
-                >{t('ProductPage|9')}</button>
-        <button type="button"
-                name="comments"
-                className={`btn ${isReviewsTabVisible ? "btn-info" : "btn-light"} w-50 mt-5 border-left border-top rounded-0 px-4 shadow-none`} 
-                onClick={toggleTabs}
-                >{t('ProductPage|10')}</button>
-      </div>
+      <ToggleButtons toggleTabs={toggleTabs} isReviewsTabVisible={isReviewsTabVisible} />
       {
         isReviewsTabVisible
         ? <Reviews dataItem={props.dataItem} value={props.value} />

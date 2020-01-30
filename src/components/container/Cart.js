@@ -39,9 +39,7 @@ export default function Cart(props) {
           </div>
         : <React.Fragment>
             <CartList value={props.value} />
-            <button type="button" 
-                    className="btn btn-danger"
-                    onClick={props.value.clearCart}>{t('Cart|2')}</button>
+            <button type="button" className="btn btn-danger" onClick={props.value.clearCart}>{t('Cart|2')}</button>
             <div className="d-flex flex-column">
               <h2>{t('Cart|3')} {currency} {subTotalPrice}</h2>
               <h2>{t('Cart|4')} {currency} {cartTax}</h2>

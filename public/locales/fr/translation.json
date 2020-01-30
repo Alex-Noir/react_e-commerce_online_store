@@ -1,5 +1,5 @@
 {
-  "Header": {
+  "AuthButtons": {
     "1": "S'identifier",
     "2": "S'enregistrer"
   },
@@ -43,17 +43,21 @@
   "MobilePhones": {
     "1": "Page d'accueil"
   },
-  "ProductPage": {
+  "ProductInfo": {
     "1": "Entreprise:",
     "2": "Évaluation globale:",
     "3": "Votre note:",
     "4": "Prix:",
-    "5": "Info:",
-    "6": "Montant:",
-    "7": "Ajouter au chariot",
-    "8": "articles ajoutés!",
-    "9": "Avis sur les produits",
-    "10": "Commentaires"
+    "5": "Info:"
+  },
+  "AddToCart": {
+    "1": "Montant:",
+    "2": "Ajouter au chariot",
+    "3": "articles ajoutés!"
+  },
+  "ToggleButtons": {
+    "1": "Avis sur les produits",
+    "2": "Commentaires"
   },
   "Reviews": {
     "1": "Vous pouvez écrire et publier un avis ici, mais l'actualisation ou la sortie de la page l'annulera.",
@@ -77,17 +81,41 @@
   "PayPalCheckoutButton": {
     "1": "Succès!"
   },
-  "Footer": {
+  "Lists": {
     "1": "Sur",
-    "2": "Nous contacter",
-    "3": "Abonnez-vous aux nouvelles!",
-    "4": "Nos réseaux sociaux::",
-    "5": "Tous les droits sont réservés."
+    "2": "Nous contacter"
+  },
+  "Social": {
+    "1": "Abonnez-vous aux nouvelles!",
+    "2": "Nos réseaux sociaux::",
+    "3": "Tous les droits sont réservés."
   },
   "I18nButtons": {
     "1": "Langue:",
     "2": "Devise:",
     "3": "Pays:"
+  },
+  "Currencies": {
+    "1": "Euro",
+    "2": "Dollars Américain",
+    "3": "Rouble Russe",
+    "4": "Yuan Chinois",
+    "5": "Yen Japonais",
+    "6": "Won Coréen",
+    "7": "Roupie Indienne"
+  },
+  "Countries": {
+    "1": "Royaume-Uni",
+    "2": "États Unis",
+    "3": "Allemagne",
+    "4": "France",
+    "5": "Espagne",
+    "6": "Italie",
+    "7": "Russie",
+    "8": "Chine",
+    "9": "Japon",
+    "10": "Corée",
+    "11": "Inde"
   },
   "About": {
     "1": "La société Alimazon est la plus grande entreprise au monde! Après avoir acheté Google, Facebook, Apple et Microsoft, il n'y a plus de rivaux pour nous :) Ah, ce doux goût sucré de monopole ... nous pouvons faire ce que nous voulons et les gens nous donneront toujours leur argent! :)",

@@ -304,7 +304,7 @@ export const DivContactForm = styled.div`
 export const StyledFooter = styled.footer`
   grid-area: 3 / 1 / 4 / 4;
   display: grid;
-  grid-template-columns: 1fr repeat(4, 300px) 1fr;
+  grid-template-columns: 1fr repeat(2, 285px) 330px 300px 1fr;
   > :first-child {
     grid-column: 2 / 3;
   }

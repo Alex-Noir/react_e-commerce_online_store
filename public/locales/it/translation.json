@@ -1,5 +1,5 @@
 {
-  "Header": {
+  "AuthButtons": {
     "1": "Accesso",
     "2": "Registrati"
   },
@@ -43,17 +43,21 @@
   "MobilePhones": {
     "1": "Pagina iniziale"
   },
-  "ProductPage": {
+  "ProductInfo": {
     "1": "Società:",
     "2": "Valutazione globale:",
     "3": "Il tuo punteggio:",
     "4": "Prezzo:",
-    "5": "Informazioni:",
-    "6": "Quantità:",
-    "7": "Aggiungi al carrello",
-    "8": "oggetti aggiunti!",
-    "9": "Recensioni dei prodotti",
-    "10": "Commenti"
+    "5": "Informazioni:"
+  },
+  "AddToCart": {
+    "1": "Quantità:",
+    "2": "Aggiungi al carrello",
+    "3": "oggetti aggiunti!"
+  },
+  "ToggleButtons": {
+    "1": "Recensioni dei prodotti",
+    "2": "Commenti"
   },
   "Reviews": {
     "1": "Puoi scrivere e pubblicare una recensione qui, ma l'aggiornamento o l'uscita dalla pagina la annulleranno.",
@@ -77,17 +81,41 @@
   "PayPalCheckoutButton": {
     "1": "Successo!"
   },
-  "Footer": {
+  "Lists": {
     "1": "Di",
-    "2": "Contattaci",
-    "3": "Iscriviti alle notizie!",
-    "4": "I nostri social media:",
-    "5": "Tutti i diritti riservati."
+    "2": "Contattaci"
+  },
+  "Social": {
+    "1": "Iscriviti alle notizie!",
+    "2": "I nostri social media:",
+    "3": "Tutti i diritti riservati."
   },
   "I18nButtons": {
     "1": "Linguaggio:",
     "2": "Moneta:",
     "3": "Nazione:"
+  },
+  "Currencies": {
+    "1": "Euro",
+    "2": "Dollaro Americano",
+    "3": "Rublo Russo",
+    "4": "Yuan Cinese",
+    "5": "Yen Giapponese",
+    "6": "Vinto coreano",
+    "7": "Rupia Indiana"
+  },
+  "Countries": {
+    "1": "Regno Unito",
+    "2": "Stati Uniti",
+    "3": "Germania",
+    "4": "Francia",
+    "5": "Spagna",
+    "6": "Italia",
+    "7": "Russia",
+    "8": "Cina",
+    "9": "Giappone",
+    "10": "Corea",
+    "11": "India"
   },
   "About": {
     "1": "La compagnia Alimazon è la più grande compagnia al mondo! Dopo aver acquistato Google, Facebook, Apple e Microsoft non ci sono più rivali per noi :) Ah, questo dolce sapore dolce di monopolio ... possiamo fare quello che vogliamo e le persone ci daranno ancora i loro soldi! :)",

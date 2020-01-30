@@ -1,5 +1,5 @@
 {
-  "Header": {
+  "AuthButtons": {
     "1": "Iniciar sesión",
     "2": "Cantar más fuerte"
   },
@@ -43,17 +43,21 @@
   "MobilePhones": {
     "1": "Página de inicio"
   },
-  "ProductPage": {
+  "ProductInfo": {
     "1": "Empresa:",
     "2": "Calificación global:",
     "3": "Tu clasificación:",
     "4": "Precio:",
-    "5": "Informacion:",
-    "6": "Cantidad:",
-    "7": "Añadir al carrito",
-    "8": "artículos añadidos!",
-    "9": "Revisiones de Productos",
-    "10": "Comentarios"
+    "5": "Informacion:"
+  },
+  "AddToCart": {
+    "1": "Cantidad:",
+    "2": "Añadir al carrito",
+    "3": "artículos añadidos!"
+  },
+  "ToggleButtons": {
+    "1": "Revisiones de Productos",
+    "2": "Comentarios"
   },
   "Reviews": {
     "1": "Puede escribir y publicar una reseña aquí, pero actualizar o abandonar la página la anulará.",
@@ -77,9 +81,11 @@
   "PayPalCheckoutButton": {
     "1": "¡Éxito!"
   },
-  "Footer": {
+  "Lists": {
     "1": "Acerca de",
-    "2": "Contáctenos",
+    "2": "Contáctenos"
+  },
+  "Social": {
     "3": "Suscríbete a las noticias!",
     "4": "Nuestras redes sociales::",
     "5": "Todos los derechos reservados."
@@ -88,6 +94,28 @@
     "1": "Idioma:",
     "2": "Moneda:",
     "3": "País:"
+  },
+  "Currencies": {
+    "1": "Euro",
+    "2": "Dólar Estadounidense",
+    "3": "Rublo Ruso",
+    "4": "Yuan Chino",
+    "5": "Yen Japonés",
+    "6": "Coreano Ganó",
+    "7": "Rupia India"
+  },
+  "Countries": {
+    "1": "Reino Unido",
+    "2": "Estados Unidos",
+    "3": "Alemania",
+    "4": "Francia",
+    "5": "España",
+    "6": "Italia",
+    "7": "Rusia",
+    "8": "China",
+    "9": "Japóna",
+    "10": "Corea",
+    "11": "India"
   },
   "About": {
     "1": "¡La compañía Alimazon es la compañía más grande del mundo! Después de comprar Google, Facebook, Apple y Microsoft, no quedan rivales para nosotros :) Ah, este dulce sabor dulce de monopolio ... ¡podemos hacer lo que queramos y la gente aún nos dará su dinero! :)",

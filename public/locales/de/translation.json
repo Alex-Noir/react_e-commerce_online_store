@@ -1,5 +1,5 @@
 {
-  "Header": {
+  "AuthButtons": {
     "1": "Einloggen",
     "2": "Lauter Singen"
   },
@@ -43,17 +43,21 @@
   "MobilePhones": {
     "1": "Startseite"
   },
-  "ProductPage": {
+  "ProductInfo": {
     "1": "Unternehmen:",
     "2": "Globales Rating:",
     "3": "Deine Bewertung:",
     "4": "Preis:",
-    "5": "Info:",
-    "6": "Menge:",
-    "7": "In den Warenkorb legen",
-    "8": "artikel hinzugefügt!",
-    "9": "Produktrezensionen",
-    "10": "Kommentare"
+    "5": "Info:"
+  },
+  "AddToCart": {
+    "1": "Menge:",
+    "2": "In den Warenkorb legen",
+    "3": "artikel hinzugefügt!"
+  },
+  "ToggleButtons": {
+    "1": "Produktrezensionen",
+    "2": "Kommentare"
   },
   "Reviews": {
     "1": "Sie können hier eine Rezension schreiben und veröffentlichen, aber das aktualisieren oder verlassen der seite macht sie ungültig.",
@@ -77,17 +81,41 @@
   "PayPalCheckoutButton": {
     "1": "Gelingen!"
   },
-  "Footer": {
+  "Lists": {
     "1": "Über",
-    "2": "Kontaktiere uns",
-    "3": "Abonnieren Sie die Nachrichten!",
-    "4": "Unsere sozialen medien:",
-    "5": "Alle Rechte vorbehalten."
+    "2": "Kontaktiere uns"
+  },
+  "Social": {
+    "1": "Abonnieren Sie die Nachrichten!",
+    "2": "Unsere sozialen medien:",
+    "3": "Alle Rechte vorbehalten."
   },
   "I18nButtons": {
     "1": "Sprache:",
     "2": "Währung:",
     "3": "Land:"
+  },
+  "Currencies": {
+    "1": "Euro",
+    "2": "U.S. Dollar",
+    "3": "Russischer Rubel",
+    "4": "Chinesische Yuan",
+    "5": "Japanische Yen",
+    "6": "Korea hat gewonnen",
+    "7": "Indische Rupie"
+  },
+  "Countries": {
+    "1": "Vereinigtes Königreich",
+    "2": "Vereinigte Staaten",
+    "3": "Deutschland",
+    "4": "Frankreich",
+    "5": "Spanien",
+    "6": "Italien",
+    "7": "Russland",
+    "8": "China",
+    "9": "Japan",
+    "10": "Korea",
+    "11": "Indien"
   },
   "About": {
     "1": "Alimazon unternehmen ist das größte unternehmen der welt! Nachdem wir Google, Facebook, Apple und Microsoft gekauft haben, gibt es keine rivalen mehr für uns :) Ah, dieser süße monopolgeschmack ... wir können tun, was wir wollen und die leute werden uns immer noch ihr geld geben! :)",

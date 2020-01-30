@@ -15,7 +15,8 @@ export default function I18nButtons() {
 
   return (
     <div className="d-flex flex-column justify-content-around align-items-center">
-      <div className="bg-success p-2 text-light rounded">{t('I18nButtons|1')}
+      <div className="bg-success p-2 text-light rounded">
+        {t('I18nButtons|1')}
         <select className="ml-2 bg-success text-light border border-success" 
                 onChange={changeLanguage}>
           <option value="en">English</option>
@@ -33,34 +34,36 @@ export default function I18nButtons() {
       <ContextConsumer>
         {
           value => (
-            <div className="bg-info p-2 text-light rounded">{t('I18nButtons|2')}
+            <div className="d-flex flex-row no-wrap bg-info p-2 text-light rounded">
+              {t('I18nButtons|2')}
               <select className="ml-2 bg-info text-light border border-info"
                       onChange={value.changeCurrency}>
-                <option value="€">€ (EUR) Euro</option>
-                <option value="$">$ (USD) U.S. Dollar</option>
-                <option value="₽">₽ (RUB) Russian Ruble</option>
-                <option value="Ch¥">¥ (CNY) Chinese Yuan</option>
-                <option value="Jp¥">¥ (JPY) Japanese Yen</option>
-                <option value="₩">₩ (KRW) Korean Won</option>
-                <option value="₹">₹ (INR) Indian Rupee</option>
+                <option value="€">€ (EUR) {t('Currencies|1')}</option>
+                <option value="$">$ (USD) {t('Currencies|2')}</option>
+                <option value="₽">₽ (RUB) {t('Currencies|3')}</option>
+                <option value="Ch¥">¥ (CNY) {t('Currencies|4')}</option>
+                <option value="Jp¥">¥ (JPY) {t('Currencies|5')}</option>
+                <option value="₩">₩ (KRW) {t('Currencies|6')}</option>
+                <option value="₹">₹ (INR) {t('Currencies|7')}</option>
               </select>
             </div>
           )
         }
       </ContextConsumer>
-      <div className="bg-primary p-2 text-light rounded">{t('I18nButtons|3')}
+      <div className="bg-primary p-2 text-light rounded">
+        {t('I18nButtons|3')}
         <select className="ml-2 bg-primary text-light border border-primary">
-          <option value="UK">United Kingdom</option>
-          <option value="USA">United States</option>
-          <option value="Germany">Germany</option>
-          <option value="France">France</option>
-          <option value="Spain">Spain</option>
-          <option value="Italy">Italy</option>
-          <option value="Russia">Russia</option>
-          <option value="China">China</option>
-          <option value="Japan">Japan</option>
-          <option value="Korea">Korea</option>
-          <option value="India">India</option>
+          <option value="UK">{t('Countries|1')}</option>
+          <option value="USA">{t('Countries|2')}</option>
+          <option value="Germany">{t('Countries|3')}</option>
+          <option value="France">{t('Countries|4')}</option>
+          <option value="Spain">{t('Countries|5')}</option>
+          <option value="Italy">{t('Countries|6')}</option>
+          <option value="Russia">{t('Countries|7')}</option>
+          <option value="China">{t('Countries|8')}</option>
+          <option value="Japan">{t('Countries|9')}</option>
+          <option value="Korea">{t('Countries|10')}</option>
+          <option value="India">{t('Countries|11')}</option>
         </select>
       </div>
     </div>

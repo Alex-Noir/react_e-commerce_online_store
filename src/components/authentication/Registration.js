@@ -43,7 +43,7 @@ export default function Registration(props) {
                   onChange={props.handleChange} 
                   required />
         </label>
-        <button type="submit" className="mt-1">{t('Header|2')}</button>
+        <button type="submit" className="mt-1">{t('AuthButtons|2')}</button>
       </form>
     </div>
   )

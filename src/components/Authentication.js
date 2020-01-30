@@ -60,11 +60,11 @@ export default function Authentication(props) {
           <div>
             <button type="button" 
                     name="signIn" 
-                    className={`btn ${props.isLogInTabVisible ? "btn-light" : "btn-info"} w-50 border-left border-top border-right rounded-0 px-auto shadow-none`} 
-                    onClick={props.handleVisibility}>{t('Header|1')}</button>
+                    className={`btn ${props.isLogInTabVisible ? "btn-light" : "btn-white"} d-inline-block border-left border-top border-right rounded-0 px-5 shadow-none`} 
+                    onClick={props.handleVisibility}>{t('AuthButtons|1')}</button>
             <button type="button" 
                     name="registration" 
-                    className={`btn ${props.isLogInTabVisible ? "btn-info" : "btn-light"} w-50 border-left border-top border-right rounded-0 px-0 shadow-none`} 
+                    className={`btn ${props.isLogInTabVisible ? "btn-white" : "btn-light"} d-inline-block border-left border-top border-right rounded-0 px-5 shadow-none`} 
                     onClick={props.handleVisibility}>{t('Authentication|1')}</button>
           </div>
         )

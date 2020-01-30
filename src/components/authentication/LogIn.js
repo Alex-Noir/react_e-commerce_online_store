@@ -31,7 +31,7 @@ export default function LogIn(props) {
             {t('LogIn|3')}
           </label>
         </div> 
-        <button type="submit" className="mt-1">{t('Header|1')}</button>
+        <button type="submit" className="mt-1">{t('AuthButtons|1')}</button>
       </form>
       <div class="dropdown-divider"></div>
       <a className="dropdown-item badge badge-light" href="/#" onClick={props.showResetPassword}> 
