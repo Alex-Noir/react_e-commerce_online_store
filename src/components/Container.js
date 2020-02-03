@@ -1,22 +1,22 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { DivGridContainer } from './styles'
 import { ContextConsumer } from '../context'
 
 import Carousel from './container/Carousel'
-import MobilePhonesDiscount from './container/carousel/MobilePhonesDiscount'
-import LaptopsDiscount from './container/carousel/LaptopsDiscount'
-import TabletsDiscount from './container/carousel/TabletsDiscount'
 import Products from './container/products/Products'
-import MobilePhones from './container/products/MobilePhones'
-import Laptops from './container/products/Laptops'
-import Tablets from './container/products/Tablets'
 import ProductPage from './container/products/ProductPage'
-import Cart from './container/Cart'
-import About from './container/footer/About'
-import ContactUs from './container/footer/ContactUs'
-import SearchResults from './container/products/SearchResults'
-import NoSuchPage from './NoSuchPage'
+const MobilePhonesDiscount = lazy(() => import('./container/carousel/MobilePhonesDiscount'))
+const LaptopsDiscount = lazy(() => import('./container/carousel/LaptopsDiscount'))
+const TabletsDiscount = lazy(() => import('./container/carousel/TabletsDiscount'))
+const MobilePhones = lazy(() => import('./container/products/MobilePhones'))
+const Laptops = lazy(() => import('./container/products/Laptops'))
+const Tablets = lazy(() => import('./container/products/Tablets'))
+const Cart = lazy(() => import('./container/Cart'))
+const About = lazy(() => import('./container/About'))
+const ContactUs = lazy(() => import('./container/ContactUs'))
+const SearchResults = lazy(() => import('./container/products/SearchResults'))
+const NoSuchPage = lazy(() => import('./container/NoSuchPage'))
 
 export default function Container() {
   return (
@@ -28,31 +28,37 @@ export default function Container() {
               return (
                 !value.areResultsVisible
                 ? (
-                  <React.Fragment>
-                    <Route exact path="/" component={Carousel} />
-                    <Switch>
-                      <Route exact path="/" component={Products} />
-                      <Route path="/mobile-phones-discount" component={MobilePhonesDiscount} />
-                      <Route path="/laptops-discount" component={LaptopsDiscount} />
-                      <Route path="/tablets-discount" component={TabletsDiscount} />
-                      <Route path="/mobile-phones" component={MobilePhones} />
-                      <Route path="/laptops" component={Laptops} />
-                      <Route path="/tablets" component={Tablets} />
-                      <Route path="/cart" render={props => <Cart {...props} value={value} />} />
-                      {
-                        value.data.map( dataItem => {
-                          return <Route key={dataItem.id}
-                                        path={`/product-page/${dataItem.id}`}
-                                        render={props => <ProductPage {...props} dataItem={dataItem} value={value}/>} />
-                        })
-                      }
-                      <Route path="/about" component={About} />
-                      <Route path="/contact-us" component={ContactUs} />
-                      <Route component={NoSuchPage} />
-                    </Switch>
-                  </React.Fragment>
+                  <>
+                    <Route exact path="/" component={Carousel} />                  
+                    <Suspense fallback={<>Loading...</>}>                      
+                      <Switch>
+                        <Route exact path="/" component={Products} />
+                        <Route path="/mobile-phones-discount" component={MobilePhonesDiscount} />
+                        <Route path="/laptops-discount" component={LaptopsDiscount} />
+                        <Route path="/tablets-discount" component={TabletsDiscount} />
+                        <Route path="/mobile-phones" component={MobilePhones} />
+                        <Route path="/laptops" component={Laptops} />
+                        <Route path="/tablets" component={Tablets} />
+                        <Route path="/cart" render={props => <Cart {...props} value={value} />} />
+                        {
+                          value.data.map( dataItem => {
+                            return <Route key={dataItem.id}
+                                          path={`/product-page/${dataItem.id}`}
+                                          render={props => <ProductPage {...props} 
+                                                                        value={value}
+                                                                        dataItem={dataItem} />} />
+                          })
+                        }
+                        <Route path="/about" component={About} />
+                        <Route path="/contact-us" component={ContactUs} />
+                        <Route component={NoSuchPage} />
+                      </Switch>
+                    </Suspense>
+                  </>
                 )
-                : <Route exact path="/" render={props => <SearchResults {...props} value={value} />} />
+                : <Suspense fallback={<>Loading...</>}>
+                    <Route exact path="/" render={props => <SearchResults {...props} value={value} />} />
+                  </Suspense>
               )
             }
           }

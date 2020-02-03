@@ -33,28 +33,29 @@ export default function Reviews({...props}) {
   }
 
   function postReview() { 
-    console.log(text)
-    if (text === '' || text === '<p><br></p>') {
+    if (text === '' || 
+        text.match(/^(<p><br><\/p>)+$/) !== null || 
+        text.match(/^<p>\s+<\/p>$/) !== null) {
       return null
+    } else {
+      setIsEditorReadOnly(true)
+
+      const myEditor = document.querySelector('#editor > :nth-child(2)')
+      const html = myEditor.children[0].innerHTML.replace(/^(<p><br><\/p>)+/, '').replace(/(<p><br><\/p>)+$/, '')
+      const review = {
+        content: html
+      }
+      reviews.push(review)
+      let reviewList = reviews.map(review => { return <Review key={review}
+                                                              review={review}
+                                                              modules={modules}
+                                                              formats={formats}
+                                                              handleChange={handleChange}
+                                                              deleteReview={deleteReview} /> })
+      setArray(reviewList)
+  
+      setIsEditorReadOnly(false)
     }
-
-    setIsEditorReadOnly(true)
-
-    const myEditor = document.querySelector('#editor > :nth-child(2)')
-    const html = myEditor.children[0].innerHTML
-    const review = {
-      content: html
-    }
-    reviews.push(review)
-    let reviewList = reviews.map(review => { return <Review key={review}
-                                                            review={review}
-                                                            modules={modules}
-                                                            formats={formats}
-                                                            handleChange={handleChange}
-                                                            deleteReview={deleteReview} /> })
-    setArray(reviewList)
-
-    setIsEditorReadOnly(false)
   }
 
   const modules = {
@@ -85,8 +86,7 @@ export default function Reviews({...props}) {
     <div className="bg-light d-flex flex-column">
       {
         array.length < 1
-        ? (
-          <React.Fragment>
+        ? <>
             <ReactQuill id="editor"
                         ref={reactQuillRef}
                         value={text}
@@ -100,8 +100,7 @@ export default function Reviews({...props}) {
               <button className="btn btn-primary ml-4 mb-4"
                       onClick={postReview}>{t('Reviews|2')}</button>
             </div>
-          </React.Fragment>
-        )
+          </>
         : <div id="arrayWrapper" className="d-flex flex-column">
             {array}
           </div>

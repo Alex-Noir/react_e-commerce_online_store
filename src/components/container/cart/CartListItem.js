@@ -35,7 +35,7 @@ export default function CartListItem(props) {
       <img src={require(`../../../img/products/data/${id}/${img}`)} alt={title} height="100" width="100" />
       <div>
         <Link to={`/product-page/${id}`}><h5 className="p-1 text-dark">{title}</h5></Link>
-        <h6 className="p-1">{t('ProductPage|1')} {company} </h6>
+        <h6 className="p-1">{t('ProductInfo|1')} {company} </h6>
       </div>
       <h6>
         <button className="btn btn-outline-dark border-right-0 rounded-0"
@@ -61,7 +61,7 @@ export default function CartListItem(props) {
           <span aria-hidden="true">&times;</span>
         </button>
         <h6>
-          {t('ProductPage|4')} {props.value.currency} {parseFloat((totalPrice * currencyRate).toFixed(2))}
+          {t('ProductInfo|4')} {props.value.currency} {parseFloat((totalPrice * currencyRate).toFixed(2))}
         </h6>
       </div>
     </DivCartListItem>

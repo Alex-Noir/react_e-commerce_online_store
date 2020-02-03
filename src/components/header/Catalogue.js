@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, Suspense, lazy } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import Nav from './Nav'
+const Nav = lazy(() => import('./Nav'))
 
 export default function Catalogue() {
   const [ isNavVisible, setIsNavVisible ] = useState(false)
@@ -30,7 +30,9 @@ export default function Catalogue() {
       </button>
       {
         isNavVisible
-        ? <Nav showNav={showNav} />
+        ? <Suspense fallback={<>Loading...</>}>
+            <Nav showNav={showNav} />
+          </Suspense>
         : null
       }
     </div>

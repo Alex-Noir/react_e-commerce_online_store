@@ -1,9 +1,10 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, Suspense, lazy } from 'react'
+import { DivAuthWrapper } from './styles'
 import { useTranslation } from 'react-i18next'
 
 import LogIn from './authentication/LogIn'
 import Registration from './authentication/Registration'
-import ResetPassword from './authentication/ResetPassword'
+const ResetPassword = lazy(() => import('./authentication/ResetPassword'))
 
 export default function Authentication(props) {
   const [ isResetPasswordVisible, setIsResetPasswordVisible ] = useState(false)
@@ -53,44 +54,48 @@ export default function Authentication(props) {
   }
 
   return (
-    <div className="position-absolute mt-5 p-5 bg-light" id="authModal">
-      {
-        !isResetPasswordVisible
-        ? (
-          <div>
-            <button type="button" 
-                    name="signIn" 
-                    className={`btn ${props.isLogInTabVisible ? "btn-light" : "btn-white"} d-inline-block border-left border-top border-right rounded-0 px-5 shadow-none`} 
-                    onClick={props.handleVisibility}>{t('AuthButtons|1')}</button>
-            <button type="button" 
-                    name="registration" 
-                    className={`btn ${props.isLogInTabVisible ? "btn-white" : "btn-light"} d-inline-block border-left border-top border-right rounded-0 px-5 shadow-none`} 
-                    onClick={props.handleVisibility}>{t('Authentication|1')}</button>
-          </div>
-        )
-        : <div className="d-flex justify-content-center border-left border-top border-right pt-2"> 
-            {t('Authentication|2')}
-          </div>
-      }
-      {
-        !isResetPasswordVisible
-        ? (
-          props.isLogInTabVisible
-          ? <LogIn  email={email}
-                    password={password}
-                    showResetPassword={showResetPassword} 
-                    handleChange={handleChange} 
-                    handleLogInSubmit={handleLogInSubmit} 
-                    checkbox={checkbox} />
-          : <Registration email={email} 
-                          name={name}
-                          password={password}
-                          passwordConfirm={passwordConfirm} 
-                          handleChange={handleChange} 
-                          handleRegistrationSubmit={handleRegistrationSubmit} />
-        )
-        : <ResetPassword hideResetPassword={hideResetPassword} />
-      }
-    </div>
+    <DivAuthWrapper className="position-absolute overflow-auto" id="outsideAuthModal" onClick={props.closeAuthModal}>
+      <div className="position-absolute mt-5 p-5 bg-light" id="authModal">
+        {
+          !isResetPasswordVisible
+          ? (
+            <>
+              <button type="button" 
+                      name="signIn" 
+                      className={`btn ${props.isLogInTabVisible ? "btn-light" : "btn-white"} d-inline-block border-left border-top border-right rounded-0 px-5 shadow-none`} 
+                      onClick={props.handleVisibility}>{t('AuthButtons|1')}</button>
+              <button type="button" 
+                      name="registration" 
+                      className={`btn ${props.isLogInTabVisible ? "btn-white" : "btn-light"} d-inline-block border-left border-top border-right rounded-0 px-5 shadow-none`} 
+                      onClick={props.handleVisibility}>{t('Authentication|1')}</button>
+            </>
+          )
+          : <div className="d-flex justify-content-center border-left border-top border-right pt-2"> 
+              {t('Authentication|2')}
+            </div>
+        }
+        {
+          !isResetPasswordVisible
+          ? (
+            props.isLogInTabVisible
+            ? <LogIn  email={email}
+                      password={password}
+                      showResetPassword={showResetPassword} 
+                      handleChange={handleChange} 
+                      handleLogInSubmit={handleLogInSubmit} 
+                      checkbox={checkbox} />
+            : <Registration email={email} 
+                            name={name}
+                            password={password}
+                            passwordConfirm={passwordConfirm} 
+                            handleChange={handleChange} 
+                            handleRegistrationSubmit={handleRegistrationSubmit} />
+          )
+          : <Suspense fallback={<>Loading...</>}>
+              <ResetPassword hideResetPassword={hideResetPassword} />
+            </Suspense>
+        }
+      </div>
+    </DivAuthWrapper>
   )
 }

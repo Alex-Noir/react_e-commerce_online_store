@@ -142,7 +142,7 @@ export const DivProductPage = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto 1fr auto;
-  > nav {
+  > :first-child {
     grid-area: 1 / 1 / 2 / 3;
   }
   > :nth-child(2) {
@@ -269,7 +269,7 @@ export const DivCartListItem = styled.div`
   display: grid;
   grid-template-columns: auto 1fr 1fr 1fr;
   grid-template-rows: auto;
-  > img {
+  > :first-child {
     grid-area: 1 / 1 / 2 / 2;
     margin-right: 1rem;
   }

@@ -81,7 +81,7 @@ export default function Slider(props) {
       {
         category === 'Mobile Phones'
         ? dataSourceMobilePhones.map((src, index) => (
-            <div key={index}>
+            <React.Fragment key={index}>
               <ReactImageMagnify
                 {...{
                   smallImage: {
@@ -104,10 +104,10 @@ export default function Slider(props) {
                   enlargedImagePosition: 'over'
                 }}
               />
-            </div>
+            </React.Fragment>
           ))
         : dataSource.map((src, index) => (
-            <div key={index}>
+            <React.Fragment key={index}>
               <ReactImageMagnify
                 {...{
                   smallImage: {
@@ -130,8 +130,9 @@ export default function Slider(props) {
                   enlargedImagePosition: 'over'
                 }}
               />
-            </div>
-          ))}
+            </React.Fragment>
+          ))
+      }
     </ReactSlick>
   )
 }

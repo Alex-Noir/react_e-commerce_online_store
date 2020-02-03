@@ -139,9 +139,9 @@ export default function SearchResult(props) {
                       className="btn btn-warning"
                       onClick={() => {  value.addToCart(id, inputValue, hasDiscount)
                                         showInfo(inputValue)
-                                        value.evaluateTotalPrice()  }}>{t('ProductPage|7')}</button>
+                                        value.evaluateTotalPrice()  }}>{t('AddToCart|2')}</button>
               <DivInfo className={isInfoVisible ? "visible" : "invisible"}> 
-                +{inputValue} {t('ProductPage|8')}
+                +{inputValue} {t('AddToCart|3')}
               </DivInfo>
             </div>
             <div className="d-flex flex-column align-items-end">
@@ -149,7 +149,7 @@ export default function SearchResult(props) {
                 {
                   !hasDiscount
                   ? <span>{value.currency} {parseFloat((price * currencyRate).toFixed(2))}</span>
-                  : <React.Fragment>
+                  : <>
                       <span>
                         <s>{value.currency} {parseFloat((price * currencyRate).toFixed(2))}</s>
                         &nbsp;                      
@@ -157,7 +157,7 @@ export default function SearchResult(props) {
                           {value.currency} {parseFloat(((price * currencyRate) * discount).toFixed(2))}
                         </span>
                       </span>
-                    </React.Fragment>
+                    </>
                 }
                 
               </h3>

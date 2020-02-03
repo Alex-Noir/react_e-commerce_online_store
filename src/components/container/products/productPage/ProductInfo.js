@@ -59,7 +59,7 @@ export default function ProductInfo(props) {
   }
 
   return (
-    <React.Fragment>
+    <>
       <h1>{title}</h1>
       <h2>{t('ProductInfo|1')} {company}</h2>
       <StarRating rating={rating} 
@@ -84,6 +84,6 @@ export default function ProductInfo(props) {
       </h2>
       <br />
       <h3>{t('ProductInfo|5')} {description}</h3>
-    </React.Fragment>
+    </>
   )
 }

@@ -3,7 +3,10 @@ import { DivInfo } from '../../../styles'
 import { useTranslation } from 'react-i18next'
 
 export default function AddToCart(props) {
-  const { id, hasDiscount } = props.dataItem
+  const { id, 
+          hasDiscount, 
+          isInCart, 
+          amountInCart } = props.dataItem
 
   const [ inputValue, setInputValue ] = useState(0)
   const [ isInfoVisible, setIsInfoVisible] = useState(false)
@@ -30,8 +33,8 @@ export default function AddToCart(props) {
   }
 
   return (
-    <React.Fragment>
-      <h3>
+    <>
+      <h3 classname="d-flex flex-row">
         {t('AddToCart|1')} 
         <button className="btn btn-outline-dark border-right-0 rounded-0 ml-3"
                 type="button" 
@@ -48,6 +51,10 @@ export default function AddToCart(props) {
                 value="+" 
                 name="+" 
                 onClick={counter}> + </button>
+        <h6 className={isInCart ? "d-inline-flex flex-row bg-danger text-white mx-3 mb-0 p-1 rounded" 
+                                : "d-inline-flex invisible"}>
+          {t('SearchResult|1')} {amountInCart}
+        </h6>
       </h3>
       <div className="position-relative">
         <button type="button"
@@ -59,6 +66,6 @@ export default function AddToCart(props) {
           +{inputValue} {t('AddToCart|3')} 
         </DivInfo>
       </div>
-    </React.Fragment>
+    </>
   )
 }

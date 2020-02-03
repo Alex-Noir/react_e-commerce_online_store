@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, Suspense, lazy } from 'react'
 import { Route } from 'react-router-dom'
-import { DivWrapper, DivAuthWrapper } from './components/styles'
+import { DivWrapper } from './components/styles'
 
 import Header from './components/Header'
-import Authentication from './components/Authentication'
 import Container from './components/Container'
 import Footer from './components/Footer'
+const Authentication = lazy(() => import('./components/Authentication'))
 
 export default function App() {
   const [ isAuthModalVisible, setIsAuthModalVisible ] = useState(false)
@@ -38,12 +38,11 @@ export default function App() {
       />
       {
         isAuthModalVisible
-        ? (
-          <DivAuthWrapper className="position-absolute overflow-auto" id="outsideAuthModal" onClick={closeAuthModal}>
+        ? <Suspense fallback={<>Loading...</>}>
             <Authentication isLogInTabVisible={isLogInTabVisible}
-                            handleVisibility={handleVisibility} />
-          </DivAuthWrapper>
-        )
+                              closeAuthModal={closeAuthModal}
+                              handleVisibility={handleVisibility} />
+          </Suspense>
         : null
       }
       <Route path="/" component={Container} />

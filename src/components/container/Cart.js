@@ -37,7 +37,7 @@ export default function Cart(props) {
         ? <div className="d-flex justify-content-center">
             <h2>{t('Cart|1')}</h2>
           </div>
-        : <React.Fragment>
+        : <>
             <CartList value={props.value} />
             <button type="button" className="btn btn-danger" onClick={props.value.clearCart}>{t('Cart|2')}</button>
             <div className="d-flex flex-column">
@@ -46,7 +46,7 @@ export default function Cart(props) {
               <h1>{t('Cart|5')} {currency} {cartTotalPrice}</h1>
               <PayPalCheckoutButton cartTotalPrice={cartTotalPrice} />
             </div>
-          </React.Fragment>
+          </>
       }
     </DivCart>
   )

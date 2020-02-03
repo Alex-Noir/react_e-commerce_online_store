@@ -6,7 +6,7 @@ export default function Lists() {
   const [ t, i18n ] = useTranslation()
 
   return (
-    <React.Fragment>
+    <>
       <ul className="list-group">
         <li className="list-group-item bg-transparent p-0">
           <Link to="/about" className="text-warning nav-link">{t('Lists|1')}</Link>
@@ -41,6 +41,6 @@ export default function Lists() {
           <a href="/#" className="text-warning nav-link">Lorem ipsum sin amet</a>
         </li>
       </ul>
-    </React.Fragment>
+    </>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { DivContactForm } from '../../styles'
+import { DivContactForm } from '../styles'
 import { useTranslation } from 'react-i18next'
 
 export default function ContactUs() {
@@ -7,7 +7,7 @@ export default function ContactUs() {
 
   return (
     <DivContactForm className="d-flex flex-column bg-light rounded p-5">
-      <h1>{t('Footer|2')}!</h1>
+      <h1>{t('Lists|2')}!</h1>
       <form>
         <div className="form-group">
           <label for="exampleFormControlInput1">{t('ContactUs|1')}</label>

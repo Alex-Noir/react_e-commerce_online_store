@@ -23,23 +23,22 @@ export default function Carousel() {
     return (
       <DivCarousel>
         <Slider {...settings}>
-          <div>
+          <>
             <Link to="/mobile-phones-discount">
               <img src={require('../../img/carousel/01.webp')} alt="First slide" />
             </Link>
-          </div>
-          <div>
+          </>
+          <>
             <Link to="/laptops-discount">
               <img src={require('../../img/carousel/02.webp')} alt="Second slide" />
             </Link>
-          </div>
-          <div>
+          </>
+          <>
             <Link to="/tablets-discount">
               <img src={require('../../img/carousel/03.webp')} alt="Third slide" />
             </Link>
-          </div>
+          </>
         </Slider>
       </DivCarousel>
     )
   }
-

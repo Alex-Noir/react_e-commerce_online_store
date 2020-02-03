@@ -53,7 +53,7 @@
   "AddToCart": {
     "1": "Cantidad:",
     "2": "Añadir al carrito",
-    "3": "artículos añadidos!"
+    "3": "¡artículos añadidos!"
   },
   "ToggleButtons": {
     "1": "Revisiones de Productos",
@@ -86,8 +86,8 @@
     "2": "Contáctenos"
   },
   "Social": {
-    "3": "Suscríbete a las noticias!",
-    "4": "Nuestras redes sociales::",
+    "3": "¡Suscríbete a las noticias!",
+    "4": "Nuestras redes sociales:",
     "5": "Todos los derechos reservados."
   },
   "I18nButtons": {

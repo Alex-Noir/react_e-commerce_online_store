@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Suspense, lazy } from 'react'
 import { Link } from 'react-router-dom'
 import { DivProductPage } from '../../styles'
 import { useTranslation } from 'react-i18next'
@@ -7,8 +7,8 @@ import ProductInfo from './productPage/ProductInfo'
 import AddToCart from './productPage/AddToCart'
 import ToggleButtons from './productPage/ToggleButtons'
 import Reviews from './productPage/Reviews'
-import Comments from './productPage/Comments'
 import Slider from './productPage/Slider'
+const Comments = lazy(() => import('./productPage/Comments'))
 
 export default function ProductPage(props) {
   useEffect(() => {
@@ -54,11 +54,13 @@ export default function ProductPage(props) {
         <AddToCart value={props.value} dataItem={props.dataItem} />
       </div>
       <ToggleButtons toggleTabs={toggleTabs} isReviewsTabVisible={isReviewsTabVisible} />
-      {
-        isReviewsTabVisible
-        ? <Reviews dataItem={props.dataItem} value={props.value} />
-        : <Comments />
-      }
+        {
+          isReviewsTabVisible
+          ? <Reviews dataItem={props.dataItem} value={props.value} />
+          : <Suspense fallback={<>Loading...</>}>
+              <Comments />
+            </Suspense>
+        }
     </DivProductPage>
   )
 }

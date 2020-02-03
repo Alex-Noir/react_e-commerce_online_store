@@ -86,7 +86,7 @@ export default function Item(props) {
             {
               !hasDiscount
               ? <span>{props.value.currency} {parseFloat((price * currencyRate).toFixed(2))}</span>
-              : <React.Fragment>
+              : <>
                   <span>
                     <s>{props.value.currency} {parseFloat((price * currencyRate).toFixed(2))}</s>
                     &nbsp;
@@ -94,7 +94,7 @@ export default function Item(props) {
                       {props.value.currency} {parseFloat(((price * currencyRate) * discount).toFixed(2))}
                     </span>
                   </span>
-                </React.Fragment>
+                </>
             }
           </h4>
           <h6 className={isInCart ? "bg-danger text-white p-1 rounded" : "invisible"}>

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { ContextConsumer } from '../../../context'
+import { ContextConsumer } from '../../context'
 import { useTranslation } from 'react-i18next'
 
 export default function I18nButtons() {

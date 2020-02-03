@@ -2,9 +2,9 @@ import React, { useEffect } from 'react'
 import { StyledFooter } from './styles'
 import { useTranslation } from 'react-i18next'
 
-import Lists from './container/footer/Lists'
-import I18nButtons from './container/footer/I18nButtons'
-import Social from './container/footer/Social'
+import Lists from './footer/Lists'
+import I18nButtons from './footer/I18nButtons'
+import Social from './footer/Social'
 
 export default function Footer() {
   const [ t, i18n ] = useTranslation()

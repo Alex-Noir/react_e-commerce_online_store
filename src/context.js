@@ -3,7 +3,6 @@ import { data } from './components/data'
 import axios from 'axios'
 
 const Context = React.createContext()
-
 class ContextProvider extends Component {
   constructor() {
     super()
@@ -30,7 +29,6 @@ class ContextProvider extends Component {
     this.setSearchValue = this.setSearchValue.bind(this)
     this.handleSearch = this.handleSearch.bind(this)
     this.nullifySearchValue = this.nullifySearchValue.bind(this)
-    this.postReview = this.postReview.bind(this)
     this.changeCurrency = this.changeCurrency.bind(this)
   }
   
@@ -201,16 +199,6 @@ class ContextProvider extends Component {
     })
   }
 
-  postReview(id, html) {
-    const review = {
-      user: "User",
-      content: html
-    }
-    const item = data[id]
-    const reviews = item.reviews
-    reviews.push(review)    
-  }
-
   changeCurrency(e) {
     const selectedCurrency = e.target.value
     this.setState(() => {
@@ -234,7 +222,6 @@ class ContextProvider extends Component {
         setSearchValue: this.setSearchValue,
         handleSearch: this.handleSearch,
         nullifySearchValue: this.nullifySearchValue,
-        postReview: this.postReview,
         changeCurrency: this.changeCurrency
       }}>
         {this.props.children}

@@ -7,7 +7,7 @@ import Item from '../products/Item'
 
 export default function MobilePhonesDiscount() {
   return (
-    <React.Fragment>
+    <>
       <DivCountdown className="d-flex flex-column">
         <img src={require('../../../img/carousel/01.webp')} alt="" />
         <hr />
@@ -26,6 +26,6 @@ export default function MobilePhonesDiscount() {
           }
         </ContextConsumer>
       </DivDiscountList>
-    </React.Fragment>
+    </>
   )
 }
