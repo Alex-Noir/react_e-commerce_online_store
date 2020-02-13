@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom'
 
 export default function Logo(props) {
   return (
-    <div className="mr-3">
-      <Link to="/" className="logo" onClick={props.value.makeResultsInvisible}>
-        <img src={require('../../img/logo.webp')} alt="logo" className="img-tumbnail" />
+    <>
+      <Link to="/" className="logo" onClick={props.makeResultsInvisible}>
+        <picture>
+          <source media="(max-width: 600px)" srcset={require('../../img/mini-logo.webp')} />
+          <img src={require('../../img/logo.webp')} alt="logo" className="img-tumbnail" />
+        </picture>
       </Link>
-    </div>
+    </>
   )
 }

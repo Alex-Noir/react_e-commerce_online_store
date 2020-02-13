@@ -10,7 +10,11 @@ ReactDOM.render(
   <React.StrictMode>
     <ContextProvider>
       <Router>
-        <Suspense fallback={(<>Loading...</>)}>
+        <Suspense fallback={
+          <div className="spinner-border text-primary" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
+        }>
           <App />
         </Suspense>
       </Router>

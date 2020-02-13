@@ -9,23 +9,23 @@ export default function Social() {
   }, [t])
 
   return (
-    <div className="d-flex flex-column">
-      <form className="float-left text-light">
+    <div className="d-flex flex-column justify-content-between text-light">
+      <form>
         {t('Social|1')}
-        <label htmlFor="email" className="d-flex flex-row no-wrap">
-          <input type="email" size="27" id="email" />
+        <label htmlFor="email" className="d-flex no-wrap">
+          <input type="email" size="20" id="email" />
           <input type="submit" value={t('ContactUs|3')} ref={submitButtonRef}></input>
         </label>
       </form>
-      <div className="text-light">
+      <div>
         <div>{t('Social|2')}</div>
         <a href="/#" className="text-light mr-2"><i className="fab fa-facebook-square fa-2x"></i></a>
         <a href="/#" className="text-light mr-2"><i className="fab fa-twitter-square fa-2x"></i></a>
         <a href="/#" className="text-light mr-2"><i className="fab fa-instagram fa-2x"></i></a>
         <a href="/#" className="text-light mr-2"><i className="fab fa-youtube fa-2x"></i></a>
         <a href="/#" className="text-light mr-2"><i className="fab fa-linkedin fa-2x"></i></a>
-        <div className="mt-5">&#169; 1991 - {new Date().getFullYear()} {t('Social|3')}</div>
       </div>
+      <div>&#169; 1991 - {new Date().getFullYear()} {t('Social|3')}</div>
     </div>
   )
 }

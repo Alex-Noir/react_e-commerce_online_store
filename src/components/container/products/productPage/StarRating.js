@@ -22,7 +22,7 @@ export default function Rating(props) {
 
   return (
     <>
-      <div className="d-flex flex-row">{stars}</div>
+      <div className="d-flex">{stars}</div>
     </>
   )
 }

@@ -1,17 +1,17 @@
 import React from 'react'
-import { DivProducts } from '../../styles'
+import { DivBestOffers, DivProductList } from '../../styles'
 import { useTranslation } from 'react-i18next'
 import { ContextConsumer } from '../../../context'
 
 import Item from './Item'
 
-export default function Products() {
+export default function BestOffers() {
   const [ t, i18n ] = useTranslation()
 
   return (
-    <DivProducts>
-      <div className="h4 mt-3 ml-5"><b>{t('Products|1')}</b></div>
-      <div className="d-flex flex-wrap justify-content-start">
+    <DivBestOffers>
+      <div className="h4 mt-3 ml-4"><b>{t('Products|1')}</b></div>
+      <DivProductList>
         <ContextConsumer>
           {
             value => {
@@ -23,7 +23,7 @@ export default function Products() {
             }
           }
         </ContextConsumer>
-      </div>
-    </DivProducts>
+      </DivProductList>
+    </DivBestOffers>
   )
 }

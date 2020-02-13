@@ -38,10 +38,14 @@ export default function App() {
       />
       {
         isAuthModalVisible
-        ? <Suspense fallback={<>Loading...</>}>
+        ? <Suspense fallback={
+            <div className="spinner-border text-primary" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
+          }>
             <Authentication isLogInTabVisible={isLogInTabVisible}
-                              closeAuthModal={closeAuthModal}
-                              handleVisibility={handleVisibility} />
+                            closeAuthModal={closeAuthModal}
+                            handleVisibility={handleVisibility} />
           </Suspense>
         : null
       }

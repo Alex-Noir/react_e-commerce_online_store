@@ -22,7 +22,7 @@ export default function Catalogue() {
   }
 
   return (
-    <div className="position-relative mr-3">
+    <div className="position-relative">
       <button type="button" 
               className="btn btn-light bg-transparent text-primary font-weight-bold border" 
               onClick={showNav}>
@@ -30,7 +30,7 @@ export default function Catalogue() {
       </button>
       {
         isNavVisible
-        ? <Suspense fallback={<>Loading...</>}>
+        ? <Suspense fallback={ <i className="fa fa-cog fa-spin" style={{fontSize: '24px'}}></i> }>
             <Nav showNav={showNav} />
           </Suspense>
         : null

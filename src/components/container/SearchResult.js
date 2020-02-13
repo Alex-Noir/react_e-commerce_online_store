@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { ContextConsumer } from '../../../context'
-import { DivInfo } from '../../styles'
+import { ContextConsumer } from '../../context'
+import { DivInfo } from '../styles'
 
-import StarRating from './productPage/StarRating'
+import StarRating from './products/productPage/StarRating'
 
 export default function SearchResult(props) {
   const { id, 
@@ -100,7 +100,7 @@ export default function SearchResult(props) {
         value => (
           <div className="rounded bg-light border border-danger m-1 p-3">
             <img
-              src={require(`../../../img/products/data/${id}/01.webp`)} 
+              src={require(`../../img/products/data/${id}/01.webp`)} 
               alt="SearchItem"
               width="121"
               heigth="121"
@@ -108,7 +108,7 @@ export default function SearchResult(props) {
             <div className="d-flex flex-column">
               <Link to={`/product-page/${id}`} className="text-dark"><h4>{title}</h4></Link>
               <h6 className="text-primary">{productCategory}</h6>
-              <div className="d-flex flex-row">
+              <div className="d-flex">
                 <StarRating rating={rating}
                             customRating={customRating}
                             handleMouseover={handleMouseover}
@@ -118,7 +118,7 @@ export default function SearchResult(props) {
               </div>
             </div>
             <div className="d-flex flex-column">
-              <div className="mb-1">
+              <div className="d-flex no-wrap align-items-start mb-1">
                 <button className="btn btn-outline-dark border-right-0 rounded-0"
                         type="button" 
                         value="-" 
@@ -150,16 +150,18 @@ export default function SearchResult(props) {
                   !hasDiscount
                   ? <span>{value.currency} {parseFloat((price * currencyRate).toFixed(2))}</span>
                   : <>
-                      <span>
-                        <s>{value.currency} {parseFloat((price * currencyRate).toFixed(2))}</s>
-                        &nbsp;                      
-                        <span className="text-danger">
-                          {value.currency} {parseFloat(((price * currencyRate) * discount).toFixed(2))}
+                      <span className="d-flex flex-column">
+                        <s className="d-flex no-wrap">
+                          <span>{value.currency}</span> 
+                          <span>{parseFloat((price * currencyRate).toFixed(2))}</span>
+                        </s>                     
+                        <span className="d-flex no-wrap text-danger">
+                          <span>{value.currency}</span> 
+                          <span>{parseFloat(((price * currencyRate) * discount).toFixed(2))}</span>
                         </span>
                       </span>
                     </>
-                }
-                
+                }                
               </h3>
               <h6 className={isInCart ? "bg-danger text-white p-1 rounded" : null}>
                 {t('SearchResult|1')} {amountInCart}

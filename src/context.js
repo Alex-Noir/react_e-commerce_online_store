@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { data } from './components/data'
-import axios from 'axios'
 
 const Context = React.createContext()
 class ContextProvider extends Component {
@@ -32,18 +31,18 @@ class ContextProvider extends Component {
     this.changeCurrency = this.changeCurrency.bind(this)
   }
   
-  componentDidMount() {
+  async componentDidMount() {
     this.setData()
 
-    axios.get('https://api.exchangeratesapi.io/latest')
-      .then(res => {
-        this.setState(() => {
-          return { fetchedRates: res.data.rates }
-        })
+    try {
+      const res = await window.axios.get('https://api.exchangeratesapi.io/latest')
+      this.setState(() => {
+        return { fetchedRates: res.data.rates }
       })
-      .catch(err => {
-        console.log(err)
-      })
+      console.log(res.data.rates)
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   setData() {

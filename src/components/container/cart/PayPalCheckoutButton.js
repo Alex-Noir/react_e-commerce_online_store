@@ -46,7 +46,7 @@ export default function PayPalCheckoutButton(props) {
   }, [])
 
   return (
-    <div className="w-25">
+    <div className="d-inline-flex">
       {
         isBeingPaidFor
         ? <h1>{t('PayPalCheckoutButton|1')}</h1>

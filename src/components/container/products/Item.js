@@ -65,8 +65,8 @@ export default function Item(props) {
   }
 
   return (
-    <DivProductItem className="mr-2 mt-2 p-3 rounded bg-light">
-      <Link to={`/product-page/${id}`} className="d-flex flex-column align-self-center nav-link text-dark">
+    <DivProductItem className="rounded bg-light">
+      <Link to={`/product-page/${id}`} className="d-flex flex-column p-4 nav-link text-dark">
         <img 
           className="align-self-center"
           alt="Item"
@@ -81,7 +81,7 @@ export default function Item(props) {
                     rate={rate}
                     handleMouseout={handleMouseout} />
         <br />
-        <div className="d-flex flex-row justify-content-between">
+        <div className="d-flex justify-content-between">
           <h4>
             {
               !hasDiscount

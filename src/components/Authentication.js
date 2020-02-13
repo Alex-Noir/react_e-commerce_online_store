@@ -1,5 +1,5 @@
 import React, { useState, useRef, Suspense, lazy } from 'react'
-import { DivAuthWrapper } from './styles'
+import { DivAuthWrapper, DivAuthButtons } from './styles'
 import { useTranslation } from 'react-i18next'
 
 import LogIn from './authentication/LogIn'
@@ -55,20 +55,20 @@ export default function Authentication(props) {
 
   return (
     <DivAuthWrapper className="position-absolute overflow-auto" id="outsideAuthModal" onClick={props.closeAuthModal}>
-      <div className="position-absolute mt-5 p-5 bg-light" id="authModal">
+      <div className="position-absolute mt-5 bg-light animated zoomInRight" id="authModal">
         {
           !isResetPasswordVisible
           ? (
-            <>
+            <DivAuthButtons>
               <button type="button" 
                       name="signIn" 
-                      className={`btn ${props.isLogInTabVisible ? "btn-light" : "btn-white"} d-inline-block border-left border-top border-right rounded-0 px-5 shadow-none`} 
+                      className={`btn ${props.isLogInTabVisible ? "btn-light" : "btn-white"} d-inline-block border-left border-top border-right rounded-0 px-1 shadow-none`} 
                       onClick={props.handleVisibility}>{t('AuthButtons|1')}</button>
               <button type="button" 
                       name="registration" 
-                      className={`btn ${props.isLogInTabVisible ? "btn-white" : "btn-light"} d-inline-block border-left border-top border-right rounded-0 px-5 shadow-none`} 
+                      className={`btn ${props.isLogInTabVisible ? "btn-white" : "btn-light"} d-inline-block border-left border-top border-right rounded-0 px-1 shadow-none`} 
                       onClick={props.handleVisibility}>{t('Authentication|1')}</button>
-            </>
+            </DivAuthButtons>
           )
           : <div className="d-flex justify-content-center border-left border-top border-right pt-2"> 
               {t('Authentication|2')}
@@ -91,7 +91,7 @@ export default function Authentication(props) {
                             handleChange={handleChange} 
                             handleRegistrationSubmit={handleRegistrationSubmit} />
           )
-          : <Suspense fallback={<>Loading...</>}>
+          : <Suspense fallback={ <i className="fa fa-cog fa-spin" style={{fontSize: '24px'}}></i> }>
               <ResetPassword hideResetPassword={hideResetPassword} />
             </Suspense>
         }

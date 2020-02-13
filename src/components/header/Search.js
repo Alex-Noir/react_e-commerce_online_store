@@ -14,8 +14,10 @@ export default function Search() {
     <ContextConsumer>
       {
         value => (
-          <FormSearchBar id="formSearchBar" onSubmit={e => {value.handleSearch(e)
-                                                            redirectToSearchResults()}}>
+          <FormSearchBar  className="d-flex no-wrap my-3 mx-3" 
+                          id="formSearchBar" 
+                          onSubmit={e => {value.handleSearch(e)
+                                          redirectToSearchResults()}}>
             <input  type="search" 
                     name="search" 
                     value={value.searchValue}

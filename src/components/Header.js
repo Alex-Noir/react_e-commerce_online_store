@@ -14,10 +14,10 @@ export default function Header(props) {
       {
         value => 
           <StyledHeader className="bg-light shadow mb-4">
-            <Logo value={value} />
+            <Logo makeResultsInvisible={value.makeResultsInvisible} />
             <Catalogue />
             <Search />
-            <div className="d-flex m-3">
+            <div className="d-flex my-3 mr-3">
               <CartButton cartList={value.cartList} />
               <AuthButtons handleVisibility={props.handleVisibility} />
             </div>

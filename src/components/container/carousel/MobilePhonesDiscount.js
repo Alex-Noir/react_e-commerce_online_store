@@ -13,7 +13,7 @@ export default function MobilePhonesDiscount() {
         <hr />
         <Timer />
       </DivCountdown>
-      <DivDiscountList className="d-flex flex-wrap justify-content-start">
+      <DivDiscountList>
         <ContextConsumer>
           {
             value => {

@@ -8,7 +8,7 @@ export default function CartButton(props) {
       <i className="fas fa-shopping-cart mx-1"></i>
       {
         props.cartList.length > 0
-        ? <DivIconAmountInCart className="bg-danger text-light font-weight-bold position-absolute rounded-circle">
+        ? <DivIconAmountInCart className="animated fadeInDown bg-danger text-light font-weight-bold position-absolute rounded-circle">
             {props.cartList.length}
           </DivIconAmountInCart>
         : null

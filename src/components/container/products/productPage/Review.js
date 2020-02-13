@@ -64,7 +64,7 @@ export default function Review({...props}) {
                   formats={props.formats}
                   readOnly={isReviewReadOnly}
                   theme="bubble" />
-      <div className="d-flex flex-row">
+      <div className="d-flex">
         {
           isReviewReadOnly
           ? <>

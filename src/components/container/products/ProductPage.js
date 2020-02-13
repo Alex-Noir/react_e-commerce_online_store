@@ -57,7 +57,7 @@ export default function ProductPage(props) {
         {
           isReviewsTabVisible
           ? <Reviews dataItem={props.dataItem} value={props.value} />
-          : <Suspense fallback={<>Loading...</>}>
+          : <Suspense fallback={ <i className="fa fa-cog fa-spin" style={{fontSize: '24px'}}></i> }>
               <Comments />
             </Suspense>
         }

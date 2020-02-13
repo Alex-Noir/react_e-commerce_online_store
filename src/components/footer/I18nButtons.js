@@ -15,7 +15,7 @@ export default function I18nButtons() {
 
   return (
     <div className="d-flex flex-column justify-content-around align-items-center">
-      <div className="bg-success p-2 text-light rounded">
+      <div className="bg-success mb-4 p-2 text-light rounded">
         {t('I18nButtons|1')}
         <select className="ml-2 bg-success text-light border border-success" 
                 onChange={changeLanguage}>
@@ -34,7 +34,7 @@ export default function I18nButtons() {
       <ContextConsumer>
         {
           value => (
-            <div className="d-flex flex-row no-wrap bg-info p-2 text-light rounded">
+            <div className="d-flex no-wrap bg-info mb-4 p-2 text-light rounded">
               {t('I18nButtons|2')}
               <select className="ml-2 bg-info text-light border border-info"
                       onChange={value.changeCurrency}>

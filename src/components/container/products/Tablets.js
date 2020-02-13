@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { DivPhonesList as DivTabletList } from '../../styles'
+import { DivProducts, DivProductList } from '../../styles'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { ContextConsumer } from '../../../context'
@@ -42,14 +42,14 @@ export default function Tablets() {
   }
   
   return (
-    <DivTabletList className="d-flex flex-column justify-content-center">
+    <DivProducts className="d-flex flex-column justify-content-center">
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item"><Link to="/">{t('MobilePhones|1')}</Link></li>
           <li className="breadcrumb-item active" aria-current="page">{t('Nav|3')}</li>
         </ol>
       </nav>
-      <div className="d-flex flex-wrap justify-content-start">
+      <DivProductList>
         <ContextConsumer>
           {
             value => {
@@ -62,12 +62,12 @@ export default function Tablets() {
             }
           }
         </ContextConsumer>
-      </div>
+      </DivProductList>
       <Pagination postsPerPage={postsPerPage} 
                   currentPage={currentPage}
                   pageNumbers={pageNumbers}
                   paginate={paginate} 
                   goToPrevOrNextPage={goToPrevOrNextPage} />
-    </DivTabletList>
+    </DivProducts>
   )
 }

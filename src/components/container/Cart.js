@@ -39,11 +39,26 @@ export default function Cart(props) {
           </div>
         : <>
             <CartList value={props.value} />
-            <button type="button" className="btn btn-danger" onClick={props.value.clearCart}>{t('Cart|2')}</button>
+            <button type="button" className="btn btn-danger mb-5" onClick={props.value.clearCart}>{t('Cart|2')}</button>
             <div className="d-flex flex-column">
-              <h2>{t('Cart|3')} {currency} {subTotalPrice}</h2>
-              <h2>{t('Cart|4')} {currency} {cartTax}</h2>
-              <h1>{t('Cart|5')} {currency} {cartTotalPrice}</h1>
+              <h2 className="d-flex no-wrap">
+                {t('Cart|3')} 
+                <span className="d-flex no-wrap pl-2">                
+                  <span>{currency}</span> &nbsp; <span>{subTotalPrice}</span>
+                </span>
+              </h2>
+              <h2 className="d-flex no-wrap">
+                {t('Cart|4')} 
+                <span className="d-flex no-wrap pl-2">   
+                  <span>{currency}</span> &nbsp; <span>{cartTax}</span>
+                </span>
+              </h2>
+              <h1 className="d-flex no-wrap">
+                {t('Cart|5')} 
+                <span className="d-flex no-wrap pl-2">  
+                  <span>{currency}</span> &nbsp; <span>{cartTotalPrice}</span>
+                </span>
+              </h1>
               <PayPalCheckoutButton cartTotalPrice={cartTotalPrice} />
             </div>
           </>

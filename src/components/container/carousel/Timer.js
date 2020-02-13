@@ -32,15 +32,18 @@ export default function Timer() {
 
   return (
     <h1>
-      <span> {t('Timer|1')}&nbsp;
-        { 
-          Math.sign(timeDifference) !== -1
-          ? (`${Math.floor(timeDifference / (1000 * 3600 * 24))} : 
-              ${Math.floor((timeDifference % (1000 * 3600 * 24)) / (1000 * 3600))} : 
-              ${Math.floor((timeDifference % (1000 * 3600)) / (1000 * 60))} : 
-              ${Math.floor((timeDifference % (1000 * 60)) / 1000)}`)
-          : "0 : 0 : 0 : 0"
-        }
+      <span className="d-inline-flex flex-column align-items-center"> 
+        <span>{t('Timer|1')}</span>
+        <span>
+          { 
+            Math.sign(timeDifference) !== -1
+            ? (`${Math.floor(timeDifference / (1000 * 3600 * 24))} : 
+                ${Math.floor((timeDifference % (1000 * 3600 * 24)) / (1000 * 3600))} : 
+                ${Math.floor((timeDifference % (1000 * 3600)) / (1000 * 60))} : 
+                ${Math.floor((timeDifference % (1000 * 60)) / 1000)}`)
+            : "0 : 0 : 0 : 0"
+          }
+        </span>
       </span>
     </h1>
   )
