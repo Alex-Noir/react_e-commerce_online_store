@@ -8,7 +8,7 @@ import Review from './Review'
 export default function Reviews({...props}) {
   const { data } = props.value
 
-  const [ t, i18n ] = useTranslation()
+  const [ t ] = useTranslation()
   const reactQuillRef = useRef(null)
   useEffect(() => {
     reactQuillRef.current.editor.root.dataset.placeholder = t('Reviews|1')

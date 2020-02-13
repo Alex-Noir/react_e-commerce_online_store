@@ -16,7 +16,7 @@ export default function ProductInfo(props) {
   const [ tempRating, setTempRating ] = useState(null)
   const prevCount = usePrevious(customRating)
 
-  const [ t, i18n ] = useTranslation()
+  const [ t ] = useTranslation()
 
   let currencyRate = 1
 

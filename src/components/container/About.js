@@ -3,7 +3,7 @@ import { DivAbout } from '../styles'
 import { useTranslation } from 'react-i18next'
 
 export default function About() {
-  const [ t, i18n ] = useTranslation()
+  const [ t ] = useTranslation()
 
   useEffect(() => {
     window.scrollTo(0, 0)

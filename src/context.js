@@ -39,7 +39,6 @@ class ContextProvider extends Component {
       this.setState(() => {
         return { fetchedRates: res.data.rates }
       })
-      console.log(res.data.rates)
     } catch (err) {
       console.log(err)
     }

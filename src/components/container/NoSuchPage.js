@@ -3,7 +3,7 @@ import { Div404 } from '../styles'
 import { useTranslation } from 'react-i18next'
 
 export default function NoSuchPage() {
-  const [ t, i18n ] = useTranslation()
+  const [ t ] = useTranslation()
 
   return (
     <Div404 className="d-flex flex-column align-items-center">

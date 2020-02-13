@@ -19,7 +19,7 @@ export default function ProductPage(props) {
           
   const [ isReviewsTabVisible, setIsReviewsTabVisible ] = useState(true)
 
-  const [ t, i18n ] = useTranslation()
+  const [ t ] = useTranslation()
 
   let productCategory
 

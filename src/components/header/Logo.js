@@ -6,7 +6,7 @@ export default function Logo(props) {
     <>
       <Link to="/" className="logo" onClick={props.makeResultsInvisible}>
         <picture>
-          <source media="(max-width: 600px)" srcset={require('../../img/mini-logo.webp')} />
+          <source media="(max-width: 600px)" srcSet={require('../../img/mini-logo.webp')} />
           <img src={require('../../img/logo.webp')} alt="logo" className="img-tumbnail" />
         </picture>
       </Link>

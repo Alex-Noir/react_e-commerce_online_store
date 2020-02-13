@@ -6,7 +6,7 @@ import { ContextConsumer } from '../../../context'
 import Item from './Item'
 
 export default function BestOffers() {
-  const [ t, i18n ] = useTranslation()
+  const [ t ] = useTranslation()
 
   return (
     <DivBestOffers>

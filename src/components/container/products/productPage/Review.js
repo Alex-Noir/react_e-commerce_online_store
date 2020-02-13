@@ -4,7 +4,7 @@ import ReactQuill from 'react-quill'
 import { useTranslation } from 'react-i18next'
 
 export default function Review({...props}) {
-  const [ t, i18n ] = useTranslation()
+  const [ t ] = useTranslation()
 
   const [ text, setText ] = useState(props.review.content)
   const [ isLikePressed, setIsLikePressed ] = useState(false)

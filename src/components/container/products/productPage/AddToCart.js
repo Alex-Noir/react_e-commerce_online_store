@@ -11,7 +11,7 @@ export default function AddToCart(props) {
   const [ inputValue, setInputValue ] = useState(0)
   const [ isInfoVisible, setIsInfoVisible] = useState(false)
 
-  const [ t, i18n ] = useTranslation()
+  const [ t ] = useTranslation()
   
   function counter(e) {
     if (e.target.name === "-" && inputValue > 0) {

@@ -23,7 +23,7 @@ export default function Laptops() {
     pageNumbers.push(i)
   }
 
-  const [ t, i18n ] = useTranslation()
+  const [ t ] = useTranslation()
   
   function paginate(e, pageNumber) {
     e.preventDefault()

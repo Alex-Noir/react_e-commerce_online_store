@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 export default function PayPalCheckoutButton(props) {
   const [ isBeingPaidFor, setIsBeingPaidFor ] = useState(false)
 
-  const [ t, i18n ] = useTranslation()
+  const [ t ] = useTranslation()
 
   const paypalRef = useRef()
 

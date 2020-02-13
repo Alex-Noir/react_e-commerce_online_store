@@ -13,7 +13,7 @@ export default function CartListItem(props) {
           hasDiscount,
           totalPrice } = props.cartListItem
   
-  const [ t, i18n ] = useTranslation()
+  const [ t ] = useTranslation()
 
   let currencyRate = 1
 

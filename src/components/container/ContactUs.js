@@ -3,7 +3,7 @@ import { DivContactForm } from '../styles'
 import { useTranslation } from 'react-i18next'
 
 export default function ContactUs() {
-  const [ t, i18n ] = useTranslation()
+  const [ t ] = useTranslation()
 
   return (
     <DivContactForm className="d-flex flex-column bg-light rounded p-5">

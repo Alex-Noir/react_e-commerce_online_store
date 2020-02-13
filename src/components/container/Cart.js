@@ -28,7 +28,7 @@ export default function Cart(props) {
   let cartTax = parseFloat((subTotalPrice * 0.1).toFixed(2))
   let cartTotalPrice = parseFloat((subTotalPrice + cartTax).toFixed(2))
 
-  const [ t, i18n ] = useTranslation()
+  const [ t ] = useTranslation()
 
   return (
     <DivCart className="w-100">

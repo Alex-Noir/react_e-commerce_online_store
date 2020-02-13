@@ -5,7 +5,7 @@ const Nav = lazy(() => import('./Nav'))
 
 export default function Catalogue() {
   const [ isNavVisible, setIsNavVisible ] = useState(false)
-  const [ t, i18n ] = useTranslation()
+  const [ t ] = useTranslation()
 
   function showNav() {    
     if (!isNavVisible) {

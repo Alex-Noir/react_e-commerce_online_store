@@ -23,7 +23,7 @@ export default function SearchResult(props) {
   const [ inputValue, setInputValue ] = useState(0)
   const [ isInfoVisible, setIsInfoVisible] = useState(false)
 
-  const [ t, i18n ] = useTranslation()
+  const [ t ] = useTranslation()
 
   let currencyRate = 1
 

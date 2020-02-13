@@ -11,6 +11,7 @@ export default function Rating(props) {
     }
     stars.push(
       <IStar
+        key={i.toString()}
         style={{ direction: (i % 2 === 0) ? "ltr" : "rtl" }}
         className={classNameValue}
         onMouseOver={() => props.handleMouseover(i)}

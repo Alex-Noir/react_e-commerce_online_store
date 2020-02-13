@@ -14,7 +14,7 @@ export default function Authentication(props) {
   const [ passwordConfirm, setPasswordConfirm ] = useState('')
   const checkbox = useRef(null)
 
-  const [ t, i18n ] = useTranslation()
+  const [ t ] = useTranslation()
 
   function handleChange(e) {
     if (e.target.name === 'email') {

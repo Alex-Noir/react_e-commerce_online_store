@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export default function Social() {
-  const [ t, i18n ] = useTranslation()  
+  const [ t ] = useTranslation()  
   const submitButtonRef = useRef(null)
   useEffect(() => {
     submitButtonRef.current.value = t('ContactUs|3')

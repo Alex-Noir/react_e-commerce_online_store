@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export default function Timer() {
-  const [ currentTime, setCurrentTime ] = useState(new Date().getTime())
-  const [ deadline, setDeadline ] = useState(new Date(2021, 0, 0).getTime())
+  const [ currentTime, setCurrentTime ] = useState(new Date().getTime())  
   const [ countdown, setCountdown ] = useState(null)
+  const deadline = new Date(2021, 0, 0).getTime()
 
-  const [ t, i18n ] = useTranslation()
+  const [ t ] = useTranslation()
 
   let timeDifference = deadline - currentTime
 
