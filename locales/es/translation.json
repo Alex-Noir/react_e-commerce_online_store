@@ -1,0 +1,132 @@
+{
+  "AuthButtons": {
+    "1": "Iniciar sesión",
+    "2": "Cantar más fuerte"
+  },
+  "Catalogue": {
+    "1": "Catálogos"
+  },
+  "Nav": {
+    "1": "Teléfonos móviles",
+    "2": "Ordenador portátil",
+    "3": "Tabletas"
+  },
+  "Authentication": {
+    "1": "Registro",
+    "2": "Restablecer la contraseña"
+  },
+  "LogIn": {
+    "1": "Email:",
+    "2": "Contraseña:",
+    "3": "Recuérdame",
+    "4": "¿Se te olvidó tu contraseña?"
+  },
+  "Registration": {
+    "1": "Tu nombre:",
+    "2": "Confirmar contraseña:"
+  },
+  "ResetPassword": {
+    "1": "Regresa",
+    "2": "Por favor, escriba su correo electrónico y le enviaremos su nueva contraseña:",
+    "3": "Enviar nueva contraseña"
+  },
+  "Carousel": {
+    "1": "Anterior",
+    "2": "Próximo"
+  },
+  "Timer": {
+    "1": "La oferta termina en:"
+  },
+  "Products": {
+    "1": "Mejores ofertas"
+  },
+  "MobilePhones": {
+    "1": "Página de inicio"
+  },
+  "ProductInfo": {
+    "1": "Empresa:",
+    "2": "Calificación global:",
+    "3": "Tu clasificación:",
+    "4": "Precio:",
+    "5": "Informacion:"
+  },
+  "AddToCart": {
+    "1": "Cantidad:",
+    "2": "Añadir al carrito",
+    "3": "¡artículos añadidos!"
+  },
+  "ToggleButtons": {
+    "1": "Revisiones de Productos",
+    "2": "Comentarios"
+  },
+  "Reviews": {
+    "1": "Puede escribir y publicar una reseña aquí, pero actualizar o abandonar la página la anulará.",
+    "2": "Publicar Revisión"
+  },
+  "Review": {
+    "1": "De acuerdo",
+    "2": "Discrepar",
+    "3": "Aceptar cambios"
+  },
+  "SearchResult": {
+    "1": "En el carrito:"
+  },
+  "Cart": {
+    "1": "Su cesta está vacía",
+    "2": "Carrito de compras claro",
+    "3": "Subtotal parcial:",
+    "4": "Impuesto:",
+    "5": "Total parcial:"
+  },
+  "PayPalCheckoutButton": {
+    "1": "¡Éxito!"
+  },
+  "Lists": {
+    "1": "Acerca de",
+    "2": "Contáctenos"
+  },
+  "Social": {
+    "3": "¡Suscríbete a las noticias!",
+    "4": "Nuestras redes sociales:",
+    "5": "Todos los derechos reservados."
+  },
+  "I18nButtons": {
+    "1": "Idioma:",
+    "2": "Moneda:",
+    "3": "País:"
+  },
+  "Currencies": {
+    "1": "Euro",
+    "2": "Dólar Estadounidense",
+    "3": "Rublo Ruso",
+    "4": "Yuan Chino",
+    "5": "Yen Japonés",
+    "6": "Coreano Ganó",
+    "7": "Rupia India"
+  },
+  "Countries": {
+    "1": "Reino Unido",
+    "2": "Estados Unidos",
+    "3": "Alemania",
+    "4": "Francia",
+    "5": "España",
+    "6": "Italia",
+    "7": "Rusia",
+    "8": "China",
+    "9": "Japóna",
+    "10": "Corea",
+    "11": "India"
+  },
+  "About": {
+    "1": "¡La compañía Alimazon es la compañía más grande del mundo! Después de comprar Google, Facebook, Apple y Microsoft, no quedan rivales para nosotros :) Ah, este dulce sabor dulce de monopolio ... ¡podemos hacer lo que queramos y la gente aún nos dará su dinero! :)",
+    "2": "El CEO de Alimazon es el Sr. John Doe, ¡es el hombre más rico del mundo! ¡También es el empresario más exitoso vivo! Nadie sabe si paga sus impuestos, pero debes admitirlo: se ve muy bien con ese traje. ;)"
+  },
+  "ContactUs": {
+    "1": "Tu correo electrónico:",
+    "2": "Tu mensaje:",
+    "3": "Enviar"
+  },
+  "NoSuchPage": {
+    "1": "Lo siento, no hay tal página..."
+  }
+}

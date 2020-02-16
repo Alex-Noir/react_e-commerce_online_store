@@ -1,0 +1,132 @@
+{
+  "AuthButtons": {
+    "1": "Einloggen",
+    "2": "Lauter Singen"
+  },
+  "Catalogue": {
+    "1": "Kataloge"
+  },
+  "Nav": {
+    "1": "Mobiltelefone",
+    "2": "Laptops",
+    "3": "Tablets"
+  },
+  "Authentication": {
+    "1": "Anmeldung",
+    "2": "Passwort zurücksetzen"
+  },
+  "LogIn": {
+    "1": "Email:",
+    "2": "Passwort:",
+    "3": "Erinnere dich an mich",
+    "4": "Passwort vergessen?"
+  },
+  "Registration": {
+    "1": "Dein Name:",
+    "2": "Kennwort bestätigen:"
+  },
+  "ResetPassword": {
+    "1": "Geh zurück",
+    "2": "Bitte schreiben Sie Ihre E-Mail und wir senden Ihnen Ihr neues Passwort:",
+    "3": "Neues Passwort senden"
+  },
+  "Carousel": {
+    "1": "Bisherige",
+    "2": "Nächster"
+  },
+  "Timer": {
+    "1": "Angebot endet in:"
+  },
+  "Products": {
+    "1": "Beste Angebote"
+  },
+  "MobilePhones": {
+    "1": "Startseite"
+  },
+  "ProductInfo": {
+    "1": "Unternehmen:",
+    "2": "Globales Rating:",
+    "3": "Deine Bewertung:",
+    "4": "Preis:",
+    "5": "Info:"
+  },
+  "AddToCart": {
+    "1": "Menge:",
+    "2": "In den Warenkorb legen",
+    "3": "artikel hinzugefügt!"
+  },
+  "ToggleButtons": {
+    "1": "Produktrezensionen",
+    "2": "Kommentare"
+  },
+  "Reviews": {
+    "1": "Sie können hier eine Rezension schreiben und veröffentlichen, aber das aktualisieren oder verlassen der seite macht sie ungültig.",
+    "2": "Bewertung Abgeben"
+  },
+  "Review": {
+    "1": "Zustimmen",
+    "2": "Nicht Zustimmen",
+    "3": "Änderungen Akzeptieren"
+  },
+  "SearchResult": {
+    "1": "Im Wagen:"
+  },
+  "Cart": {
+    "1": "Dein einkaufswagen ist leer",
+    "2": "Warenkorb löschen",
+    "3": "Zwischensumme:",
+    "4": "Besteuerung:",
+    "5": "Gesamt:"
+  },
+  "PayPalCheckoutButton": {
+    "1": "Gelingen!"
+  },
+  "Lists": {
+    "1": "Über",
+    "2": "Kontaktiere uns"
+  },
+  "Social": {
+    "1": "Abonnieren Sie die Nachrichten!",
+    "2": "Unsere sozialen medien:",
+    "3": "Alle Rechte vorbehalten."
+  },
+  "I18nButtons": {
+    "1": "Sprache:",
+    "2": "Währung:",
+    "3": "Land:"
+  },
+  "Currencies": {
+    "1": "Euro",
+    "2": "U.S. Dollar",
+    "3": "Russischer Rubel",
+    "4": "Chinesische Yuan",
+    "5": "Japanische Yen",
+    "6": "Korea hat gewonnen",
+    "7": "Indische Rupie"
+  },
+  "Countries": {
+    "1": "Vereinigtes Königreich",
+    "2": "Vereinigte Staaten",
+    "3": "Deutschland",
+    "4": "Frankreich",
+    "5": "Spanien",
+    "6": "Italien",
+    "7": "Russland",
+    "8": "China",
+    "9": "Japan",
+    "10": "Korea",
+    "11": "Indien"
+  },
+  "About": {
+    "1": "Alimazon unternehmen ist das größte unternehmen der welt! Nachdem wir Google, Facebook, Apple und Microsoft gekauft haben, gibt es keine rivalen mehr für uns :) Ah, dieser süße monopolgeschmack ... wir können tun, was wir wollen und die leute werden uns immer noch ihr geld geben! :)",
+    "2": "Der CEO von Alimazon ist Herr John Doe - er ist der reichste Mann der welt! Er ist auch der erfolgreichste geschäftsmann der welt! Niemand weiß, ob er seine steuern zahlt, aber Sie müssen zugeben - er sieht in diesem anzug verdammt gut aus. ;)"
+  },
+  "ContactUs": {
+    "1": "Deine E-Mail:",
+    "2": "Deine Nachricht:",
+    "3": "Einreichen"
+  },
+  "NoSuchPage": {
+    "1": "Entschuldigung, es gibt keine solche Seite..."
+  }
+}

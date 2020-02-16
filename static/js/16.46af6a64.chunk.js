@@ -1,0 +1,2 @@
+(this.webpackJsonponline_store=this.webpackJsonponline_store||[]).push([[16],{386:function(e,t,n){"use strict";n.r(t),n.d(t,"default",(function(){return r}));var a=n(0),s=n.n(a);function r(){return Object(a.useEffect)((function(){window.FB.XFBML.parse()})),s.a.createElement("div",{className:"bg-light"},s.a.createElement("div",{className:"fb-comments","data-width":"100%","data-numposts":"10","data-order-by":"reverse_time"}))}}}]);
+//# sourceMappingURL=16.46af6a64.chunk.js.map

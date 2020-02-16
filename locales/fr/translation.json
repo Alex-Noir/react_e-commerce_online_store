@@ -1,0 +1,132 @@
+{
+  "AuthButtons": {
+    "1": "S'identifier",
+    "2": "S'enregistrer"
+  },
+  "Catalogue": {
+    "1": "Catalogues"
+  },
+  "Nav": {
+    "1": "Téléphones portables",
+    "2": "Portables",
+    "3": "Tablettes"
+  },
+  "Authentication": {
+    "1": "Enregistrement",
+    "2": "Réinitialiser Le Mot De Passe"
+  },
+  "LogIn": {
+    "1": "Email:",
+    "2": "Mot de passe:",
+    "3": "Souviens-toi de moi",
+    "4": "Ьot de passe oublié?"
+  },
+  "Registration": {
+    "1": "Votre nom:",
+    "2": "Confirmez le mot de passe:"
+  },
+  "ResetPassword": {
+    "1": "Retourner",
+    "2": "Veuillez écrire votre e-mail et nous vous enverrons votre nouveau mot de passe:",
+    "3": "Envoyer un nouveau mot de passe"
+  },
+  "Carousel": {
+    "1": "Précédent",
+    "2": "Prochain"
+  },
+  "Timer": {
+    "1": "L'offre se termine dans:"
+  },
+  "Products": {
+    "1": "Meilleures offres"
+  },
+  "MobilePhones": {
+    "1": "Page d'accueil"
+  },
+  "ProductInfo": {
+    "1": "Entreprise:",
+    "2": "Évaluation globale:",
+    "3": "Votre note:",
+    "4": "Prix:",
+    "5": "Info:"
+  },
+  "AddToCart": {
+    "1": "Montant:",
+    "2": "Ajouter au chariot",
+    "3": "articles ajoutés!"
+  },
+  "ToggleButtons": {
+    "1": "Avis sur les produits",
+    "2": "Commentaires"
+  },
+  "Reviews": {
+    "1": "Vous pouvez écrire et publier un avis ici, mais l'actualisation ou la sortie de la page l'annulera.",
+    "2": "Publier Revue"
+  },
+  "Review": {
+    "1": "Se mettre d'accord",
+    "2": "Être en désaccord",
+    "3": "Accepter les modifications"
+  },
+  "SearchResult": {
+    "1": "Dans un chariot:"
+  },
+  "Cart": {
+    "1": "Votre panier est vide",
+    "2": "Panier clair",
+    "3": "Subtotal:",
+    "4": "Impôt:",
+    "5": "Total:"
+  },
+  "PayPalCheckoutButton": {
+    "1": "Succès!"
+  },
+  "Lists": {
+    "1": "Sur",
+    "2": "Nous contacter"
+  },
+  "Social": {
+    "1": "Abonnez-vous aux nouvelles!",
+    "2": "Nos réseaux sociaux::",
+    "3": "Tous les droits sont réservés."
+  },
+  "I18nButtons": {
+    "1": "Langue:",
+    "2": "Devise:",
+    "3": "Pays:"
+  },
+  "Currencies": {
+    "1": "Euro",
+    "2": "Dollars Américain",
+    "3": "Rouble Russe",
+    "4": "Yuan Chinois",
+    "5": "Yen Japonais",
+    "6": "Won Coréen",
+    "7": "Roupie Indienne"
+  },
+  "Countries": {
+    "1": "Royaume-Uni",
+    "2": "États Unis",
+    "3": "Allemagne",
+    "4": "France",
+    "5": "Espagne",
+    "6": "Italie",
+    "7": "Russie",
+    "8": "Chine",
+    "9": "Japon",
+    "10": "Corée",
+    "11": "Inde"
+  },
+  "About": {
+    "1": "La société Alimazon est la plus grande entreprise au monde! Après avoir acheté Google, Facebook, Apple et Microsoft, il n'y a plus de rivaux pour nous :) Ah, ce doux goût sucré de monopole ... nous pouvons faire ce que nous voulons et les gens nous donneront toujours leur argent! :)",
+    "2": "Le PDG d'Alimazon est M. John Doe - c'est l'homme le plus riche du monde! Il est également l'homme d'affaires le plus prospère du monde! Personne ne sait s'il paie ses impôts, mais tu dois admettre - il a l'air foutrement bien dans ce costume. ;)"
+  },
+  "ContactUs": {
+    "1": "Votre e-mail:",
+    "2": "Votre message:",
+    "3": "Soumettre"
+  },
+  "NoSuchPage": {
+    "1": "Désolé, il n'y a pas une telle page..."
+  }
+}
