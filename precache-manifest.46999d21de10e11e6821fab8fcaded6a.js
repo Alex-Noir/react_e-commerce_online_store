@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b77ba01e66c83656847693ee5aed7d52",
+    "revision": "0f475b32e875275cad5c82da77fd57f9",
     "url": "/Alex-Noir/react_e-commerce_online_store/index.html"
   },
   {

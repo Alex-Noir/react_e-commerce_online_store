@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Alex-Noir/react_e-commerce_online_store/precache-manifest.15bf9b52500be0329bf040baa334a371.js"
+  "/Alex-Noir/react_e-commerce_online_store/precache-manifest.46999d21de10e11e6821fab8fcaded6a.js"
 );
 
 self.addEventListener('message', (event) => {
