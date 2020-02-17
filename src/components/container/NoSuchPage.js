@@ -1,5 +1,5 @@
 import React from 'react'
-import { Div404 } from '../styles'
+import { Div404 } from '../Styles'
 import { useTranslation } from 'react-i18next'
 
 export default function NoSuchPage() {

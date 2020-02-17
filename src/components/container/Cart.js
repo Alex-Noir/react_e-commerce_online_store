@@ -1,5 +1,5 @@
 import React from 'react'
-import { DivCart } from '../styles'
+import { DivCart } from '../Styles'
 import { useTranslation } from 'react-i18next'
 
 import CartList from './cart/CartList'

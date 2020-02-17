@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import { DivReview } from '../../../styles'
+import { DivReview } from '../../../Styles'
 import ReactQuill from 'react-quill'
 import { useTranslation } from 'react-i18next'
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import { FormSearchBar } from '../styles'
+import { FormSearchBar } from '../Styles'
 import { ContextConsumer } from '../../context'
 
 export default function Search() {

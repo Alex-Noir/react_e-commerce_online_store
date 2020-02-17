@@ -1,5 +1,5 @@
 import React, { useState, useRef, Suspense, lazy } from 'react'
-import { DivAuthWrapper, DivAuthButtons } from './styles'
+import { DivAuthWrapper, DivAuthButtons } from './Styles'
 import { useTranslation } from 'react-i18next'
 
 import LogIn from './authentication/LogIn'

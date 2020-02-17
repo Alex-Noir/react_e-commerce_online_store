@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { DivCarousel } from '../styles'
+import { DivCarousel } from '../Styles'
 import { Link } from 'react-router-dom'
 import Slider from 'react-slick'
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { DivInfo } from '../../../styles'
+import { DivInfo } from '../../../Styles'
 import { useTranslation } from 'react-i18next'
 
 export default function AddToCart(props) {

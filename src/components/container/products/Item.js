@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { DivProductItem } from '../../styles'
+import { DivProductItem } from '../../Styles'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 

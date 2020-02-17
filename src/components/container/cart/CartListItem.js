@@ -1,5 +1,5 @@
 import React from 'react'
-import { DivCartListItem } from '../../styles'
+import { DivCartListItem } from '../../Styles'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 

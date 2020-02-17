@@ -1,6 +1,9 @@
 {
   "name": "online_store",
   "version": "0.1.0",
+  "engines": {
+    "node": "12.13.0"
+  },
   "private": true,
   "dependencies": {
     "i18next": "^19.0.3",
@@ -42,6 +45,7 @@
     "cross-env": "^7.0.0",
     "eslint-plugin-react-hooks": "^2.3.0"
   },
+  "homepage": ".",
   "plugins": [
     [
       "babel-plugin-styled-components",

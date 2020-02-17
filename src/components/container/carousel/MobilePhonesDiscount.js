@@ -1,5 +1,5 @@
 import React from 'react'
-import { DivCountdown, DivDiscountList } from '../../styles'
+import { DivCountdown, DivDiscountList } from '../../Styles'
 import { ContextConsumer } from '../../../context'
 
 import Timer from './Timer'

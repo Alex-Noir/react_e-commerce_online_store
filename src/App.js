@@ -1,6 +1,6 @@
 import React, { useState, Suspense, lazy } from 'react'
 import { Route } from 'react-router-dom'
-import { DivWrapper } from './components/styles'
+import { DivWrapper } from './components/Styles'
 
 import Header from './components/Header'
 import Container from './components/Container'

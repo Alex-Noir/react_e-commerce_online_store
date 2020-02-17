@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { ContextConsumer } from '../../context'
-import { DivSearchResults } from '../styles'
+import { DivSearchResults } from '../Styles'
 
 import SearchResult from './SearchResult'
 

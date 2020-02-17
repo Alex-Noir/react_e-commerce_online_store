@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { DivAbout } from '../styles'
+import { DivAbout } from '../Styles'
 import { useTranslation } from 'react-i18next'
 
 export default function About() {

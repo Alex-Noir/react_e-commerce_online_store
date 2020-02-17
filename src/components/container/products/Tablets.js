@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { DivProducts, DivProductList } from '../../styles'
+import { DivProducts, DivProductList } from '../../Styles'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { ContextConsumer } from '../../../context'

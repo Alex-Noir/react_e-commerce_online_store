@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyledHeader } from './styles'
+import { StyledHeader } from './Styles'
 import { ContextConsumer } from '../context'
 
 import Logo from './header/Logo'

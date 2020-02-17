@@ -1,5 +1,5 @@
 import React from 'react'
-import { IStar } from '../../../styles'
+import { IStar } from '../../../Styles'
 
 export default function Rating(props) {
   let stars = []

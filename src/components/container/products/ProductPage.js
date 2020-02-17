@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react'
 import { Link } from 'react-router-dom'
-import { DivProductPage } from '../../styles'
+import { DivProductPage } from '../../Styles'
 import { useTranslation } from 'react-i18next'
 
 import ProductInfo from './productPage/ProductInfo'

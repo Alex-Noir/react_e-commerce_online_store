@@ -1,5 +1,5 @@
 import React from 'react'
-import { DivContactForm } from '../styles'
+import { DivContactForm } from '../Styles'
 import { useTranslation } from 'react-i18next'
 
 export default function ContactUs() {

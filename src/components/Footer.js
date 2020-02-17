@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { StyledFooter } from './styles'
+import { StyledFooter } from './Styles'
 import { useTranslation } from 'react-i18next'
 
 import Lists from './footer/Lists'

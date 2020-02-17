@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { DivGridContainer } from './styles'
+import { DivGridContainer } from './Styles'
 import { ContextConsumer } from '../context'
 
 import Carousel from './container/Carousel'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { DivBestOffers, DivProductList } from '../../styles'
+import { DivBestOffers, DivProductList } from '../../Styles'
 import { useTranslation } from 'react-i18next'
 import { ContextConsumer } from '../../../context'
 

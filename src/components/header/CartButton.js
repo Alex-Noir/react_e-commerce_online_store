@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { DivIconAmountInCart } from '../styles'
+import { DivIconAmountInCart } from '../Styles'
 
 export default function CartButton(props) {
   return (
