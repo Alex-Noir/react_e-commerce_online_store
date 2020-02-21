@@ -45,7 +45,7 @@
     "cross-env": "^7.0.0",
     "eslint-plugin-react-hooks": "^2.3.0"
   },
-  "homepage": ".",
+  "homepage": "https://hopeful-shirley-ffb643.netlify.com",
   "plugins": [
     [
       "babel-plugin-styled-components",

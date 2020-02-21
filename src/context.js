@@ -45,7 +45,11 @@ class ContextProvider extends Component {
   }
 
   setData() {
-    let tempData = JSON.parse(JSON.stringify(data))
+    let tempData = []
+    data.forEach(dataItem => {
+      const item = {...dataItem}
+      tempData = [...tempData, item]  
+    })
     this.setState(() => {
       return { data: tempData }
     })
