@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react'
-import { ContextConsumer } from '../../context'
+import React, { useEffect, useContext } from 'react'
+import { Context } from '../../context'
 import { useTranslation } from 'react-i18next'
 
 export default function I18nButtons() {
+  const { changeCurrency } = useContext(Context)
+
   const [ t, i18n ] = useTranslation()
 
   useEffect(() => {
@@ -31,25 +33,19 @@ export default function I18nButtons() {
           <option value="hi">हिंदी</option>
         </select>
       </div>
-      <ContextConsumer>
-        {
-          value => (
-            <div className="d-flex no-wrap bg-info mb-4 p-2 text-light rounded">
-              {t('I18nButtons|2')}
-              <select className="ml-2 bg-info text-light border border-info"
-                      onChange={value.changeCurrency}>
-                <option value="€">€ (EUR) {t('Currencies|1')}</option>
-                <option value="$">$ (USD) {t('Currencies|2')}</option>
-                <option value="₽">₽ (RUB) {t('Currencies|3')}</option>
-                <option value="Ch¥">¥ (CNY) {t('Currencies|4')}</option>
-                <option value="Jp¥">¥ (JPY) {t('Currencies|5')}</option>
-                <option value="₩">₩ (KRW) {t('Currencies|6')}</option>
-                <option value="₹">₹ (INR) {t('Currencies|7')}</option>
-              </select>
-            </div>
-          )
-        }
-      </ContextConsumer>
+      <div className="d-flex no-wrap bg-info mb-4 p-2 text-light rounded">
+        {t('I18nButtons|2')}
+        <select className="ml-2 bg-info text-light border border-info"
+                onChange={changeCurrency}>
+          <option value="€">€ (EUR) {t('Currencies|1')}</option>
+          <option value="$">$ (USD) {t('Currencies|2')}</option>
+          <option value="₽">₽ (RUB) {t('Currencies|3')}</option>
+          <option value="Ch¥">¥ (CNY) {t('Currencies|4')}</option>
+          <option value="Jp¥">¥ (JPY) {t('Currencies|5')}</option>
+          <option value="₩">₩ (KRW) {t('Currencies|6')}</option>
+          <option value="₹">₹ (INR) {t('Currencies|7')}</option>
+        </select>
+      </div>
       <div className="bg-primary p-2 text-light rounded">
         {t('I18nButtons|3')}
         <select className="ml-2 bg-primary text-light border border-primary">

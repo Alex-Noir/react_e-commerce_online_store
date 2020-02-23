@@ -1,15 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { DivInfo } from '../../../Styles'
 import { useTranslation } from 'react-i18next'
+import { Context } from '../../../../context'
 
-export default function AddToCart(props) {
+export default function AddToCart({ dataItem }) {
   const { id, 
           hasDiscount, 
           isInCart, 
-          amountInCart } = props.dataItem
+          amountInCart } = dataItem
 
   const [ inputValue, setInputValue ] = useState(0)
-  const [ isInfoVisible, setIsInfoVisible] = useState(false)
+  const [ isInfoVisible, setIsInfoVisible ] = useState(false)
+
+  const { addToCart, evaluateTotalPrice } = useContext(Context)
 
   const [ t ] = useTranslation()
   
@@ -60,9 +63,9 @@ export default function AddToCart(props) {
       <div className="position-relative">
         <button type="button"
                 className="btn btn-warning mr-2"
-                onClick={() => {  props.value.addToCart(id, inputValue, hasDiscount)
+                onClick={() => {  addToCart(id, inputValue, hasDiscount)
                                   showInfo(inputValue)
-                                  props.value.evaluateTotalPrice()  }}>{t('AddToCart|2')}</button>
+                                  evaluateTotalPrice()  }}>{t('AddToCart|2')}</button>
         <DivInfo className={isInfoVisible ? "visible" : "invisible"}> 
           +{inputValue} {t('AddToCart|3')} 
         </DivInfo>

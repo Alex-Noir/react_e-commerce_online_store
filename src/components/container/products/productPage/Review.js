@@ -3,10 +3,10 @@ import { DivReview } from '../../../Styles'
 import ReactQuill from 'react-quill'
 import { useTranslation } from 'react-i18next'
 
-export default function Review({...props}) {
+export default function Review({ review, modules, formats, deleteReview }) {
   const [ t ] = useTranslation()
 
-  const [ text, setText ] = useState(props.review.content)
+  const [ text, setText ] = useState(review.content)
   const [ isLikePressed, setIsLikePressed ] = useState(false)
   const [ isDislikePressed, setIsDislikePressed ] = useState(false)
   const [ isReviewReadOnly, setIsReviewReadOnly ] = useState(true)
@@ -54,14 +54,14 @@ export default function Review({...props}) {
         <button type="button" 
                 className="close text-danger"
                 aria-label="Close"
-                onClick={props.deleteReview}>
+                onClick={deleteReview}>
           <span aria-hidden="true">&times;</span>
         </button>
       </span>
       <ReactQuill defaultValue={text}
                   onChange={handleChange}
-                  modules={props.modules}
-                  formats={props.formats}
+                  modules={modules}
+                  formats={formats}
                   readOnly={isReviewReadOnly}
                   theme="bubble" />
       <div className="d-flex">

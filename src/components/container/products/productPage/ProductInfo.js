@@ -1,37 +1,40 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useContext, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Context } from '../../../../context'
 
 import StarRating from '../productPage/StarRating'
 
-export default function ProductInfo(props) {
+export default function ProductInfo({ dataItem }) {
   const { title, 
           company,
           description, 
           price,
           hasDiscount,
           discount,
-          rating } = props.dataItem
+          rating } = dataItem
 
   const [ customRating, setCustomRating ] = useState(rating || null)
   const [ tempRating, setTempRating ] = useState(null)
   const prevCount = usePrevious(customRating)
 
+  const { fetchedRates, currency } = useContext(Context)
+
   const [ t ] = useTranslation()
 
   let currencyRate = 1
 
-  if (props.value.currency === '$') {
-    currencyRate = props.value.fetchedRates.USD
-  } else if (props.value.currency === '₽') {
-    currencyRate = props.value.fetchedRates.RUB
-  } else if (props.value.currency === 'Ch¥') {
-    currencyRate = props.value.fetchedRates.CNY
-  } else if (props.value.currency === 'Jp¥') {
-    currencyRate = props.value.fetchedRates.JPY
-  } else if (props.value.currency === '₩') {
-    currencyRate = props.value.fetchedRates.KRW
-  } else if (props.value.currency === '₹') {
-    currencyRate = props.value.fetchedRates.INR
+  if (currency === '$') {
+    currencyRate = fetchedRates.USD
+  } else if (currency === '₽') {
+    currencyRate = fetchedRates.RUB
+  } else if (currency === 'Ch¥') {
+    currencyRate = fetchedRates.CNY
+  } else if (currency === 'Jp¥') {
+    currencyRate = fetchedRates.JPY
+  } else if (currency === '₩') {
+    currencyRate = fetchedRates.KRW
+  } else if (currency === '₹') {
+    currencyRate = fetchedRates.INR
   }
 
   function handleMouseover(rating) {
@@ -62,8 +65,7 @@ export default function ProductInfo(props) {
     <>
       <h1>{title}</h1>
       <h2>{t('ProductInfo|1')} {company}</h2>
-      <StarRating rating={rating} 
-                  customRating={customRating}
+      <StarRating customRating={customRating}
                   handleMouseover={handleMouseover}
                   rate={rate}
                   handleMouseout={handleMouseout} />
@@ -73,13 +75,13 @@ export default function ProductInfo(props) {
         {
           hasDiscount
           ? <span>
-              <s>{props.value.currency} {parseFloat((price * currencyRate).toFixed(2))}</s>
+              <s>{currency} {parseFloat((price * currencyRate).toFixed(2))}</s>
               &nbsp;
               <span className="text-danger">
-                {props.value.currency} {parseFloat(((price * currencyRate) * discount).toFixed(2))}
+                {currency} {parseFloat(((price * currencyRate) * discount).toFixed(2))}
               </span>
             </span>
-          : <span>{props.value.currency} {parseFloat((price * currencyRate).toFixed(2))}</span>
+          : <span>{currency} {parseFloat((price * currencyRate).toFixed(2))}</span>
         }          
       </h2>
       <br />

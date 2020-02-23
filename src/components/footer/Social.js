@@ -19,8 +19,8 @@ export default function Social() {
       </form>
       <div>
         <div>{t('Social|2')}</div>
-        <a href="/#" className="text-light mr-2"><i className="fab fa-facebook-square fa-2x"></i></a>
-        <a href="/#" className="text-light mr-2"><i className="fab fa-twitter-square fa-2x"></i></a>
+        <a href="/#" className="text-light mr-2"><i className="fab fa-facebook fa-2x"></i></a>
+        <a href="/#" className="text-light mr-2"><i className="fab fa-twitter fa-2x"></i></a>
         <a href="/#" className="text-light mr-2"><i className="fab fa-instagram fa-2x"></i></a>
         <a href="/#" className="text-light mr-2"><i className="fab fa-youtube fa-2x"></i></a>
         <a href="/#" className="text-light mr-2"><i className="fab fa-linkedin fa-2x"></i></a>

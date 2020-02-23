@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 
-export default function PayPalCheckoutButton(props) {
+export default function PayPalCheckoutButton({ cartTotalPrice }) {
   const [ isBeingPaidFor, setIsBeingPaidFor ] = useState(false)
 
   const [ t ] = useTranslation()
@@ -9,7 +9,7 @@ export default function PayPalCheckoutButton(props) {
   const paypalRef = useRef()
 
   const product = {
-    price: props.cartTotalPrice
+    price: cartTotalPrice
   }
 
   useEffect(() => {

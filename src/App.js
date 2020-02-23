@@ -33,16 +33,11 @@ export default function App() {
   return (
     <DivWrapper>
       <Route path="/" render={props => 
-        <Header {...props} 
-                handleVisibility={handleVisibility} />}
+        <Header {...props} handleVisibility={handleVisibility} />}
       />
       {
         isAuthModalVisible
-        ? <Suspense fallback={
-            <div className="spinner-border text-primary" role="status">
-              <span className="sr-only">Loading...</span>
-            </div>
-          }>
+        ? <Suspense fallback={ <div><i className="fa fa-cog fa-spin" style={{fontSize: '24px'}}></i></div> }>
             <Authentication isLogInTabVisible={isLogInTabVisible}
                             closeAuthModal={closeAuthModal}
                             handleVisibility={handleVisibility} />

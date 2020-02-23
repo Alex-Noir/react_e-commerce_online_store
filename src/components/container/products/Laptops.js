@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { DivProducts, DivProductList } from '../../Styles'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { ContextConsumer } from '../../../context'
+import { Context } from '../../../context'
 import { laptops } from '../../../components/data'
 
 import Item from './Item'
@@ -12,6 +12,8 @@ export default function Laptops() {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+
+  const { data } = useContext(Context)
 
   const [ currentPage, setCurrentPage ] = useState(1)
   const [ postsPerPage ] = useState(8)
@@ -50,21 +52,15 @@ export default function Laptops() {
         </ol>
       </nav>
       <DivProductList>
-        <ContextConsumer>
-          {
-            value => {
-              return value.data
-                .filter( dataItem => dataItem.category === 'Laptops' )
-                .slice( indexOfFirstPost, indexOfLastPost )
-                .map( dataItem => {
-                  return <Item key={dataItem.id} dataItem={dataItem} value={value} />
-                })
-            }
-          }
-        </ContextConsumer>
+        {
+          data.filter( dataItem => dataItem.category === 'Laptops' )
+              .slice( indexOfFirstPost, indexOfLastPost )
+              .map( dataItem => {
+                return <Item key={dataItem.id} dataItem={dataItem} />
+              })
+        }
       </DivProductList>
-      <Pagination postsPerPage={postsPerPage} 
-                  currentPage={currentPage}
+      <Pagination currentPage={currentPage}
                   pageNumbers={pageNumbers}
                   paginate={paginate} 
                   goToPrevOrNextPage={goToPrevOrNextPage} />

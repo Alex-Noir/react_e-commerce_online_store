@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useContext, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { ContextConsumer } from '../../context'
+import { Context } from '../../context'
 import { DivInfo } from '../Styles'
 
 import StarRating from './products/productPage/StarRating'
 
-export default function SearchResult(props) {
+export default function SearchResult({ result }) {
   const { id, 
           title, 
           category,
@@ -15,30 +15,32 @@ export default function SearchResult(props) {
           discount,
           isInCart, 
           amountInCart, 
-          rating } = props.result
-
+          rating } = result
+          
   const [ customRating, setCustomRating ] = useState(rating || null)
   const [ tempRating, setTempRating ] = useState(null)
   const prevCount = usePrevious(customRating)
   const [ inputValue, setInputValue ] = useState(0)
   const [ isInfoVisible, setIsInfoVisible] = useState(false)
-
+          
+  const { fetchedRates, currency, addToCart, evaluateTotalPrice } = useContext(Context)
+  
   const [ t ] = useTranslation()
 
   let currencyRate = 1
 
-  if (props.value.currency === '$') {
-    currencyRate = props.value.fetchedRates.USD
-  } else if (props.value.currency === '₽') {
-    currencyRate = props.value.fetchedRates.RUB
-  } else if (props.value.currency === 'Ch¥') {
-    currencyRate = props.value.fetchedRates.CNY
-  } else if (props.value.currency === 'Jp¥') {
-    currencyRate = props.value.fetchedRates.JPY
-  } else if (props.value.currency === '₩') {
-    currencyRate = props.value.fetchedRates.KRW
-  } else if (props.value.currency === '₹') {
-    currencyRate = props.value.fetchedRates.INR
+  if (currency === '$') {
+    currencyRate = fetchedRates.USD
+  } else if (currency === '₽') {
+    currencyRate = fetchedRates.RUB
+  } else if (currency === 'Ch¥') {
+    currencyRate = fetchedRates.CNY
+  } else if (currency === 'Jp¥') {
+    currencyRate = fetchedRates.JPY
+  } else if (currency === '₩') {
+    currencyRate = fetchedRates.KRW
+  } else if (currency === '₹') {
+    currencyRate = fetchedRates.INR
   }
 
   let productCategory
@@ -95,81 +97,73 @@ export default function SearchResult(props) {
   }
 
   return (
-    <ContextConsumer>
-      {
-        value => (
-          <div className="rounded bg-light border border-danger m-1 p-3">
-            <img
-              src={require(`../../img/products/data/${id}/01.webp`)} 
-              alt="SearchItem"
-              width="121"
-              heigth="121"
-            />
-            <div className="d-flex flex-column">
-              <Link to={`/product-page/${id}`} className="text-dark"><h4>{title}</h4></Link>
-              <h6 className="text-primary">{productCategory}</h6>
-              <div className="d-flex">
-                <StarRating rating={rating}
-                            customRating={customRating}
-                            handleMouseover={handleMouseover}
-                            rate={rate}
-                            handleMouseout={handleMouseout} />
-                <span className="ml-2">({rating})</span>
-              </div>
-            </div>
-            <div className="d-flex flex-column">
-              <div className="d-flex no-wrap align-items-start mb-1">
-                <button className="btn btn-outline-dark border-right-0 rounded-0"
-                        type="button" 
-                        value="-" 
-                        name="-" 
-                        onClick={counter}> - </button>
-                <input  className="btn btn-outline-dark border-left-0 border-right-0 rounded-0"
-                        type="text" 
-                        value={inputValue} 
-                        size="1" 
-                        readOnly />
-                <button className="btn btn-outline-dark border-left-0 rounded-0" 
-                        type="button" 
-                        value="+" 
-                        name="+" 
-                        onClick={counter}> + </button>
-              </div>
-              <button type="button"
-                      className="btn btn-warning"
-                      onClick={() => {  value.addToCart(id, inputValue, hasDiscount)
-                                        showInfo(inputValue)
-                                        value.evaluateTotalPrice()  }}>{t('AddToCart|2')}</button>
-              <DivInfo className={isInfoVisible ? "visible" : "invisible"}> 
-                +{inputValue} {t('AddToCart|3')}
-              </DivInfo>
-            </div>
-            <div className="d-flex flex-column align-items-end">
-              <h3>
-                {
-                  !hasDiscount
-                  ? <span>{value.currency} {parseFloat((price * currencyRate).toFixed(2))}</span>
-                  : <>
-                      <span className="d-flex flex-column">
-                        <s className="d-flex no-wrap">
-                          <span>{value.currency}</span> 
-                          <span>{parseFloat((price * currencyRate).toFixed(2))}</span>
-                        </s>                     
-                        <span className="d-flex no-wrap text-danger">
-                          <span>{value.currency}</span> 
-                          <span>{parseFloat(((price * currencyRate) * discount).toFixed(2))}</span>
-                        </span>
-                      </span>
-                    </>
-                }                
-              </h3>
-              <h6 className={isInCart ? "bg-danger text-white p-1 rounded" : null}>
-                {t('SearchResult|1')} {amountInCart}
-              </h6>
-            </div>
-          </div>
-        )
-      }
-    </ContextConsumer>
+    <div className="rounded bg-light border border-danger m-1 p-3">
+      <img
+        src={require(`../../img/products/data/${id}/01.webp`)} 
+        alt="SearchItem"
+        width="121"
+        heigth="121"
+      />
+      <div className="d-flex flex-column">
+        <Link to={`/product-page/${id}`} className="text-dark"><h4>{title}</h4></Link>
+        <h6 className="text-primary">{productCategory}</h6>
+        <div className="d-flex">
+          <StarRating rating={rating}
+                      customRating={customRating}
+                      handleMouseover={handleMouseover}
+                      rate={rate}
+                      handleMouseout={handleMouseout} />
+          <span className="ml-2">({rating})</span>
+        </div>
+      </div>
+      <div className="d-flex flex-column">
+        <div className="d-flex no-wrap align-items-start mb-1">
+          <button className="btn btn-outline-dark border-right-0 rounded-0"
+                  type="button" 
+                  value="-" 
+                  name="-" 
+                  onClick={counter}> - </button>
+          <input  className="btn btn-outline-dark border-left-0 border-right-0 rounded-0"
+                  type="text" 
+                  value={inputValue} 
+                  size="1" 
+                  readOnly />
+          <button className="btn btn-outline-dark border-left-0 rounded-0" 
+                  type="button" 
+                  value="+" 
+                  name="+" 
+                  onClick={counter}> + </button>
+        </div>
+        <button type="button"
+                className="btn btn-warning"
+                onClick={() => {  addToCart(id, inputValue, hasDiscount)
+                                  showInfo(inputValue)
+                                  evaluateTotalPrice()  }}>{t('AddToCart|2')}</button>
+        <DivInfo className={isInfoVisible ? "visible" : "invisible"}> 
+          +{inputValue} {t('AddToCart|3')}
+        </DivInfo>
+      </div>
+      <div className="d-flex flex-column align-items-end">
+        <h3>
+          {
+            !hasDiscount
+            ? <span className="d-flex no-wrap">{currency} {parseFloat((price * currencyRate).toFixed(2))}</span>
+            : <>
+                <span className="d-flex flex-column">
+                  <s className="d-flex no-wrap justify-content-end">
+                    {currency} {parseFloat((price * currencyRate).toFixed(2))}
+                  </s> 
+                  <span className="d-flex no-wrap text-danger justify-content-end">
+                    {currency} {parseFloat(((price * currencyRate) * discount).toFixed(2))}
+                  </span>
+                </span>
+              </>
+          }                
+        </h3>
+        <h6 className={isInCart ? "bg-danger text-white p-1 rounded" : null}>
+          {t('SearchResult|1')} {amountInCart}
+        </h6>
+      </div>
+    </div>
   )
 }

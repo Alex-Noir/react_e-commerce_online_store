@@ -6,7 +6,7 @@ import LogIn from './authentication/LogIn'
 import Registration from './authentication/Registration'
 const ResetPassword = lazy(() => import('./authentication/ResetPassword'))
 
-export default function Authentication(props) {
+export default function Authentication({ isLogInTabVisible, closeAuthModal, handleVisibility }) {
   const [ isResetPasswordVisible, setIsResetPasswordVisible ] = useState(false)
   const [ email, setEmail ] = useState('')
   const [ name, setName ] = useState('')
@@ -54,7 +54,7 @@ export default function Authentication(props) {
   }
 
   return (
-    <DivAuthWrapper className="position-absolute overflow-auto" id="outsideAuthModal" onClick={props.closeAuthModal}>
+    <DivAuthWrapper className="position-absolute overflow-auto" id="outsideAuthModal" onClick={closeAuthModal}>
       <div className="position-absolute mt-5 bg-light animated zoomInRight" id="authModal">
         {
           !isResetPasswordVisible
@@ -62,12 +62,12 @@ export default function Authentication(props) {
             <DivAuthButtons>
               <button type="button" 
                       name="signIn" 
-                      className={`btn ${props.isLogInTabVisible ? "btn-light" : "btn-white"} d-inline-block border-left border-top border-right rounded-0 px-1 shadow-none`} 
-                      onClick={props.handleVisibility}>{t('AuthButtons|1')}</button>
+                      className={`btn ${isLogInTabVisible ? "btn-light" : "btn-white"} d-inline-block border-left border-top border-right rounded-0 px-1 shadow-none`} 
+                      onClick={handleVisibility}>{t('AuthButtons|1')}</button>
               <button type="button" 
                       name="registration" 
-                      className={`btn ${props.isLogInTabVisible ? "btn-white" : "btn-light"} d-inline-block border-left border-top border-right rounded-0 px-1 shadow-none`} 
-                      onClick={props.handleVisibility}>{t('Authentication|1')}</button>
+                      className={`btn ${isLogInTabVisible ? "btn-white" : "btn-light"} d-inline-block border-left border-top border-right rounded-0 px-1 shadow-none`} 
+                      onClick={handleVisibility}>{t('Authentication|1')}</button>
             </DivAuthButtons>
           )
           : <div className="d-flex justify-content-center border-left border-top border-right pt-2"> 
@@ -77,7 +77,7 @@ export default function Authentication(props) {
         {
           !isResetPasswordVisible
           ? (
-            props.isLogInTabVisible
+            isLogInTabVisible
             ? <LogIn  email={email}
                       password={password}
                       showResetPassword={showResetPassword} 
@@ -91,7 +91,7 @@ export default function Authentication(props) {
                             handleChange={handleChange} 
                             handleRegistrationSubmit={handleRegistrationSubmit} />
           )
-          : <Suspense fallback={ <i className="fa fa-cog fa-spin" style={{fontSize: '24px'}}></i> }>
+          : <Suspense fallback={ <div><i className="fa fa-cog fa-spin" style={{fontSize: '24px'}}></i></div> }>
               <ResetPassword hideResetPassword={hideResetPassword} />
             </Suspense>
         }

@@ -1,27 +1,28 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { DivCart } from '../Styles'
+import { Context } from '../../context'
 import { useTranslation } from 'react-i18next'
 
 import CartList from './cart/CartList'
 import PayPalCheckoutButton from './cart/PayPalCheckoutButton'
 
-export default function Cart(props) {
-  const { cartSubTotalPrice, currency } = props.value
+export default function Cart() {
+  const { cartList, cartSubTotalPrice, fetchedRates, currency, clearCart } = useContext(Context)
 
   let currencyRate = 1
 
   if (currency === '$') {
-    currencyRate = props.value.fetchedRates.USD
+    currencyRate = fetchedRates.USD
   } else if (currency === '₽') {
-    currencyRate = props.value.fetchedRates.RUB
+    currencyRate = fetchedRates.RUB
   } else if (currency === 'Ch¥') {
-    currencyRate = props.value.fetchedRates.CNY
+    currencyRate = fetchedRates.CNY
   } else if (currency === 'Jp¥') {
-    currencyRate = props.value.fetchedRates.JPY
+    currencyRate = fetchedRates.JPY
   } else if (currency === '₩') {
-    currencyRate = props.value.fetchedRates.KRW
+    currencyRate = fetchedRates.KRW
   } else if (currency === '₹') {
-    currencyRate = props.value.fetchedRates.INR
+    currencyRate = fetchedRates.INR
   }
 
   let subTotalPrice = parseFloat((cartSubTotalPrice * currencyRate).toFixed(2))
@@ -33,13 +34,13 @@ export default function Cart(props) {
   return (
     <DivCart className="w-100">
       {
-        props.value.cartList < 1
+        cartList < 1
         ? <div className="d-flex justify-content-center">
             <h2>{t('Cart|1')}</h2>
           </div>
         : <>
-            <CartList value={props.value} />
-            <button type="button" className="btn btn-danger mb-5" onClick={props.value.clearCart}>{t('Cart|2')}</button>
+            <CartList cartList={cartList} />
+            <button type="button" className="btn btn-danger mb-5" onClick={clearCart}>{t('Cart|2')}</button>
             <div className="d-flex flex-column">
               <h2 className="d-flex no-wrap">
                 {t('Cart|3')} 

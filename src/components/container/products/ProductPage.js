@@ -10,12 +10,12 @@ import Reviews from './productPage/Reviews'
 import Slider from './productPage/Slider'
 const Comments = lazy(() => import('./productPage/Comments'))
 
-export default function ProductPage(props) {
+export default function ProductPage({ dataItem }) {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
   
-  const { title, category } = props.dataItem
+  const { title, category } = dataItem
           
   const [ isReviewsTabVisible, setIsReviewsTabVisible ] = useState(true)
 
@@ -48,15 +48,15 @@ export default function ProductPage(props) {
           <li className="breadcrumb-item active" aria-current="page">{title}</li>
         </ol>
       </nav>
-      <Slider dataItem={props.dataItem} />
+      <Slider dataItem={dataItem} />
       <div className="d-flex flex-column">
-        <ProductInfo value={props.value} dataItem={props.dataItem} />
-        <AddToCart value={props.value} dataItem={props.dataItem} />
+        <ProductInfo dataItem={dataItem} />
+        <AddToCart dataItem={dataItem} />
       </div>
       <ToggleButtons toggleTabs={toggleTabs} isReviewsTabVisible={isReviewsTabVisible} />
         {
           isReviewsTabVisible
-          ? <Reviews dataItem={props.dataItem} value={props.value} />
+          ? <Reviews dataItem={dataItem} />
           : <Suspense fallback={ <i className="fa fa-cog fa-spin" style={{fontSize: '24px'}}></i> }>
               <Comments />
             </Suspense>

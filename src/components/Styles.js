@@ -201,7 +201,7 @@ export const DivProductItem = styled.div`
   width: 290px;
 
   &:hover {
-    box-shadow: .1rem .1rem 1rem .1rem rgba(0,0,0,.15);
+    box-shadow: .1rem .1rem 1rem .1rem rgba(0,0,0,.3);
   }
 
   > a {

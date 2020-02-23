@@ -1,12 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useContext, useRef } from 'react'
 import ReactQuill from 'react-quill'
 import { useTranslation } from 'react-i18next'
+import { Context } from '../../../../context'
 import './reviews.css'
 
 import Review from './Review'
 
-export default function Reviews({...props}) {
-  const { data } = props.value
+export default function Reviews({ dataItem }) {
+  const { data } = useContext(Context)
 
   const [ t ] = useTranslation()
   const reactQuillRef = useRef(null)
@@ -19,7 +20,7 @@ export default function Reviews({...props}) {
   const [ isEditorReadOnly, setIsEditorReadOnly ] = useState(false)
   const [ array, setArray ] = useState([])
 
-  const item = data[props.dataItem.id]
+  const item = data[dataItem.id]
   const reviews = item.reviews
 
   function handleChange(value) {
@@ -50,7 +51,6 @@ export default function Reviews({...props}) {
                                                               review={review}
                                                               modules={modules}
                                                               formats={formats}
-                                                              handleChange={handleChange}
                                                               deleteReview={deleteReview} /> })
       setArray(reviewList)
   

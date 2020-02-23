@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { DivCountdown, DivDiscountList } from '../../Styles'
-import { ContextConsumer } from '../../../context'
+import { Context } from '../../../context'
 
 import Timer from './Timer'
 import Item from '../products/Item'
 
 export default function MobilePhonesDiscount() {
+  const { data } = useContext(Context)
+
   return (
     <>
       <DivCountdown className="d-flex flex-column">
@@ -14,17 +16,12 @@ export default function MobilePhonesDiscount() {
         <Timer />
       </DivCountdown>
       <DivDiscountList>
-        <ContextConsumer>
-          {
-            value => {
-              return value.data
-                .filter( dataItem => dataItem.category === 'Mobile Phones' && dataItem.hasDiscount === true )
-                .map( dataItem => {
-                  return <Item key={dataItem.id} dataItem={dataItem} value={value} />
-                })
-            }
-          }
-        </ContextConsumer>
+        {
+          data.filter( dataItem => dataItem.category === 'Mobile Phones' && dataItem.hasDiscount === true )
+              .map( dataItem => {
+                return <Item key={dataItem.id} dataItem={dataItem} />
+              })
+        }
       </DivDiscountList>
     </>
   )

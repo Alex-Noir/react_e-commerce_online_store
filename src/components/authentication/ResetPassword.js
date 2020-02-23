@@ -1,12 +1,12 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-export default function ResetPassword(props) {
+export default function ResetPassword({ hideResetPassword }) {
   const [ t ] = useTranslation()
 
   return (
     <div className="border-left border-bottom border-right p-2">
-      <button className="ml-2 mb-3 btn btn-light" onClick={props.hideResetPassword}>
+      <button className="ml-2 mb-3 btn btn-light" onClick={hideResetPassword}>
         <i className="fas fa-arrow-left"></i> {t('ResetPassword|1')}
       </button>
       <form className="d-flex flex-column">        

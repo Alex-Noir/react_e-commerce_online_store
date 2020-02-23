@@ -2,14 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { DivIconAmountInCart } from '../Styles'
 
-export default function CartButton(props) {
+export default function CartButton({ cartList }) {
   return (
     <Link to="/cart" className="position-relative">
       <i className="fas fa-shopping-cart mx-1"></i>
       {
-        props.cartList.length > 0
+        cartList.length > 0
         ? <DivIconAmountInCart className="animated fadeInDown bg-danger text-light font-weight-bold position-absolute rounded-circle">
-            {props.cartList.length}
+            {cartList.length}
           </DivIconAmountInCart>
         : null
       }

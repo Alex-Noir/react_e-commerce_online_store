@@ -1,12 +1,12 @@
 import React from 'react'
 import { IStar } from '../../../Styles'
 
-export default function Rating(props) {
+export default function Rating({ customRating, handleMouseover, rate, handleMouseout }) {
   let stars = []
 
   for (let i = 0; i < 10; i++) {
     let classNameValue = "far fa-star text-dark h4"
-    if (props.customRating >= i && props.customRating !== null) {
+    if (customRating >= i && customRating !== null) {
       classNameValue = "fas fa-star text-warning h4"
     }
     stars.push(
@@ -14,9 +14,9 @@ export default function Rating(props) {
         key={i.toString()}
         style={{ direction: (i % 2 === 0) ? "ltr" : "rtl" }}
         className={classNameValue}
-        onMouseOver={() => props.handleMouseover(i)}
-        onClick={() => props.rate(i)}
-        onMouseOut={props.handleMouseout}
+        onMouseOver={() => handleMouseover(i)}
+        onClick={() => rate(i)}
+        onMouseOut={handleMouseout}
       />
     )
   }
