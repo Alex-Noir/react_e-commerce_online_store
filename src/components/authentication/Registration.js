@@ -1,7 +1,17 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-export default function Registration({email, name, password, passwordConfirm, handleChange, handleRegistrationSubmit}) {
+export default function Registration(props) {
+  const { email, 
+          setEmail,
+          name, 
+          setName,
+          password, 
+          setPassword,
+          passwordConfirm, 
+          setPasswordConfirm,
+          handleRegistrationSubmit } = props
+
   const [ t ] = useTranslation()
 
   return (
@@ -13,7 +23,7 @@ export default function Registration({email, name, password, passwordConfirm, ha
                   type="email" 
                   name="email" 
                   value={email} 
-                  onChange={handleChange} 
+                  onChange={e => setEmail(e.target.value)} 
                   required />
         </label>
         <label className="d-flex flex-column">
@@ -22,17 +32,17 @@ export default function Registration({email, name, password, passwordConfirm, ha
                   type="text" 
                   name="name"
                   value={name} 
-                  onChange={handleChange} 
+                  onChange={e => setName(e.target.value)} 
                   required />
         </label>
         <label className="d-flex flex-column">
           {t('LogIn|2')}
-          <input className="px-1" 
-                 type="password" 
-                 name="password" 
-                 value={password} 
-                 onChange={handleChange} 
-                 required />
+          <input  className="px-1" 
+                  type="password" 
+                  name="password" 
+                  value={password} 
+                  onChange={e => setPassword(e.target.value)} 
+                  required />
         </label>
         <label className="d-flex flex-column">
           {t('Registration|2')}
@@ -40,9 +50,10 @@ export default function Registration({email, name, password, passwordConfirm, ha
                   type="password" 
                   name="passwordConfirm"
                   passwordConfirm={passwordConfirm} 
-                  onChange={handleChange} 
+                  onChange={e => setPasswordConfirm(e.target.value)} 
                   required />
         </label>
+
         <button type="submit" className="mt-1">{t('AuthButtons|2')}</button>
       </form>
     </div>

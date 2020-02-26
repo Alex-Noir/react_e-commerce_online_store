@@ -10,11 +10,11 @@ export default function ContactUs() {
       <h1>{t('Lists|2')}!</h1>
       <form>
         <div className="form-group">
-          <label for="exampleFormControlInput1">{t('ContactUs|1')}</label>
+          <label htmlFor="exampleFormControlInput1">{t('ContactUs|1')}</label>
           <input type="email" className="form-control" id="exampleFormControlInput1" required />
         </div>
         <div className="form-group">
-          <label for="exampleFormControlTextarea1">{t('ContactUs|2')}</label>
+          <label htmlFor="exampleFormControlTextarea1">{t('ContactUs|2')}</label>
           <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
         </div>
         <input className="btn btn-primary" type="submit" value={t('ContactUs|3')}></input>

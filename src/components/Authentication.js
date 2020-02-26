@@ -16,18 +16,6 @@ export default function Authentication({ isLogInTabVisible, closeAuthModal, hand
 
   const [ t ] = useTranslation()
 
-  function handleChange(e) {
-    if (e.target.name === 'email') {
-      setEmail(e.target.value)
-    } else if (e.target.name === 'name') {
-      setName(e.target.value)
-    } else if (e.target.name === 'password') {
-      setPassword(e.target.value)
-    } else if (e.target.name === 'passwordConfirm') {
-      setPasswordConfirm(e.target.value)
-    }
-  }
-
   function handleRegistrationSubmit(e) {
     e.preventDefault()
     if (password === passwordConfirm && password.length >= 6) {
@@ -79,16 +67,20 @@ export default function Authentication({ isLogInTabVisible, closeAuthModal, hand
           ? (
             isLogInTabVisible
             ? <LogIn  email={email}
+                      setEmail={setEmail}
                       password={password}
+                      setPassword={setPassword}
                       showResetPassword={showResetPassword} 
-                      handleChange={handleChange} 
                       handleLogInSubmit={handleLogInSubmit} 
                       checkbox={checkbox} />
             : <Registration email={email} 
+                            setEmail={setEmail}
                             name={name}
+                            setName={setName}
                             password={password}
-                            passwordConfirm={passwordConfirm} 
-                            handleChange={handleChange} 
+                            setPassword={setPassword}
+                            passwordConfirm={passwordConfirm}
+                            setPasswordConfirm={setPasswordConfirm} 
                             handleRegistrationSubmit={handleRegistrationSubmit} />
           )
           : <Suspense fallback={ <div><i className="fa fa-cog fa-spin" style={{fontSize: '24px'}}></i></div> }>

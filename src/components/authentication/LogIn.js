@@ -1,7 +1,15 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-export default function LogIn({ email, password, showResetPassword, handleChange, handleLogInSubmit, checkbox }) {
+export default function LogIn(props) {
+  const { email, 
+          setEmail,
+          password, 
+          setPassword,
+          showResetPassword,
+          handleLogInSubmit, 
+          checkbox } = props
+
   const [ t ] = useTranslation()
 
   return (
@@ -13,7 +21,7 @@ export default function LogIn({ email, password, showResetPassword, handleChange
                   type="email" 
                   name="email" 
                   value={email} 
-                  onChange={handleChange} 
+                  onChange={e => setEmail(e.target.value)} 
                   required />
         </label>
         <label className="d-flex flex-column">
@@ -22,7 +30,7 @@ export default function LogIn({ email, password, showResetPassword, handleChange
                   type="password" 
                   name="password" 
                   value={password} 
-                  onChange={handleChange} 
+                  onChange={e => setPassword(e.target.value)} 
                   required />
         </label>
         <div className="form-check mb-2">
