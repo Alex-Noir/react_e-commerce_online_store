@@ -8,6 +8,7 @@ export default function Comments() {
   return (
     <div className="bg-light">
       <div  className="fb-comments" 
+            data-href={window.location.href}
             data-width="100%" 
             data-numposts="10"
             data-order-by="reverse_time"></div>
