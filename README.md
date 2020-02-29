@@ -28,13 +28,13 @@ This is a demo website. Made with ReactJS (CRA). Fully responsive.
 - [WebP Converter](https://webp-converter.com/)
 - [Animate.css](https://github.com/daneden/animate.css) (code: [1](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/components/header/CartButton.js#L11), [2](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/components/Authentication.js#L46))
 - [React Router](https://reacttraining.com/react-router/)
-- [axios](https://github.com/axios/axios) [code](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/context.js#L38)
+- [axios](https://github.com/axios/axios) ([code](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/context.js#L38))
 - [react-slick](https://github.com/akiran/react-slick) ([code](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/components/container/Carousel.js#L26), [in combination with react-image-magnify](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/components/container/products/productPage/Slider.js#L69))
 - [react-image-magnify](https://github.com/ethanselzer/react-image-magnify) ([code](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/components/container/products/productPage/Slider.js#L84))
 - [react-quill](https://github.com/zenoamaro/react-quill) (code: [1](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/components/container/products/productPage/Reviews.js#L90), [2 (as a published review)](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/components/container/products/productPage/Review.js#L61))
 - [Facebook Comments plugin](https://developers.facebook.com/docs/plugins/comments/) ([code](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/components/container/products/productPage/Comments.js))
-- [react-paypal-button-v2](https://github.com/Luehang/react-paypal-button-v2) ([code](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/components/container/products/productPage/Comments.js))
-- [react-i18next](https://github.com/i18next/react-i18next, requiring [i18next](https://github.com/i18next/i18next) (code: [1](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/i18n.js), [2](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/components/footer/I18nButtons.js))
+- [react-paypal-button-v2](https://github.com/Luehang/react-paypal-button-v2) ([code](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/components/container/cart/PayPalCheckoutButton.js))
+- [react-i18next](https://github.com/i18next/react-i18next), requiring [i18next](https://github.com/i18next/i18next) (code: [1](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/i18n.js), [2](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/components/footer/I18nButtons.js))
 
 ### Notes:
 
