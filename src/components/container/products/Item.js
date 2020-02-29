@@ -98,7 +98,7 @@ export default function Item({ dataItem }) {
                 </>
             }
           </h4>
-          <h6 className={isInCart ? "bg-danger text-white p-1 rounded" : "invisible"}>
+          <h6 className={isInCart ? "align-self-start bg-danger text-white p-1 rounded" : "invisible"}>
             {t('SearchResult|1')} {amountInCart}
           </h6>
         </div>

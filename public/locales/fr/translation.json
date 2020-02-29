@@ -66,7 +66,8 @@
   "Review": {
     "1": "Se mettre d'accord",
     "2": "Être en désaccord",
-    "3": "Accepter les modifications"
+    "3": "Accepter les modifications",
+    "4": "Aucun avis pour l'instant. Soyez le premier!"
   },
   "SearchResult": {
     "1": "Dans un chariot:"

@@ -66,7 +66,8 @@
   "Review": {
     "1": "Essere d'accordo",
     "2": "Disaccordo",
-    "3": "Accetta modifiche"
+    "3": "Accetta modifiche",
+    "4": "Nessuna recensione finora. Sii il primo!"
   },
   "SearchResult": {
     "1": "Nel carrello:"

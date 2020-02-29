@@ -1,68 +1,46 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## React E-Commerce Online Store
 
-## Available Scripts
+This is a demo website. Made with ReactJS (CRA). Fully responsive.
 
-In the project directory, you can run:
+### [Dependencies](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/package.json#L8)
 
-### `npm start`
+### [CDN links](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/public/index.html)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### What can you do in this demo:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- browse products
+- use slider and magnifying glass
+- search for products
+- write/edit/delete product review with Rich Text Editor
+- write Facebook commentaries 
+- add/delete products to/from cart
+- make fake payments
+- change language (10 avaliable)
+- change currency (7 avaliable)
 
-### `npm test`
+### What did I use to make this demo:
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Create React App](https://create-react-app.dev/)
+- [Bootstrap](https://getbootstrap.com/) / [Bootstrap Flex](https://getbootstrap.com/docs/4.1/utilities/flex/)
+- [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout)
+- [styled-components](https://styled-components.com/) ([code](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/components/Styles.js))
+- [Font Awesome](https://fontawesome.com/)
+- [WebP Converter](https://webp-converter.com/)
+- [Animate.css](https://github.com/daneden/animate.css) (code: [1](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/components/header/CartButton.js#L11), [2](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/components/Authentication.js#L46))
+- [React Router](https://reacttraining.com/react-router/)
+- [axios](https://github.com/axios/axios) [code](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/context.js#L38)
+- [react-slick](https://github.com/akiran/react-slick) ([code](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/components/container/Carousel.js#L26), [in combination with react-image-magnify](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/components/container/products/productPage/Slider.js#L69))
+- [react-image-magnify](https://github.com/ethanselzer/react-image-magnify) ([code](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/components/container/products/productPage/Slider.js#L84))
+- [react-quill](https://github.com/zenoamaro/react-quill) (code: [1](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/components/container/products/productPage/Reviews.js#L90), [2 (as a published review)](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/components/container/products/productPage/Review.js#L61))
+- [Facebook Comments plugin](https://developers.facebook.com/docs/plugins/comments/) ([code](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/components/container/products/productPage/Comments.js))
+- [react-paypal-button-v2](https://github.com/Luehang/react-paypal-button-v2) ([code](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/components/container/products/productPage/Comments.js))
+- [react-i18next](https://github.com/i18next/react-i18next, requiring [i18next](https://github.com/i18next/i18next) (code: [1](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/i18n.js), [2](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/components/footer/I18nButtons.js))
 
-### `npm run build`
+### Notes:
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Since there is no backend and no session, some things are just simulations:
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- modal window after log in/registration
+- no actual product rating
+- product review code made *as if* there can be more than one review from many users (ready made product review placed in [array](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/components/container/products/productPage/Reviews.js#L105)), despite there can be *only* one product review in demo
+ 

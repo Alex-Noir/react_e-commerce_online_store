@@ -232,6 +232,4 @@ class ContextProvider extends Component {
   }
 }
 
-const ContextConsumer = Context.Consumer
-
-export { Context, ContextProvider, ContextConsumer }
+export { Context, ContextProvider }

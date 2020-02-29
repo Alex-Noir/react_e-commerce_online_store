@@ -100,6 +100,9 @@ export default function Reviews({ dataItem }) {
               <button className="btn btn-primary ml-4 mb-4"
                       onClick={postReview}>{t('Reviews|2')}</button>
             </div>
+            <div className="d-flex justify-content-center mb-3">
+              <h5>{t('Review|4')}</h5>
+            </div>            
           </>
         : <div id="arrayWrapper" className="d-flex flex-column">
             {array}
