@@ -40,8 +40,6 @@ This is a demo website. Made with ReactJS (CRA). Fully responsive.
 
 For the most of the languages I used Google Translator.
 
-Each product page has its own Facebook commentaries. You can check that they are different on "Samsung Galaxy S10" and "Sansung Galaxy S9" pages.
-
 Since there is no backend and no session, some things are just simulations:
 
 - modal window after log in/registration
