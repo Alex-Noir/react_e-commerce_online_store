@@ -1,40 +1,44 @@
-import React, { useState, Suspense, lazy } from 'react'
-import { useTranslation } from 'react-i18next'
+import React, { useState, Suspense, lazy } from "react";
+import { useTranslation } from "react-i18next";
 
-const Nav = lazy(() => import('./Nav'))
+const Nav = lazy(() => import("./catalogue/Nav"));
 
 export default function Catalogue() {
-  const [ isNavVisible, setIsNavVisible ] = useState(false)
-  const [ t ] = useTranslation()
+  const [isNavVisible, setIsNavVisible] = useState(false);
+  const [t] = useTranslation();
 
-  function showNav() {    
+  function showNav() {
     if (!isNavVisible) {
-      setIsNavVisible(true)
-      document.addEventListener('click', hideNav)        
+      setIsNavVisible(true);
+      document.addEventListener("click", hideNav);
     } else if (isNavVisible) {
-      return null
+      return null;
     }
   }
 
   function hideNav() {
-    setIsNavVisible(false)
-    document.removeEventListener('click', hideNav)
+    setIsNavVisible(false);
+    document.removeEventListener("click", hideNav);
   }
 
   return (
     <div className="position-relative">
-      <button type="button" 
-              className="btn btn-light bg-transparent text-primary font-weight-bold border" 
-              onClick={showNav}>
-        {t('Catalogue|1')}
+      <button
+        type="button"
+        className="btn btn-light bg-transparent text-primary font-weight-bold border"
+        onClick={showNav}
+      >
+        {t("Catalogue|1")}
       </button>
-      {
-        isNavVisible
-        ? <Suspense fallback={ <i className="fa fa-cog fa-spin" style={{fontSize: '24px'}}></i> }>
-            <Nav showNav={showNav} />
-          </Suspense>
-        : null
-      }
+      {isNavVisible ? (
+        <Suspense
+          fallback={
+            <i className="fa fa-cog fa-spin" style={{ fontSize: "24px" }}></i>
+          }
+        >
+          <Nav showNav={showNav} />
+        </Suspense>
+      ) : null}
     </div>
-  )
+  );
 }

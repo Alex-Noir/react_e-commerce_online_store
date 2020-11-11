@@ -1,16 +1,16 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { useTranslation } from 'react-i18next'
+import React, { useState, useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function PayPalCheckoutButton({ cartTotalPrice }) {
-  const [ isBeingPaidFor, setIsBeingPaidFor ] = useState(false)
+  const [isBeingPaidFor, setIsBeingPaidFor] = useState(false);
 
-  const [ t ] = useTranslation()
+  const [t] = useTranslation();
 
-  const paypalRef = useRef()
+  const paypalRef = useRef();
 
   const product = {
-    price: cartTotalPrice
-  }
+    price: cartTotalPrice,
+  };
 
   useEffect(() => {
     window.paypal
@@ -19,39 +19,39 @@ export default function PayPalCheckoutButton({ cartTotalPrice }) {
           return actions.order.create({
             purchase_units: [
               {
-                description: 'desc',
+                description: "desc",
                 amount: {
-                  currency_code: 'USD',
-                  value: product.price
-                }
-              }
-            ]
-          })
+                  currency_code: "USD",
+                  value: product.price,
+                },
+              },
+            ],
+          });
         },
         onApprove: async (data, actions) => {
-          const order = await actions.order.capture()
-          setIsBeingPaidFor(true)
-          console.log(order)
+          const order = await actions.order.capture();
+          setIsBeingPaidFor(true);
+          console.log(order);
         },
-        locale: 'en_US',
+        locale: "en_US",
         style: {
-          color:  'gold',
-          shape:  'pill',
-          size: 'responsive',
-          label:  'pay',
-          height: 40
-        }
+          color: "gold",
+          shape: "pill",
+          size: "responsive",
+          label: "pay",
+          height: 40,
+        },
       })
-      .render(paypalRef.current)
-  }, [])
+      .render(paypalRef.current);
+  }, []);
 
   return (
     <div className="d-inline-flex">
-      {
-        isBeingPaidFor
-        ? <h1>{t('PayPalCheckoutButton|1')}</h1>
-        : <div ref={paypalRef} />
-      }
+      {isBeingPaidFor ? (
+        <h1>{t("PayPalCheckoutButton|1")}</h1>
+      ) : (
+        <div ref={paypalRef} />
+      )}
     </div>
-  )
+  );
 }
