@@ -38,9 +38,11 @@ This is a demo website. Made with ReactJS (CRA). Fully responsive.
 
 ### Notes:
 
+For the most of the languages I used Google Translator.
+
 Since there is no backend and no session, some things are just simulations:
 
 - modal window after log in/registration
 - no actual product rating
-- product review code made *as if* there can be more than one review from many users (ready made product review placed in [array](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/components/container/products/productPage/Reviews.js#L105)), despite there can be *only* one product review in demo
+- product review code made *as if* there can be more than one review from many users (ready made product review placed in [array](https://github.com/Alex-Noir/react_e-commerce_online_store/blob/master/src/components/container/products/productPage/Reviews.js#L108)), despite there can be *only* one product review in demo
  
